@@ -39,25 +39,19 @@ const Home: NextPage = () => {
               justifyContent: "center",
             }}
           >
-            <Title align={laptop ? "start" : "center"}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              {/* နိုင်ငံ့အခြေအနေဖော်ပြချက် */}
-            </Title>
+            <Text weight={900} size={40} align={laptop ? "start" : "center"}>
+              WE ARE HERE FOR YOU
+            </Text>
             <Text
+              size={20}
               weight={500}
               align={laptop ? "start" : "center"}
               sx={{ marginTop: "30px", lineHeight: "35px" }}
             >
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem
-              consequuntur ea natus ad iusto veniam nulla quo possimus
-              perferendis et hic, saepe ipsum rem animi beatae eum dolores
-              deserunt deleniti?
-              {/* ကျွန်တော်တို့ မြန်မာနိုင်ငံတော်ကြီးဟာဆိုရင်ဖြင့်
-              တလွဲတွေကြီးဖြစ်နေပါတယ်။ တခြားနိုင်ငံပြေးရင်
-              ပြည်တွင်းကိုပိုက်ဆံပြန်ပို့ဖို့ အမိန့်ထုတ်ပြီး လူတွေကိုတော့
-              ငတ်အောင်လုပ်နေပါပြီ။ */}
+              We are passionate to offer assured, trusted, affordable counseling
+              services, pyschological tests, and assessment services.
             </Text>
-            <Box sx={{ marginTop: "30px" }}>
+            {/* <Box sx={{ marginTop: "30px" }}>
               <Button
                 size="md"
                 color={"dark"}
@@ -65,7 +59,7 @@ const Home: NextPage = () => {
               >
                 See More
               </Button>
-            </Box>
+            </Box> */}
           </Box>
           <Box
             sx={{
@@ -83,98 +77,80 @@ const Home: NextPage = () => {
             />
           </Box>
         </Box>
-        <hr style={{ borderColor: "black" }} />
-      </Container>
-      {/*---------- main section end ---------*/}
+        {/*---------- main section end ---------*/}
 
-      {/*----------- Member section ---------*/}
-      <Container size={"lg"} sx={{ marginTop: "50px", marginBottom: "50px" }}>
-        <Text
-          color={"white"}
-          size={18}
-          weight={500}
-          sx={{
-            display: "inline-flex",
-            alignItems: "center",
-            padding: "5px 10px",
-            gap: "10px",
-            backgroundColor: "#25262b",
-            borderRadius: "5px",
-          }}
-        >
-          Counsellors
-          <HiOutlineUserGroup size={25} color={"white"} />
-        </Text>
+        {/*----------- Member section ---------*/}
+        <Box id="counsellors" sx={{ paddingTop: "100px" }}>
+          <Text align="center" size={30} weight={800}>
+            COUNSELLORS
+          </Text>
 
-        <Grid
-          grow
-          gutter={20}
-          sx={{
-            margin: "50px 0 0 0",
-          }}
-        >
-          {["Ko Mg Mg", "Ma Thi", "U Myint Maung", "U Kyaw"].map(
-            (item, index) => (
-              <Grid.Col
-                lg={3}
-                md={3}
-                sm={4}
-                xs={6}
-                key={index}
-                sx={{
-                  display: "flex",
-                  justifyContent: "center",
-                  borderRadius: "10px",
-                }}
-              >
-                <Box
+          <Grid
+            grow
+            gutter={20}
+            sx={{
+              margin: "50px 0 0 0",
+            }}
+          >
+            {["Ko Mg Mg", "Ma Thi", "U Myint Maung", "U Kyaw"].map(
+              (item, index) => (
+                <Grid.Col
+                  lg={6}
+                  xs={6}
+                  key={index}
                   sx={{
-                    // maxWidth: "250px",
-                    minWidth: "250px",
                     display: "flex",
-                    flexDirection: "column",
-                    padding: "10px",
+                    justifyContent: "center",
                     borderRadius: "10px",
-                    backdropFilter: "blur(10px)",
-                    boxShadow: "0 0 5px 0px #4bc9b3",
                   }}
                 >
-                  <Image
-                    src={index === 1 ? female : male}
-                    width={100}
-                    height={100}
-                    style={{ marginTop: "20px" }}
-                  />
                   <Box
                     sx={{
-                      marginTop: "20px",
+                      // maxWidth: "250px",
+                      // minWidth: "400px",
+                      width: "100%",
                       display: "flex",
                       flexDirection: "column",
+                      padding: "10px",
+                      borderRadius: "10px",
+                      backdropFilter: "blur(10px)",
+                      boxShadow: "0 0 5px 0px #4bc9b3",
                     }}
                   >
-                    <Text weight={500} size={18} align={"center"}>
-                      {item}
-                    </Text>
-                    <Link href={`/${item}/appointments`}>
-                      <Button
-                        size="md"
-                        sx={{
-                          cursor: "pointer",
-                          padding: "5px",
-                        }}
-                        color={"dark"}
-                      >
-                        See More
-                        <HiChevronRight size={20} />
-                      </Button>
-                    </Link>
+                    <Image
+                      src={index === 1 ? female : male}
+                      width={100}
+                      height={100}
+                      style={{ marginTop: "20px" }}
+                    />
+                    <Box
+                      sx={{
+                        marginTop: "20px",
+                        display: "flex",
+                        flexDirection: "column",
+                        height: "200px",
+                      }}
+                    >
+                      <Text weight={500} size={18} align={"center"}>
+                        {item}
+                      </Text>
+                      <Link href={`/${item}/appointments`}>
+                        <Text
+                          align="center"
+                          weight={500}
+                          sx={{ cursor: "pointer" }}
+                        >
+                          See More
+                        </Text>
+                      </Link>
+                    </Box>
                   </Box>
-                </Box>
-                <Space h={50} />
-              </Grid.Col>
-            )
-          )}
-        </Grid>
+                  <Space h={50} />
+                </Grid.Col>
+              )
+            )}
+          </Grid>
+        </Box>
       </Container>
       {/*--------- Member section End ----------*/}
     </Box>

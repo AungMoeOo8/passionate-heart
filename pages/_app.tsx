@@ -30,6 +30,7 @@ function MyApp({ Component, pageProps }: AppProps) {
               boxSizing: "border-box",
               margin: 0,
               padding: 0,
+              scrollBehavior: "smooth",
             },
 
             body: {

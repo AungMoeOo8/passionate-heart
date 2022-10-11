@@ -2,6 +2,8 @@ import Link from "next/link";
 import { Box, Container, Anchor, Text, Burger } from "@mantine/core";
 import { useResponsive } from "../hooks";
 import { useState } from "react";
+import { logo } from "../assets";
+import Image from "next/image";
 
 export default function Navbar() {
   const { tablet } = useResponsive();
@@ -13,6 +15,11 @@ export default function Navbar() {
         top: "0px",
         backdropFilter: "blur(10px)",
         zIndex: 100,
+        backgroundColor: tablet
+          ? "transparent"
+          : isOpened
+          ? "#b9f9d7eb"
+          : "transparent",
       }}
     >
       <Container
@@ -25,31 +32,29 @@ export default function Navbar() {
         }}
       >
         <Link href={"/"} passHref>
-          <Text
-            size={18}
-            weight={900}
+          <Box
             sx={{
+              minWidth: "130px",
+              height: "100px",
+              overflow: "hidden",
+              position: "relative",
               cursor: "pointer",
               marginLeft: tablet ? "0" : "16px",
               padding: "10px 0",
             }}
           >
-            <Text>PASSIONATE</Text>
-            <Text sx={{letterSpacing: 13}}>HEART</Text>
-          </Text>
-          {/* <Text
-            size={40}
-            weight={700}
-            sx={{ cursor: "pointer", marginLeft: tablet ? "0" : "16px" }}
-          >
-            HEART
-          </Text> */}
+            <Image
+              src={logo}
+              layout={"fill"}
+              style={{ transform: "scale(1.5, 2)" }}
+            />
+          </Box>
         </Link>
 
         <Box
           sx={{
             position: tablet ? "static" : "absolute",
-            top: "75.78px",
+            top: "100px",
             padding: "10px 0",
             display: tablet ? "flex" : isOpened ? "flex" : "none",
             gap: "10px",
@@ -61,26 +66,85 @@ export default function Navbar() {
             borderRadius: "0 0 10px 10px",
           }}
         >
-          {["about", "blog", "booking", "contact"].map((item, index) => (
-            <Link
-              key={index}
-              href={`/${item}`}
-              // style={{ textDecoration: "none", color: "black" }}
+          <Anchor
+            href={"#counsellors"}
+            style={{ textDecoration: "none", color: "black" }}
+          >
+            <Text
+              transform={"capitalize"}
+              weight={500}
+              size={18}
+              align={"center"}
+              sx={{
+                margin: "10px 0",
+                padding: "5px 10px",
+                cursor: "pointer",
+                borderRadius: "5px",
+                ":hover": {
+                  backgroundColor: "#4bc9b3",
+                },
+              }}
             >
-              <Text
-                transform={"capitalize"}
-                weight={500}
-                size={18}
-                align={"center"}
-                sx={{
-                  padding: "10px 0",
-                  cursor: "pointer",
-                }}
-              >
-                {item}
-              </Text>
-            </Link>
-          ))}
+              Counsellors
+            </Text>
+          </Anchor>
+          <Anchor href={"/"} style={{ textDecoration: "none", color: "black" }}>
+            <Text
+              transform={"capitalize"}
+              weight={500}
+              size={18}
+              align={"center"}
+              sx={{
+                margin: "10px 0",
+                padding: "5px 10px",
+                cursor: "pointer",
+                borderRadius: "5px",
+                ":hover": {
+                  backgroundColor: "#4bc9b3",
+                },
+              }}
+            >
+              Projects
+            </Text>
+          </Anchor>
+          <Anchor href={"/"} style={{ textDecoration: "none", color: "black" }}>
+            <Text
+              transform={"capitalize"}
+              weight={500}
+              size={18}
+              align={"center"}
+              sx={{
+                margin: "10px 0",
+                padding: "5px 10px",
+                cursor: "pointer",
+                borderRadius: "5px",
+                ":hover": {
+                  backgroundColor: "#4bc9b3",
+                },
+              }}
+            >
+              Articles
+            </Text>
+          </Anchor>
+          <Anchor href={"/"} style={{ textDecoration: "none", color: "black" }}>
+            <Text
+              transform={"capitalize"}
+              weight={500}
+              size={18}
+              align={"center"}
+              sx={{
+                margin: "10px 0",
+                padding: "5px 10px",
+                cursor: "pointer",
+                borderRadius: "5px",
+                ":hover": {
+                  backgroundColor: "#4bc9b3",
+                },
+              }}
+            >
+              Contact
+            </Text>
+          </Anchor>
         </Box>
 
         {!tablet && (
