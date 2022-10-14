@@ -31,7 +31,7 @@ export default function Navbar() {
           alignItems: "center",
         }}
       >
-        <Link href={"/"} passHref>
+        <Link href={"/"} replace>
           <Box
             sx={{
               minWidth: "130px",
@@ -88,7 +88,10 @@ export default function Navbar() {
               Counsellors
             </Text>
           </Anchor>
-          <Anchor href={"/"} style={{ textDecoration: "none", color: "black" }}>
+          <Anchor
+            href={"#services"}
+            style={{ textDecoration: "none", color: "black" }}
+          >
             <Text
               transform={"capitalize"}
               weight={500}
@@ -104,7 +107,7 @@ export default function Navbar() {
                 },
               }}
             >
-              Projects
+              Services
             </Text>
           </Anchor>
           <Anchor href={"/"} style={{ textDecoration: "none", color: "black" }}>

@@ -22,6 +22,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           components: {},
           /** Put your mantine theme override here */
           colorScheme: "light",
+          fontFamily: "'Inter', sans-serif;",
         }}
       >
         <Global
@@ -32,7 +33,6 @@ function MyApp({ Component, pageProps }: AppProps) {
               padding: 0,
               scrollBehavior: "smooth",
             },
-
             body: {
               ...theme.fn.fontStyles(),
               minHeight: "100vh",
@@ -41,6 +41,8 @@ function MyApp({ Component, pageProps }: AppProps) {
               // height: "100vh",
               background:
                 "radial-gradient(at top left, #66ffb4, white) no-repeat",
+              // background:
+              //   "radial-gradient(at top left, #cafffd, white) no-repeat",
             },
           })}
         />

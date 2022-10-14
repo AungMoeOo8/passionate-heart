@@ -14,6 +14,7 @@ export default function Footer() {
       <Anchor
         sx={{ display: "flex", alignItems: "center" }}
         href="https://www.facebook.com/profile.php?id=100075651559328"
+        target={"_blank"}
       >
         <RiFacebookCircleFill size={40} />
         {/* <Text size={16} weight={700}>
