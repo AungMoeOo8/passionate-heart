@@ -36,10 +36,11 @@ function MyApp({ Component, pageProps }: AppProps) {
             body: {
               ...theme.fn.fontStyles(),
               minHeight: "100vh",
-              background:
-                "radial-gradient(at top left, #66ffb4, white) no-repeat",
+              // background:
+              //   "radial-gradient(at top left, #66ffb4, white) no-repeat",
               // background:
               //   "radial-gradient(at top left, #cafffd, white) no-repeat",
+              // background: "radial-gradient(at top left, red, blue) no-repeat",
             },
           })}
         />

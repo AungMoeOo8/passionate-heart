@@ -18,7 +18,7 @@ export default function Navbar() {
         backgroundColor: tablet
           ? "transparent"
           : isOpened
-          ? "#b9f9d7eb"
+          ? "white"
           : "transparent",
       }}
     >
@@ -62,7 +62,8 @@ export default function Navbar() {
             justifyContent: "space-evenly",
             maxWidth: "600px",
             width: "100%",
-            backgroundColor: tablet ? "transparent" : "#b9f9d7eb",
+            // backgroundColor: tablet ? "transparent" : "#b9f9d7eb",
+            backgroundColor: tablet ? "transparent" : "white",
             borderRadius: "0 0 10px 10px",
           }}
         >
@@ -82,6 +83,7 @@ export default function Navbar() {
                 borderRadius: "5px",
                 ":hover": {
                   backgroundColor: "#4bc9b3",
+                  color: "white",
                 },
               }}
             >
@@ -104,6 +106,7 @@ export default function Navbar() {
                 borderRadius: "5px",
                 ":hover": {
                   backgroundColor: "#4bc9b3",
+                  color: "white",
                 },
               }}
             >
@@ -123,6 +126,7 @@ export default function Navbar() {
                 borderRadius: "5px",
                 ":hover": {
                   backgroundColor: "#4bc9b3",
+                  color: "white",
                 },
               }}
             >
@@ -142,6 +146,7 @@ export default function Navbar() {
                 borderRadius: "5px",
                 ":hover": {
                   backgroundColor: "#4bc9b3",
+                  color: "white",
                 },
               }}
             >

@@ -4,7 +4,13 @@ import CounsellorCard from "../CounsellorCard";
 export default function CounsellorSection() {
   return (
     <Box id="counsellors" sx={{ padding: "100px 0" }}>
-      <Text align="center" size={35} weight={800}>
+      <Text
+        align="center"
+        size={35}
+        weight={800}
+        variant={"gradient"}
+        gradient={{ from: "pink", to: "orange", deg: 45 }}
+      >
         COUNSELLORS
       </Text>
 

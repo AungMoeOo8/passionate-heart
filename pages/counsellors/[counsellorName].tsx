@@ -1,16 +1,32 @@
 import { Box, Container } from "@mantine/core";
+import Head from "next/head";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import { male } from "../../assets";
 
 export default function Counsellors() {
   const router = useRouter();
   const { counsellorName } = router.query;
   return (
-    <Container size={"lg"}>
-      <Box>
-        <Image src={male} />
-      </Box>
-    </Container>
+    <>
+      <Head>
+        <title>{counsellorName} | Detail</title>
+      </Head>
+      <Container size={"lg"}>
+        <Box
+          sx={{
+            position: "relative",
+            width: "500px",
+            height: "750px",
+          }}
+        >
+          <Image
+            src={
+              "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1600"
+            }
+            layout={"fill"}
+          />
+        </Box>
+      </Container>
+    </>
   );
 }

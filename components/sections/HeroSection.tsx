@@ -21,7 +21,13 @@ export default function HeroSection() {
           justifyContent: "center",
         }}
       >
-        <Text weight={900} size={45} align={laptop ? "start" : "center"}>
+        <Text
+          weight={900}
+          size={45}
+          align={laptop ? "start" : "center"}
+          variant={"gradient"}
+          gradient={{ from: "pink", to: "orange", deg: 45 }}
+        >
           WE ARE HERE FOR YOU
         </Text>
         <Text

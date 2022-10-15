@@ -8,12 +8,18 @@ export default function CounsellorCard({ item }: { item: string }) {
     <Box
       sx={{
         width: "100%",
+        maxWidth: "550px",
+        minWidth: tablet ? "530px" : "none",
         borderRadius: "10px",
-        backdropFilter: "blur(10px)",
-        boxShadow: "0 0 5px 0px #4bc9b3",
+        boxShadow: "0 0 2px 0px gray",
+        // boxShadow: "0 0 5px 0px #4bc9b3",
         display: "flex",
         flexDirection: tablet ? "row" : "column",
         overflow: "hidden",
+        transition: "ease 250ms",
+        ":hover": {
+          translate: "-3px -3px",
+        },
       }}
     >
       <Box
@@ -21,7 +27,7 @@ export default function CounsellorCard({ item }: { item: string }) {
           position: "relative",
           flexBasis: "35%",
           height: "100%",
-          minWidth: "200px",
+          // minWidth: "200px",
         }}
       >
         <Image
@@ -29,6 +35,7 @@ export default function CounsellorCard({ item }: { item: string }) {
             "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1600"
           }
           layout={"fill"}
+          priority
         />
       </Box>
       <Box sx={{ flexBasis: "65%", padding: "20px" }}>
