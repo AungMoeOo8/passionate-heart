@@ -1,4 +1,6 @@
-import { Box, Text, Grid, Space } from "@mantine/core";
+import { Box, Text, Grid, Space, Button } from "@mantine/core";
+import Link from "next/link";
+import { HiArrowRight as RightArrow } from "react-icons/hi";
 import CounsellorCard from "../CounsellorCard";
 
 export default function CounsellorSection() {
@@ -39,6 +41,21 @@ export default function CounsellorSection() {
           )
         )}
       </Grid>
+
+      <Link href={"/counsellors"} passHref>
+        <Box
+          sx={{ display: "flex", justifyContent: "center", marginTop: "50px" }}
+        >
+          <Button
+            size="md"
+            rightIcon={<RightArrow />}
+            variant="gradient"
+            gradient={{ from: "pink", to: "orange", deg: 45 }}
+          >
+            All Counsellors
+          </Button>
+        </Box>
+      </Link>
     </Box>
   );
 }

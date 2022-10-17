@@ -67,8 +67,8 @@ export default function Navbar() {
             borderRadius: "0 0 10px 10px",
           }}
         >
-          <Anchor
-            href={"#counsellors"}
+          <Link
+            href={"/counsellors"}
             style={{ textDecoration: "none", color: "black" }}
           >
             <Text
@@ -89,7 +89,7 @@ export default function Navbar() {
             >
               Counsellors
             </Text>
-          </Anchor>
+          </Link>
           <Anchor
             href={"#services"}
             style={{ textDecoration: "none", color: "black" }}

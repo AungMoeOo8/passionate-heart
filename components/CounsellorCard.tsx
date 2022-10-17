@@ -8,17 +8,23 @@ export default function CounsellorCard({ item }: { item: string }) {
     <Box
       sx={{
         width: "100%",
-        maxWidth: "550px",
-        minWidth: tablet ? "530px" : "none",
         borderRadius: "10px",
         boxShadow: "0 0 2px 0px gray",
         // boxShadow: "0 0 5px 0px #4bc9b3",
         display: "flex",
-        flexDirection: tablet ? "row" : "column",
+        flexDirection: "row",
         overflow: "hidden",
         transition: "ease 250ms",
         ":hover": {
           translate: "-3px -3px",
+        },
+
+        "@media (max-width: 1000px)": {
+          flexDirection: "column",
+        },
+
+        "@media (max-width: 600px)": {
+          flexDirection: "column",
         },
       }}
     >
