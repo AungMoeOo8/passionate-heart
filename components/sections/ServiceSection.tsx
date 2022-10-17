@@ -54,7 +54,7 @@ export default function ServiceSection() {
                 position: "relative",
               }}
             >
-              <Image src={image} layout={"fill"} />
+              <Image alt="Service Photo" src={image} layout={"fill"} />
             </Box>
             <Text weight={700} size={20}>
               {title}

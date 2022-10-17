@@ -52,6 +52,7 @@ export default function HeroSection() {
         }}
       >
         <Image
+          alt="Passionate Heart Logo"
           src={logo}
           width={400}
           height={400}
