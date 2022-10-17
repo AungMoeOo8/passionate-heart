@@ -31,7 +31,7 @@ export default function Navbar() {
           alignItems: "center",
         }}
       >
-        <Link href={"/"} replace>
+        <Link href={"/"}>
           <Box
             sx={{
               minWidth: "130px",

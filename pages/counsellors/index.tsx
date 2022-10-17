@@ -9,11 +9,17 @@ export default function CounsellorsPage() {
         <title>Passionate Heart | Counsellors</title>
       </Head>
       <Container size={"lg"}>
-        <Title align="center">WE ARE HERE TO HELP</Title>
+        <Title
+          align="center"
+          variant="gradient"
+          gradient={{ from: "pink", to: "orange", deg: 45 }}
+        >
+          Counsellors
+        </Title>
         <Grid
           gutter={20}
           sx={{
-            margin: "50px 0 0 0",
+            margin: "50px 0 50px 0",
           }}
         >
           {["Ko Mg Mg", "Ma Thi", "U Myint Maung", "U Kyaw", "Ko Htun"].map(

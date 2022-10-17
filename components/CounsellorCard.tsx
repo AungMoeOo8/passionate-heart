@@ -1,9 +1,7 @@
 import { Box, Text } from "@mantine/core";
 import Image from "next/image";
-import { useResponsive } from "../hooks";
 
 export default function CounsellorCard({ item }: { item: string }) {
-  const { tablet } = useResponsive();
   return (
     <Box
       sx={{
@@ -30,20 +28,44 @@ export default function CounsellorCard({ item }: { item: string }) {
     >
       <Box
         sx={{
-          position: "relative",
           flexBasis: "35%",
-          height: "100%",
-          // minWidth: "200px",
+          justifyContent: "center",
+          "@media (max-width: 1000px)": {
+            display: "flex",
+          },
         }}
       >
-        <Image
-          alt="Counsellor Photo"
-          src={
-            "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1600"
-          }
-          layout={"fill"}
-          priority
-        />
+        <Box
+          sx={{
+            position: "relative",
+            height: "100%",
+            minHeight: "200px",
+            overflow: "hidden",
+
+            "@media (max-width: 1000px)": {
+              width: "200px",
+              height: "200px",
+              borderRadius: "100%",
+              margin: "20px",
+            },
+
+            "@media (max-width: 600px)": {
+              width: "200px",
+              height: "200px",
+              borderRadius: "100%",
+              margin: "20px",
+            },
+          }}
+        >
+          <Image
+            alt="Counsellor Photo"
+            src={
+              "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1600"
+            }
+            layout={"fill"}
+            priority
+          />
+        </Box>
       </Box>
       <Box sx={{ flexBasis: "65%", padding: "20px" }}>
         <Text weight={600} size={20} sx={{}}>

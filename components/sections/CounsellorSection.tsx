@@ -1,6 +1,6 @@
 import { Box, Text, Grid, Space, Button } from "@mantine/core";
 import Link from "next/link";
-import { HiArrowRight as RightArrow } from "react-icons/hi";
+import { IconArrowRight as RightArrow } from "@tabler/icons";
 import CounsellorCard from "../CounsellorCard";
 
 export default function CounsellorSection() {
@@ -13,7 +13,7 @@ export default function CounsellorSection() {
         variant={"gradient"}
         gradient={{ from: "pink", to: "orange", deg: 45 }}
       >
-        COUNSELLORS
+        Counsellors
       </Text>
 
       <Grid
