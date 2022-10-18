@@ -91,7 +91,7 @@ export default function Navbar() {
             </Text>
           </Link>
           <Anchor
-            href={"#services"}
+            href={"/#services"}
             style={{ textDecoration: "none", color: "black" }}
           >
             <Text

@@ -11,7 +11,7 @@ const Home: NextPage = () => {
       <Head>
         <title>Passionate Heart | Welcome</title>
       </Head>
-      <Container size={"lg"} sx={{ marginTop: tablet ? "50px" : "0" }}>
+      <Container size={"lg"} sx={{ marginTop: tablet ? "100px" : "0" }}>
         <HeroSection />
         <CounsellorSection />
         <ServiceSection />
