@@ -59,7 +59,7 @@ export default function Footer() {
         </Box>
       </Box>
       <Text weight={300} size={"sm"} align="center">
-        Copyright © 2022 by <br /> passionateheartmyanmar.com
+        Copyright © 2022<br /> passionateheartmyanmar.com
       </Text>
     </Container>
   );

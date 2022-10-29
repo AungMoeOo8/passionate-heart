@@ -13,15 +13,18 @@ export default function ServiceSection() {
   const { laptop } = useResponsive();
   return (
     <Box id="services" sx={{ padding: "100px 0" }}>
-      <Text
-        align="center"
-        size={35}
-        weight={800}
-        variant={"gradient"}
-        gradient={{ from: "pink", to: "orange", deg: 45 }}
-      >
-        Services
-      </Text>
+      <Box sx={{ display: "flex", justifyContent: "center" }}>
+        <Text
+          align="center"
+          size={35}
+          weight={800}
+          variant={"gradient"}
+          gradient={{ from: "#346f99", to: "#00e7ff", deg: 45 }}
+          sx={{ display: "inline" }}
+        >
+          Services
+        </Text>
+      </Box>
 
       <Box
         sx={{

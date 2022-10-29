@@ -1,13 +1,19 @@
 import Link from "next/link";
 import { Box, Container, Anchor, Text, Burger } from "@mantine/core";
 import { useResponsive } from "../hooks";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { logo } from "../assets";
 import Image from "next/image";
+import { useRouter } from "next/router";
 
 export default function Navbar() {
+  const { route } = useRouter();
   const { tablet } = useResponsive();
   const [isOpened, setIsOpened] = useState(false);
+
+  useEffect(() => {
+    setIsOpened(false);
+  }, [route]);
   return (
     <Box
       sx={{
@@ -31,8 +37,9 @@ export default function Navbar() {
           alignItems: "center",
         }}
       >
-        <Link href={"/"}>
+        <Link href={"/"} passHref>
           <Box
+            component="a"
             sx={{
               minWidth: "130px",
               height: "100px",
@@ -70,8 +77,10 @@ export default function Navbar() {
           <Link
             href={"/counsellors"}
             style={{ textDecoration: "none", color: "black" }}
+            passHref
           >
             <Text
+              component="a"
               transform={"capitalize"}
               weight={500}
               size={18}
@@ -82,7 +91,7 @@ export default function Navbar() {
                 cursor: "pointer",
                 borderRadius: "5px",
                 ":hover": {
-                  backgroundColor: "#4bc9b3",
+                  backgroundColor: "#4697fb",
                   color: "white",
                 },
               }}
@@ -90,7 +99,7 @@ export default function Navbar() {
               Counsellors
             </Text>
           </Link>
-          <Anchor
+          <Link
             href={"/#services"}
             style={{ textDecoration: "none", color: "black" }}
           >
@@ -105,14 +114,14 @@ export default function Navbar() {
                 cursor: "pointer",
                 borderRadius: "5px",
                 ":hover": {
-                  backgroundColor: "#4bc9b3",
+                  backgroundColor: "#4697fb",
                   color: "white",
                 },
               }}
             >
               Services
             </Text>
-          </Anchor>
+          </Link>
           <Anchor href={"/"} style={{ textDecoration: "none", color: "black" }}>
             <Text
               transform={"capitalize"}
@@ -125,7 +134,7 @@ export default function Navbar() {
                 cursor: "pointer",
                 borderRadius: "5px",
                 ":hover": {
-                  backgroundColor: "#4bc9b3",
+                  backgroundColor: "#4697fb",
                   color: "white",
                 },
               }}
@@ -145,7 +154,7 @@ export default function Navbar() {
                 cursor: "pointer",
                 borderRadius: "5px",
                 ":hover": {
-                  backgroundColor: "#4bc9b3",
+                  backgroundColor: "#4697fb",
                   color: "white",
                 },
               }}

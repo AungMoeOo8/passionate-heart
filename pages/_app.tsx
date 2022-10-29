@@ -13,6 +13,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=device-width"
         />
+        <link href="https://passionateheartmyanmar.com" rel="canonical" />
       </Head>
 
       <MantineProvider
