@@ -22,6 +22,7 @@ export default function HeroSection() {
         }}
       >
         <Text
+          component="h2"
           weight={900}
           size={45}
           align={laptop ? "start" : "center"}

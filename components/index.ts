@@ -1,15 +1,19 @@
-import Navbar from "./Navbar";
-import Footer from "./Footer";
-import CounsellorCard from "./CounsellorCard";
+import Navbar from "./layout/Navbar";
+import Footer from "./layout/Footer";
 import HeroSection from "./sections/HeroSection";
 import CounsellorSection from "./sections/CounsellorSection";
 import ServiceSection from "./sections/ServiceSection";
+import CounsellorCard from "./commons/CounsellorCard";
+import NavLinkButton from "./commons/NavLinkButton";
+import ServiceComponent from "./commons/ServiceComponent";
 
 export {
   Navbar,
   Footer,
-  CounsellorCard,
   HeroSection,
   CounsellorSection,
   ServiceSection,
+  CounsellorCard,
+  NavLinkButton,
+  ServiceComponent,
 };

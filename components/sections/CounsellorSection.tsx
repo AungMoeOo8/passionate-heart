@@ -1,7 +1,7 @@
 import { Box, Text, Grid, Space, Button } from "@mantine/core";
 import Link from "next/link";
 import { IconArrowRight as RightArrow } from "@tabler/icons";
-import CounsellorCard from "../CounsellorCard";
+import CounsellorCard from "../commons/CounsellorCard";
 
 export default function CounsellorSection() {
   return (
