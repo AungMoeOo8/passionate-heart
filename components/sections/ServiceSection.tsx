@@ -11,6 +11,7 @@ const services = [
 
 export default function ServiceSection() {
   const { laptop } = useResponsive();
+
   return (
     // <Box id="services" sx={{ padding: "100px 0" }}>
     //   <Box sx={{ display: "flex", justifyContent: "center" }}>
@@ -67,7 +68,14 @@ export default function ServiceSection() {
     //   </Box>
     // </Box>
 
-    <Box id="services" sx={{ padding: "100px 0" }}>
+    <Box
+      id="services"
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        gap: "50px",
+      }}
+    >
       {services.map((service, index) => (
         <ServiceComponent
           key={index}

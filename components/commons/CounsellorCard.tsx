@@ -6,6 +6,10 @@ export default function CounsellorCard({ item }: { item: string }) {
   return (
     <Link href={`/counsellors/${item}`} passHref>
       <Box
+        data-aos="fade-up"
+        data-aos-delay="100"
+        data-aos-duration="1000"
+        data-aos-offset="50"
         sx={{
           width: "100%",
           borderRadius: "10px",
@@ -16,9 +20,9 @@ export default function CounsellorCard({ item }: { item: string }) {
           overflow: "hidden",
           cursor: "pointer",
           transition: "ease 250ms",
-          ":hover": {
-            translate: "-3px -3px",
-          },
+          // ":hover": {
+          //   translate: "-3px -3px",
+          // },
 
           "@media (max-width: 1000px)": {
             flexDirection: "column",

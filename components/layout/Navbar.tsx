@@ -61,6 +61,7 @@ export default function Navbar() {
         </Link>
 
         <Box
+          component="nav"
           sx={{
             position: tablet ? "static" : "absolute",
             top: "100px",
@@ -77,7 +78,7 @@ export default function Navbar() {
           }}
         >
           <NavLinkButton name="Counsellors" href="/counsellors" />
-          <NavLinkButton name="Services" href="#services" />
+          <NavLinkButton name="Services" href="/#services" />
           <NavLinkButton name="Activities" href="/activities" />
           <NavLinkButton name="Contact" href="/" />
         </Box>

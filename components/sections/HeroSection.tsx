@@ -22,6 +22,11 @@ export default function HeroSection() {
         }}
       >
         <Text
+          data-aos="fade-up"
+          data-aos-delay="100"
+          data-aos-duration="1000"
+          data-aos-offset="0"
+          // data-aos-once="true"
           component="h2"
           weight={900}
           size={45}
@@ -32,6 +37,11 @@ export default function HeroSection() {
           WE ARE HERE FOR YOU
         </Text>
         <Text
+          data-aos="fade-left"
+          data-aos-delay="100"
+          data-aos-duration="1000"
+          data-aos-offset="0"
+          data-aos-once="true"
           size={20}
           weight={500}
           align={laptop ? "start" : "center"}

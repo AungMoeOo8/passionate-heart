@@ -17,6 +17,10 @@ const ServiceComponent: React.FC<ServiceComponentProps> = ({
   const direction = reverse ? "row-reverse" : "row";
   return (
     <Box
+      data-aos="fade-up"
+      data-aos-delay="100"
+      data-aos-duration="1000"
+      data-aos-offset="50"
       sx={{
         display: "flex",
         flexDirection: tablet ? direction : "column",
