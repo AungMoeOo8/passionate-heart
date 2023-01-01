@@ -1,6 +1,7 @@
 import { Box, Container, Grid, Space, Title } from "@mantine/core";
 import Head from "next/head";
 import { CounsellorCard } from "../../components";
+import counsellorsData from "../../counsellorsData";
 
 export default function CounsellorsPage() {
   return (
@@ -22,23 +23,25 @@ export default function CounsellorsPage() {
             margin: "50px 0 50px 0",
           }}
         >
-          {["Ko Mg Mg", "Ma Thi", "U Myint Maung", "U Kyaw", "Ko Htun"].map(
-            (item, index) => (
-              <Grid.Col
-                lg={6}
-                xs={6}
-                key={index}
-                sx={{
-                  display: "flex",
-                  justifyContent: "center",
-                  borderRadius: "10px",
-                }}
-              >
-                <CounsellorCard item={item} />
-                <Space h={50} />
-              </Grid.Col>
-            )
-          )}
+          {counsellorsData.map((counsellor, index) => (
+            <Grid.Col
+              lg={6}
+              xs={6}
+              key={index}
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                borderRadius: "10px",
+              }}
+            >
+              <CounsellorCard
+                image={counsellor.image}
+                name={counsellor.name}
+                bio={counsellor.bio}
+              />
+              <Space h={50} />
+            </Grid.Col>
+          ))}
         </Grid>
       </Container>
     </>
