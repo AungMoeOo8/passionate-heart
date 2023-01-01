@@ -8,7 +8,12 @@ export default function Academy() {
         <title>Passionate Heart | Academy</title>
       </Head>
       <div>
-        <Image width={500} height={500} src="/images/ph-academy-logo.png" />
+        <Image
+          alt="academy logo"
+          width={500}
+          height={500}
+          src="/images/ph-academy-logo.png"
+        />
       </div>
     </>
   );
