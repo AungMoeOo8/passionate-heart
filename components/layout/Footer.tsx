@@ -44,7 +44,7 @@ export default function Footer() {
             <Tooltip label="follow us on Facebook">
               <a
                 href="https://www.facebook.com/profile.php?id=100075651559328"
-                target={"_blank"}
+                // target={"_blank"}
               >
                 <div className="bg-white rounded-full p-[10px]">
                   <IconBrandFacebook size={24} stroke={2} />
@@ -52,7 +52,10 @@ export default function Footer() {
               </a>
             </Tooltip>
             <Tooltip label="join our Telegram channel">
-              <a href="https://t.me/passionateheart" target={"_blank"}>
+              <a
+                href="https://t.me/passionateheart"
+                // target={"_blank"}
+              >
                 <div className="bg-white rounded-full p-[10px]">
                   <IconBrandTelegram size={24} stroke={1.5} />
                 </div>

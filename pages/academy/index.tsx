@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Head from "next/head";
 
-export default () => {
+export default function Academy() {
   return (
     <>
       <Head>
@@ -12,4 +12,4 @@ export default () => {
       </div>
     </>
   );
-};
+}

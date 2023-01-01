@@ -23,6 +23,7 @@ const ServiceComponent: React.FC<ServiceComponentProps> = ({
     >
       <div className="basis-6/12 flex justify-center relative">
         <Image
+          alt="services"
           width="400px"
           height="250px"
           src={image}
