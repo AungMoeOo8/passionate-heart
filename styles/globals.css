@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* :root {
+  --purple: #af74ff;
+  --lightgreen: #afffff;
+} */
+
+@layer base {
+  /* body {
+    @apply bg-neutral-800
+  } */
+}
+
+@layer components {
+  .container-lg {
+    @apply max-w-[1440px] mx-auto px-4;
+  }
+
+  .container-sm {
+    @apply max-w-[1140px] mx-auto px-4;
+  }
+}
+
+@layer ultilities {
+  .open-navbar {
+    background-color: white;
+  }
+
+  .open-nav {
+    top: 100px !important;
+  }
+}

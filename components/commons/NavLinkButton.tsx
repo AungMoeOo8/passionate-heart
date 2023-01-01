@@ -9,31 +9,10 @@ type NavLinkProps = {
 
 const NavLinkButton: FC<NavLinkProps> = ({ name, href }) => {
   return (
-    <Link
-      href={href}
-      style={{ textDecoration: "none", color: "black" }}
-      passHref
-    >
-      <Text
-        component="a"
-        transform={"capitalize"}
-        weight={500}
-        size={18}
-        align={"center"}
-        sx={{
-          margin: "10px 0",
-          padding: "5px 10px",
-          cursor: "pointer",
-          borderRadius: "5px",
-          transition: "background-color ease 250ms",
-          ":hover": {
-            backgroundColor: "#4697fb",
-            color: "white",
-          },
-        }}
-      >
+    <Link href={href} style={{ textDecoration: "none", color: "black" }}>
+      <a className="font-medium text-[18px] mx-[10px] px-[5px] py-[10px] text-center cursor-pointer">
         {name}
-      </Text>
+      </a>
     </Link>
   );
 };

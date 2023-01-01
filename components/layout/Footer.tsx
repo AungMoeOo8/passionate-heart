@@ -1,12 +1,4 @@
-import {
-  ActionIcon,
-  Anchor,
-  AnchorProps,
-  Box,
-  Container,
-  Text,
-  Tooltip,
-} from "@mantine/core";
+import { ActionIcon, Tooltip } from "@mantine/core";
 import {
   IconBrandFacebook,
   IconBrandTelegram,
@@ -16,84 +8,63 @@ import {
   IconPhone,
   TablerIcon,
 } from "@tabler/icons";
-import { useResponsive } from "../../hooks";
 
-const Info = ({ icon, info }: { icon: TablerIcon; info: string }) => {
+type InfoPropsType = { icon: TablerIcon; info: string };
+
+const Info = ({ icon, info }: InfoPropsType) => {
   return (
-    <Text
-      size={"sm"}
-      weight={300}
-      sx={{ display: "flex", alignItems: "start", gap: "10px" }}
+    <p
+      className="flex items-start gap-[10px] text-sm text-white"
+      // size={"sm"}
+      // weight={300}
+      // sx={{ display: "flex", alignItems: "start", gap: "10px" }}
     >
       {icon({ stroke: 1.5 })} {info}
-    </Text>
+    </p>
   );
 };
 
 export default function Footer() {
-  const { tablet } = useResponsive();
   return (
-    <Container
-      size={"lg"}
-      sx={(theme) => ({
-        padding: "50px 16px",
-        display: "flex",
-        gap: "30px",
-        flexDirection: "column",
-        alignItems: "center",
-        borderTop: `solid 1px ${theme.colors.gray[2]}`,
-      })}
-    >
-      <Box
-        sx={{
-          width: "100%",
-          display: "flex",
-          flexDirection: tablet ? "row" : "column",
-          justifyContent: "space-between",
-          gap: "30px",
-        }}
-      >
-        <Box sx={{ display: "flex", flexDirection: "column", gap: "20px" }}>
-          <Info icon={IconPhone} info="09 988 209589" />
-          <Info icon={IconMail} info="passionateheartmyanmar@gmail.com" />
-          <Info
-            icon={IconLocation}
-            info="Hledan Centre, 2nd Floor Learning Hub
+    <div className="bg-neutral-800">
+      <div className="container-lg py-[50px] px-[16px] gap-[30px] flex flex-col items-center">
+        <div className="w-full flex gap-[30px] justify-between flex-col sm:flex-row">
+          <div className="flex flex-col gap-[20px]">
+            <Info icon={IconPhone} info="09 988 209589" />
+            <Info icon={IconMail} info="passionateheartmyanmar@gmail.com" />
+            <Info
+              icon={IconLocation}
+              info="Hledan Centre, 2nd Floor Learning Hub
             Room 2"
-          />
-          <Info icon={IconClock} info="Tues, Thurs, Sat, Sun (10AM - 3PM)" />
-        </Box>
+            />
+            <Info icon={IconClock} info="Tues, Thurs, Sat, Sun (10AM - 3PM)" />
+          </div>
 
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "center",
-            gap: "20px",
-          }}
-        >
-          <Tooltip label="follow us on Facebook">
-            <Anchor
-              href="https://www.facebook.com/profile.php?id=100075651559328"
-              target={"_blank"}
-            >
-              <ActionIcon size="xl" variant="default" radius="xl">
-                <IconBrandFacebook size={25} stroke={1.5} />
-              </ActionIcon>
-            </Anchor>
-          </Tooltip>
-          <Tooltip label="join our Telegram channel">
-            <Anchor href="https://t.me/passionateheart" target={"_blank"}>
-              <ActionIcon size="xl" variant="default" radius="xl">
-                <IconBrandTelegram size={25} stroke={1.5} />
-              </ActionIcon>
-            </Anchor>
-          </Tooltip>
-        </Box>
-      </Box>
-      <Text weight={300} size={"sm"} align="center">
-        Copyright © 2022
-        <br /> passionateheartmyanmar.com
-      </Text>
-    </Container>
+          <div className="flex justify-center gap-[20px]">
+            <Tooltip label="follow us on Facebook">
+              <a
+                href="https://www.facebook.com/profile.php?id=100075651559328"
+                target={"_blank"}
+              >
+                <div className="bg-white rounded-full p-[10px]">
+                  <IconBrandFacebook size={24} stroke={2} />
+                </div>
+              </a>
+            </Tooltip>
+            <Tooltip label="join our Telegram channel">
+              <a href="https://t.me/passionateheart" target={"_blank"}>
+                <div className="bg-white rounded-full p-[10px]">
+                  <IconBrandTelegram size={24} stroke={1.5} />
+                </div>
+              </a>
+            </Tooltip>
+          </div>
+        </div>
+        <p className="font-light text-center text-sm text-white">
+          Copyright © 2022
+          <br /> passionateheartmyanmar.com
+        </p>
+      </div>
+    </div>
   );
 }

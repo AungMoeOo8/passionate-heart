@@ -1,76 +1,53 @@
 import { Box, Text } from "@mantine/core";
 import Image from "next/image";
 import { useResponsive } from "../../hooks";
-import { logo } from "../../assets";
 
 export default function HeroSection() {
   const { laptop } = useResponsive();
   return (
-    <Box
-      sx={{
-        marginBottom: "100px",
-        display: "flex",
-        flexDirection: laptop ? "row" : "column-reverse",
-      }}
-    >
-      <Box
-        sx={{
-          flexBasis: "50%",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-        }}
-      >
-        <Text
-          data-aos="fade-up"
-          data-aos-delay="100"
-          data-aos-duration="1000"
-          data-aos-offset="0"
-          // data-aos-once="true"
-          component="h2"
-          weight={900}
-          size={45}
-          align={laptop ? "start" : "center"}
-          variant={"gradient"}
-          gradient={{ from: "pink", to: "orange", deg: 45 }}
+    <div className="container-sm py-[100px] z-50">
+      {/* <div className="mb-[100px] flex flex-col-reverse md:flex-row z-50"> */}
+        <div className="basis-6/12 flex flex-col justify-center">
+          <h2
+            className="font-bold text-[30px] md:text-[45px] text-center "
+            data-aos="fade-up"
+            data-aos-delay="100"
+            data-aos-duration="1000"
+            data-aos-offset="0"
+            data-aos-once="true"
+          >
+            WE ARE HERE FOR YOU
+          </h2>
+          <p
+            className="text-[20px] md:text-[32px] font-medium text-center mt-[30px] leading-9"
+            data-aos="fade-left"
+            data-aos-delay="100"
+            data-aos-duration="1000"
+            data-aos-offset="0"
+            data-aos-once="true"
+          >
+            We are passionate to offer assured, trusted, affordable counseling
+            services, pyschological tests, and assessment services.
+          </p>
+        </div>
+        {/* <div
+          className="basis-6/12 flex justify-center"
+          // sx={{
+          //   flexBasis: "50%",
+          //   display: "flex",
+          //   justifyContent: "center",
+          // }}
         >
-          WE ARE HERE FOR YOU
-        </Text>
-        <Text
-          data-aos="fade-left"
-          data-aos-delay="100"
-          data-aos-duration="1000"
-          data-aos-offset="0"
-          data-aos-once="true"
-          size={20}
-          weight={500}
-          align={laptop ? "start" : "center"}
-          sx={{
-            marginTop: "30px",
-            lineHeight: "35px",
-            letterSpacing: "0px",
-          }}
-        >
-          We are passionate to offer assured, trusted, affordable counseling
-          services, pyschological tests, and assessment services.
-        </Text>
-      </Box>
-      <Box
-        sx={{
-          flexBasis: "50%",
-          display: "flex",
-          justifyContent: "center",
-        }}
-      >
-        <Image
-          alt="Passionate Heart Logo"
-          src={logo}
-          width={400}
-          height={400}
-          // objectFit={"contain"}
-          priority
-        />
-      </Box>
-    </Box>
+          <Image
+            alt="Passionate Heart Logo"
+            src={"/images/passionate-heart-logo.png"}
+            width={400}
+            height={400}
+            // objectFit={"contain"}
+            priority
+          />
+        </div> */}
+      </div>
+    // </div>
   );
 }
