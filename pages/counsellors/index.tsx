@@ -9,41 +9,32 @@ export default function CounsellorsPage() {
       <Head>
         <title>Passionate Heart | Counsellors</title>
       </Head>
-      <Container size={"lg"}>
-        <Title
-          align="center"
-          variant="gradient"
-          gradient={{ from: "pink", to: "orange", deg: 45 }}
-        >
-          Counsellors
-        </Title>
-        <Grid
-          gutter={20}
-          sx={{
-            margin: "50px 0 50px 0",
-          }}
-        >
+      <div className="">
+        <p className="text-center text-4xl font-extrabold">Counsellors</p>
+      </div>
+      <div className="container-sm my-[100px]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-[20px]">
           {counsellorsData.map((counsellor, index) => (
-            <Grid.Col
-              lg={6}
+            <div key={index} className="flex justify-center rounded-[10px]">
+              {/* lg={6}
               xs={6}
               key={index}
               sx={{
                 display: "flex",
                 justifyContent: "center",
                 borderRadius: "10px",
-              }}
-            >
+              }} */}
+
               <CounsellorCard
                 image={counsellor.image}
                 name={counsellor.name}
                 bio={counsellor.bio}
               />
               <Space h={50} />
-            </Grid.Col>
+            </div>
           ))}
-        </Grid>
-      </Container>
+        </div>
+      </div>
     </>
   );
 }

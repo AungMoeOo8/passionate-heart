@@ -3,6 +3,7 @@ import Image from "next/image";
 
 import { MutableRefObject, useEffect, useRef } from "react";
 import { NavLinkButton } from "..";
+import { IconX } from "@tabler/icons";
 
 export default function Navbar() {
   const navRef = useRef<HTMLElement>() as MutableRefObject<HTMLElement>;
@@ -10,23 +11,28 @@ export default function Navbar() {
     useRef<HTMLDivElement>() as MutableRefObject<HTMLDivElement>;
 
   function openNav() {
-    navbarRef.current.classList.toggle("open-navbar");
-    navRef.current.classList.toggle("open-nav");
+    document.body.classList.add("overflow-hidden");
+    navRef.current.classList.add("open-nav");
   }
 
-  useEffect(() => {
-    document.onscroll = () => {
-      if (scrollY > 100) {
-        navbarRef.current.classList.add("bg-white");
-      }
-      if (scrollY < 100) {
-        navbarRef.current.classList.remove("bg-white");
-      }
-    };
-  });
+  function closeNav() {
+    document.body.classList.remove("overflow-hidden");
+    navRef.current.classList.remove("open-nav");
+  }
+
+  // useEffect(() => {
+  //   document.onscroll = () => {
+  //     if (scrollY > 100) {
+  //       navbarRef.current.classList.add("bg-white");
+  //     }
+  //     if (scrollY < 100) {
+  //       navbarRef.current.classList.remove("bg-white");
+  //     }
+  //   };
+  // });
 
   return (
-    <div ref={navbarRef} className="z-50 sticky top-0">
+    <div ref={navbarRef} className="z-50 bg-[#F1FDFF]">
       <div className="container-lg flex justify-between items-center bg-inherit">
         <Link href={"/"}>
           <a className="min-w-[130px] h-[100px] overflow-hidden relative cursor-pointer px-[10px]">
@@ -42,12 +48,22 @@ export default function Navbar() {
 
         <nav
           ref={navRef}
-          className="absolute md:static left-0 top-[-250px] px-[10px] flex gap-[10px] flex-col md:flex-row justify-evenly md:max-w-[600px] w-full transition-[top] z-10 bg-inherit"
+          className="absolute md:static left-[10%] top-[-600px] opacity-0 md:opacity-100 px-[10px] py-[30px] md:py-0 m-auto md:m-0  md:max-w-[600px] w-[80%] h-[50vh] md:h-full transition-[opacity] rounded-lg bg-white md:bg-transparent overflow-scroll md:overflow-hidden shadow-lg md:shadow-none z-50"
         >
-          <NavLinkButton name="Counsellors" href="/counsellors" />
-          <NavLinkButton name="Services" href="/#services" />
-          <NavLinkButton name="Academy" href="/academy" />
-          <NavLinkButton name="Contact" href="/contact" />
+          <div className="flex gap-[30px] flex-col md:flex-row justify-evenly">
+            <div className="sticky top-0 flex items-center justify-end">
+              <div
+                onClick={closeNav}
+                className="md:hidden p-[10px]  rounded bg-purple-500 shadow-md cursor-pointer"
+              >
+                <IconX color="white" />
+              </div>
+            </div>
+            <NavLinkButton name="Counselors" href="/counsellors" />
+            <NavLinkButton name="Services" href="/#services" />
+            <NavLinkButton name="Academy" href="/academy" />
+            <NavLinkButton name="Contact" href="/contact" />
+          </div>
         </nav>
 
         <div className="block md:hidden" onClick={openNav}>
@@ -73,91 +89,3 @@ export default function Navbar() {
     </div>
   );
 }
-
-// export default function Navbar() {
-//   const { route } = useRouter();
-//   const { tablet } = useResponsive();
-//   const [isOpened, setIsOpened] = useState(false);
-
-//   useEffect(() => {
-//     setIsOpened(false);
-//   }, [route]);
-//   return (
-//     <Box
-//       sx={{
-//         position: "sticky",
-//         top: "0px",
-//         backdropFilter: "blur(10px)",
-//         zIndex: 100,
-//         backgroundColor: tablet
-//           ? "transparent"
-//           : isOpened
-//           ? "white"
-//           : "transparent",
-//       }}
-//     >
-//       <Container
-//         size={"lg"}
-//         sx={{
-//           padding: tablet ? "0 16px" : "0",
-//           display: "flex",
-//           justifyContent: "space-between",
-//           alignItems: "center",
-//         }}
-//       >
-//         <Link href={"/"} passHref>
-//           <Box
-//             rel="home"
-//             component="a"
-//             sx={{
-//               minWidth: "130px",
-//               height: "100px",
-//               overflow: "hidden",
-//               position: "relative",
-//               cursor: "pointer",
-//               marginLeft: tablet ? "0" : "16px",
-//               padding: "10px 0",
-//             }}
-//           >
-//             <Image
-//               src={"/images/passionate-heart-logo.png"}
-//               layout={"fill"}
-//               style={{ transform: "scale(1.5, 2)" }}
-//             />
-//           </Box>
-//         </Link>
-
-//         <Box
-//           component="nav"
-//           sx={{
-//             position: tablet ? "static" : "absolute",
-//             top: "100px",
-//             padding: "10px 0",
-//             display: tablet ? "flex" : isOpened ? "flex" : "none",
-//             gap: "10px",
-//             flexDirection: tablet ? "row" : "column",
-//             justifyContent: "space-evenly",
-//             maxWidth: "600px",
-//             width: "100%",
-//             // backgroundColor: tablet ? "transparent" : "#b9f9d7eb",
-//             backgroundColor: tablet ? "transparent" : "white",
-//             borderRadius: "0 0 10px 10px",
-//           }}
-//         >
-//           <NavLinkButton name="Counsellors" href="/counsellors" />
-//           <NavLinkButton name="Services" href="/#services" />
-//           <NavLinkButton name="Activities" href="/activities" />
-//           <NavLinkButton name="Contact" href="/" />
-//         </Box>
-
-//         {!tablet && (
-//           <Burger
-//             opened={isOpened}
-//             onClick={() => setIsOpened(!isOpened)}
-//             sx={{ marginRight: tablet ? "0" : "16px" }}
-//           />
-//         )}
-//       </Container>
-//     </Box>
-//   );
-// }

@@ -8,7 +8,7 @@ const Home: NextPage = () => {
       <Head>
         <title>Passionate Heart | Welcome</title>
       </Head>
-      <div
+      {/* <div
         style={{
           backgroundImage: `url("/images/wave3.svg")`,
           backgroundRepeat: "no-repeat",
@@ -23,7 +23,7 @@ const Home: NextPage = () => {
           pointerEvents: "none",
           zIndex: "-100",
         }}
-      ></div>
+      ></div> */}
       <HeroSection />
       <ServiceSection />
       <CounsellorSection />

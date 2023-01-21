@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -9,8 +11,12 @@
 
 @layer base {
   /* body {
-    @apply bg-neutral-800
+    @apply md:overflow-auto
   } */
+
+  ::selection {
+    @apply bg-[#af74ff] text-white;
+  }
 }
 
 @layer components {
@@ -21,6 +27,16 @@
   .container-sm {
     @apply max-w-[1140px] mx-auto px-4;
   }
+
+  .box-lg {
+    width: 100px;
+    height: 100px;
+  }
+
+  .box-sm {
+    width: 50px;
+    height: 50px;
+  }
 }
 
 @layer ultilities {
@@ -29,6 +45,50 @@
   }
 
   .open-nav {
-    top: 100px !important;
+    opacity: 1 !important;
+    top: 15vh !important;
+  }
+
+  .box {
+    position: absolute;
+    border-radius: 10px;
+    box-shadow: -8px 8px 15px 0px #9ce3ed;
+    animation: bounce 18s infinite ease;
+    z-index: 10;
+    pointer-events: none;
+  }
+}
+
+.rectangle-sm {
+  position: absolute;
+  right: 1520px;
+  top: 380px;
+  background-image: url("/images/Rectangle3.png");
+  background-repeat: no-repeat;
+  width: 90px;
+  height: 90px;
+  animation: bounce 18s infinite ease;
+  z-index: 0;
+}
+
+@keyframes bounce {
+  0% {
+    translate: 0;
+  }
+
+  30% {
+    translate: 0 -10px;
+  }
+
+  50% {
+    translate: 0 4px;
+  }
+
+  70% {
+    translate: 0 -15px;
+  }
+
+  100% {
+    translate: 0;
   }
 }

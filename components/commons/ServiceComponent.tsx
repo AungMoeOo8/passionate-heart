@@ -16,21 +16,22 @@ const ServiceComponent: React.FC<ServiceComponentProps> = ({
     <div
       data-reverse={reverse ? true : false}
       className={`flex flex-col sm:data-[reverse=true]:flex-row-reverse sm:data-[reverse=false]:flex-row justify-center items-center gap-y-5`}
-      data-aos="fade-up"
-      data-aos-delay="100"
-      data-aos-duration="1000"
-      data-aos-offset="50"
+      // data-aos="fade-up"
+      // data-aos-delay="100"
+      // data-aos-duration="1000"
+      // data-aos-offset="50"
     >
       <div className="basis-6/12 flex justify-center relative">
         <Image
           alt="services"
-          width="400px"
-          height="250px"
+          width="450px"
+          height="300px"
           src={image}
           className="rounded-lg"
+          priority
         />
       </div>
-      <div className="basis-6/12 p-5 rounded-lg">{text}</div>
+      <div className="basis-6/12 rounded-lg">{text}</div>
     </div>
   );
 };

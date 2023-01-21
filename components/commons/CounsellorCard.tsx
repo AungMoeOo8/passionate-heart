@@ -17,7 +17,7 @@ export default function CounsellorCard({
   return (
     <Link href={`/counsellors/${name}`} passHref>
       <a
-        className="w-full rounded-lg flex flex-col lg:flex-row shadow overflow-hidden cursor-pointer backdrop-blur"
+        className="w-full rounded-lg flex flex-col lg:flex-row shadow-md hover:shadow-lg overflow-hidden cursor-pointer translate-y-0 hover:-translate-y-2 transition duration-300"
         // data-aos="fade-up"
         // data-aos-delay="100"
         // data-aos-duration="1000"

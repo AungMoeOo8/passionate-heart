@@ -6,11 +6,11 @@ import counsellorsData from "../../counsellorsData";
 
 export default function CounsellorSection() {
   return (
-    <div className="bg-white">
+    <div className="bg-[#F1FDFF]">
       <div className="container-sm mt-[0] py-[100px] z-50 ">
         <div id="counsellors">
           <div className="flex justify-center">
-            <p className="text-center text-4xl font-extrabold ">Counsellors</p>
+            <p className="text-center text-4xl font-bold">Counsellors</p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-[20px] mt-[50px]">
@@ -28,7 +28,7 @@ export default function CounsellorSection() {
 
           <div className="flex justify-center mt-[50px]">
             <Link href={"/counsellors"}>
-              <span className="bg-blue-500 text-white px-4 py-2 rounded cursor-pointer shadow-lg hover:shadow-sm transition flex items-center gap-1">
+              <span className="text-white px-4 py-2 rounded cursor-pointer shadow-lg hover:shadow-md transition-[box-shadow] duration-300 flex items-center gap-1 bg-gradient-to-br from-[#af74ff] to-[#afffff]">
                 All Counsellors
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
