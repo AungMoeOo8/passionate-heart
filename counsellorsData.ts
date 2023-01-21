@@ -1,6 +1,6 @@
 export default [
   {
-    image: "/images/DrTinMarSanPhoto.jpg",
+    image: "/images/DrTinMarSanPhoto2.jpg",
     name: "Dr. Tin Mar San",
     bio: `Prof. Dr Tin Mar San got the B.A (Hons), M.A (Credit), M.Res and Doctoral
   degree of psychology from Yangon University. She had been attended as the research
