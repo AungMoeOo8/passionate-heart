@@ -1,5 +1,6 @@
-import Image from "next/future/image";
+import Image from "next/image";
 import Link from "next/link";
+import Glass from "./Glass";
 
 // "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1600"
 
@@ -7,42 +8,48 @@ type CounsellorCardType = {
   image: string;
   name: string;
   bio: string;
+  roles: string[];
 };
 
 export default function CounsellorCard({
   image,
   name,
   bio,
+  roles,
 }: CounsellorCardType) {
   return (
-    <Link href={`/counsellors/${name}`} passHref>
-      <a
-        className="w-full rounded-lg flex flex-col lg:flex-row shadow-md hover:shadow-lg overflow-hidden cursor-pointer translate-y-0 hover:-translate-y-2 transition duration-300"
-        // data-aos="fade-up"
-        // data-aos-delay="100"
-        // data-aos-duration="1000"
-        // data-aos-offset="50"
-      >
+    <Link href={`/counselors/${name}`} passHref>
+      <a className="w-full rounded-lg p-4 flex flex-col lg:flex-row custom-shadow overflow-hidden cursor-pointer group">
         <div className="basis-[35%] justify-center flex">
-          <div className="relative md:h-full min-h-[200px] overflow-hidden w-[200px] h-[200] rounded-[100%] lg:rounded-none m-[20px] md:m-0">
-            <Image
-              alt={name}
-              src={image}
-              // layout={"fill"}
-              style={{ objectFit: "cover" }}
-              fill
-              priority
-            />
+          <div className="min-w-[200px] min-h-[200px] w-[200px] lg:w-full h-[200px] lg:h-full overflow-hidden rounded-[100%] lg:rounded-[20px]">
+            <div className="relative min-w-[200px] min-h-[300px]">
+              <Image
+                alt={name}
+                src={image}
+                layout={"fill"}
+                // width={200}
+                // height={300}
+                priority
+              />
+            </div>
           </div>
         </div>
         <div className="basis-[65%] p-[20px]">
           <p className="font-semibold text-[20px]">{name}</p>
-          <div className="inline-block rounded-full px-[6px] bg-blue-50 ">
-            <span className="font-normal text-[#4697fb] text-[13px]">
-              Counsellor
-            </span>
+          <div className="">
+            {roles.map((role, index) => (
+              <div
+                key={index}
+                className="inline-block rounded-sm mt-[4px] px-[8px] border even:mx-2"
+              >
+                <span className="font-normal text-[12px] opacity-80">
+                  {role}
+                </span>
+              </div>
+            ))}
           </div>
-          <p className="mt-[20px] leading-[25px] line-clamp-6 text-[14px] ">
+
+          <p className="mt-[20px] leading-[25px] line-clamp-6 text-[14px] opacity-80">
             {bio}
           </p>
         </div>

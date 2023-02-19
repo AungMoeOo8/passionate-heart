@@ -4,6 +4,7 @@ const nextConfig = {
   swcMinify: true,
   images: {
     unoptimized: true,
+    minimumCacheTTL: 60,
   },
 };
 

@@ -1,15 +1,14 @@
-import { meeting, phoneCall } from "../../assets";
 import ServiceComponent from "../commons/ServiceComponent";
 
 const services = [
   { image: "/images/photo1.JPG", title: "Meet in person" },
-  { image: phoneCall, title: "Call via phone" },
-  { image: meeting, title: "Meet in person" },
+  { image: "/images/photo1.JPG", title: "Call via phone" },
+  { image: "/images/photo1.JPG", title: "Meet in person" },
 ];
 
 export default function ServiceSection() {
   return (
-    <div className="bg-[#F1FDFF]">
+    <div className="bg-white">
       <div id="services" className="container-sm mt-[0] z-50 py-[100px]">
         <div className="flex flex-col gap-[50px]">
           {services.map((service, index) => (

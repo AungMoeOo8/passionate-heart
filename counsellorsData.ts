@@ -1,6 +1,6 @@
 export default [
   {
-    image: "/images/DrTinMarSanPhoto2.jpg",
+    image: "/images/DrTinMarSan.jpg",
     name: "Dr. Tin Mar San",
     bio: `Prof. Dr Tin Mar San got the B.A (Hons), M.A (Credit), M.Res and Doctoral
   degree of psychology from Yangon University. She had been attended as the research
@@ -31,12 +31,14 @@ export default [
   professional psychologist and mental health professional in our community. So she is
   reliable and validation to help and support for your emotional and mental problems as
   well as treatment of traumas.`,
+    roles: ["Psychologist", "EMDR Therapist", "Trauma Counselor"],
   },
   {
     image:
       "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1600",
     name: "Dr. Paing Soe",
     bio: ``,
+    roles: ["Psychiatrist"],
   },
   {
     image: "/images/BrangSengPhoto.jpg",
@@ -56,11 +58,13 @@ export default [
   organizations. Now, he also has been providing mental health related training,
   webinars, workshops and awareness programs to some organizations and working as a
   Lay Counselor at Passionate Heart Mental Health Services.`,
+    roles: ["Counselor"],
   },
   {
     image:
       "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1600",
     name: "Thaw Zin Min Thant",
     bio: "",
+    roles: ["Counselor"],
   },
 ];
