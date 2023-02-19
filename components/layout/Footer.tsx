@@ -38,27 +38,21 @@ export default function Footer() {
 
           <div className="flex justify-center gap-[20px]">
             <Tooltip label="follow us on Facebook">
-              <a
-                href="https://www.facebook.com/profile.php?id=100075651559328"
-                target={"_blank"}
-              >
+              <a href="https://www.facebook.com/profile.php?id=100075651559328">
                 <div className="rounded-sm p-[10px]">
                   <IconBrandFacebook size={28} stroke={1.5} color="white" />
                 </div>
               </a>
             </Tooltip>
             <Tooltip label="follow us on Linkedin">
-              <a
-                href="https://www.linkedin.com/company/passionate-heart/"
-                target={"_blank"}
-              >
+              <a href="https://www.linkedin.com/company/passionate-heart/">
                 <div className="rounded-sm p-[10px]">
                   <IconBrandLinkedin size={28} stroke={1.5} color="white" />
                 </div>
               </a>
             </Tooltip>
             <Tooltip label="join our Telegram channel">
-              <a href="https://t.me/passionateheart" target={"_blank"}>
+              <a href="https://t.me/passionateheart">
                 <div className="rounded-sm p-[10px]">
                   <IconBrandTelegram size={28} stroke={1.5} color="white" />
                 </div>
