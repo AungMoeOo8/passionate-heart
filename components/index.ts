@@ -6,10 +6,12 @@ import ServiceSection from "./sections/ServiceSection";
 import CounsellorCard from "./commons/CounsellorCard";
 import NavLinkButton from "./commons/NavLinkButton";
 import ServiceComponent from "./commons/ServiceComponent";
+import Announcement from "./layout/Announcement";
 
 export {
   Navbar,
   Footer,
+  Announcement,
   HeroSection,
   CounsellorSection,
   ServiceSection,

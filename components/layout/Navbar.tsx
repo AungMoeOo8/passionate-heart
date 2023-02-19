@@ -3,9 +3,11 @@ import Image from "next/image";
 
 import { MutableRefObject, useEffect, useRef } from "react";
 import { NavLinkButton } from "..";
-import { IconX } from "@tabler/icons";
+import { IconX } from "@tabler/icons-react";
+import { useRouter } from "next/router";
 
 export default function Navbar() {
+  const { pathname } = useRouter();
   const navRef = useRef<HTMLElement>() as MutableRefObject<HTMLElement>;
   const navbarRef =
     useRef<HTMLDivElement>() as MutableRefObject<HTMLDivElement>;
@@ -20,46 +22,51 @@ export default function Navbar() {
     navRef.current.classList.remove("open-nav");
   }
 
-  // useEffect(() => {
-  //   document.onscroll = () => {
-  //     if (scrollY > 100) {
-  //       navbarRef.current.classList.add("bg-white");
-  //     }
-  //     if (scrollY < 100) {
-  //       navbarRef.current.classList.remove("bg-white");
-  //     }
-  //   };
-  // });
+  useEffect(() => {
+    // document.onscroll = () => {
+    //   if (scrollY > 100) {
+    //     navbarRef.current.classList.add("bg-white");
+    //   }
+    //   if (scrollY < 100) {
+    //     navbarRef.current.classList.remove("bg-white");
+    //   }
+    // };
+    closeNav(), [pathname];
+  });
+
+  // style={{backgroundColor: "#f1f9fd"}}
 
   return (
-    <div ref={navbarRef} className="z-50 bg-[#F1FDFF]">
+    <div ref={navbarRef} className="z-50 sticky top-0 bg-white shadow-sm">
       <div className="container-lg flex justify-between items-center bg-inherit">
         <Link href={"/"}>
-          <a className="min-w-[130px] h-[100px] overflow-hidden relative cursor-pointer px-[10px]">
-            <Image
-              priority
-              alt="logo"
-              src={"/images/ph-logo.webp"}
-              layout={"fill"}
-              style={{ transform: "scale(1, 0.6)" }}
-            />
-          </a>
+          {/* <a className="min-w-[130px] h-[100px] overflow-hidden relative cursor-pointer px-[10px]"> */}
+          <Image
+            priority
+            alt="logo"
+            width={130}
+            height={100}
+            src={"/images/ph-logo.webp"}
+            // layout={"fill"}
+            style={{ transform: "scale(1, 0.6)" }}
+          />
+          {/* </a> */}
         </Link>
 
         <nav
           ref={navRef}
-          className="absolute md:static left-[10%] top-[-600px] opacity-0 md:opacity-100 px-[10px] py-[30px] md:py-0 m-auto md:m-0  md:max-w-[600px] w-[80%] h-[50vh] md:h-full transition-[opacity] rounded-lg bg-white md:bg-transparent overflow-scroll md:overflow-hidden shadow-lg md:shadow-none z-50"
+          className="absolute md:static left-0 -top-[100vh] opacity-0 md:opacity-100 md:px-[10px] md:py-0 m-auto md:m-0  md:max-w-[600px] w-full h-screen md:h-full transition-[opacity] bg-white md:bg-transparent z-50"
         >
-          <div className="flex gap-[30px] flex-col md:flex-row justify-evenly">
-            <div className="sticky top-0 flex items-center justify-end">
+          <div className="flex gap-[30px] h-[80%] flex-col md:flex-row justify-evenly">
+            <div className="absolute top-[30px] right-[30px] flex items-center justify-end">
               <div
                 onClick={closeNav}
-                className="md:hidden p-[10px]  rounded bg-purple-500 shadow-md cursor-pointer"
+                className="md:hidden p-[10px] rounded-[16px] bg-azure shadow-lg cursor-pointer"
               >
-                <IconX color="white" />
+                <IconX />
               </div>
             </div>
-            <NavLinkButton name="Counselors" href="/counsellors" />
+            <NavLinkButton name="Counselors" href="/counselors" />
             <NavLinkButton name="Services" href="/#services" />
             <NavLinkButton name="Academy" href="/academy" />
             <NavLinkButton name="Contact" href="/contact" />
