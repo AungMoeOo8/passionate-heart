@@ -67,7 +67,7 @@ export default function Navbar() {
               </div>
             </div>
             <NavLinkButton name="Counselors" href="/counselors" />
-            <NavLinkButton name="Services" href="/#services" />
+            <NavLinkButton name="Services" href="/services" />
             <NavLinkButton name="Academy" href="/academy" />
             <NavLinkButton name="Contact" href="/contact" />
           </div>
