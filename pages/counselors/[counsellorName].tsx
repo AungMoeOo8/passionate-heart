@@ -1,6 +1,4 @@
-import { Box, Container, Text } from "@mantine/core";
 import Head from "next/head";
-import Image from "next/image";
 import { useRouter } from "next/router";
 import counsellorsData from "../../counsellorsData";
 
@@ -21,7 +19,7 @@ export default function Counsellors() {
       <Head>
         <title>Counselor | {counsellor?.name}</title>
       </Head>
-      <div className="container-sm mt-[50px] mb-[50px] min-h-[560px] relative">
+      <div className="container-sm mt-10 mb-10 min-h-[560px] relative">
         <div className="max-w-[400px] h-[400px] rounded-lg overflow-hidden">
           <img
             className="w-auto h-auto object-center rounded-lg"
@@ -29,7 +27,7 @@ export default function Counsellors() {
             src={counsellor.image}
           />
         </div>
-        <span className="block text-[25px] font-semibold mt-[20px]">
+        <span className="block text-[25px] font-semibold mt-[16px]">
           {counsellor.name}
         </span>
         {counsellor.roles.map((role, index) => (
@@ -40,9 +38,14 @@ export default function Counsellors() {
             <span className="font-normal text-[14px] opacity-80">{role}</span>
           </div>
         ))}
-        <p className="mt-[28px] leading-7 opacity-80 indent-8">
+        <p className=" mt-8 leading-7 opacity-80 indent-8">
           {counsellor.bio}
         </p>
+        <div className="flex justify-center items-center gap-2 mt-5">
+          <hr className=" flex-1"/>
+          <img src="/images/paragraph_end.png" className=" w-40" />
+          <hr className="flex-1"/>
+        </div>
       </div>
     </>
   );

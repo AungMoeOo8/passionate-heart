@@ -4,7 +4,7 @@ import counsellorsData from "../../counsellorsData";
 
 export default function CounsellorSection() {
   return (
-    <div className="bg-white">
+    <section className="bg-white">
       <div className="container-sm mt-[0] py-[100px] z-50 ">
         <div id="counsellors">
           <div className="flex justify-center">
@@ -50,6 +50,6 @@ export default function CounsellorSection() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

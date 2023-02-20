@@ -77,18 +77,17 @@
   }
 
   .custom-shadow {
+    box-shadow: 0 10px 35px 0px #cfe7e7;
+  }
+
+  .custom-hover {
     translate: 0px -5px;
-    box-shadow: 0 10px 35px -5px #cfe7e7;
     transition: box-shadow 0.25s ease, translate 0.25s ease;
   }
 
-  .custom-shadow:hover {
+  .custom-hover:hover {
     translate: 0px 0px;
     box-shadow: none;
-  }
-
-  .fancy-border {
-    border-radius: 43% 57% 33% 67% / 70% 74% 26% 30%;
   }
 }
 
@@ -120,7 +119,6 @@
 
 .stacked-box div {
   box-shadow: 6px 9px 15px 0px #9ce3ed;
-  /* transform: rotate3d(1, -1, 1, 43deg); */
   transform: rotate3d(1.5, -1, 1, 69deg);
   transition: top 250ms;
 }

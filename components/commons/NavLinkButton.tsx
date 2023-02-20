@@ -1,10 +1,6 @@
 import Link from "next/link";
 import { FC } from "react";
-
-type NavLinkProps = {
-  name: string;
-  href: string;
-};
+import { NavLinkProps } from "../../types";
 
 const NavLinkButton: FC<NavLinkProps> = ({ name, href }) => {
   return (

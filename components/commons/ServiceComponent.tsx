@@ -1,8 +1,4 @@
-type ServiceComponentProps = {
-  image: string;
-  text: React.ReactNode;
-  reverse?: Boolean;
-};
+import { ServiceComponentProps } from "../../types";
 
 const ServiceComponent: React.FC<ServiceComponentProps> = ({
   image,

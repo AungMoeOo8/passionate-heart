@@ -1,10 +1,4 @@
-import { ReactNode } from "react";
-
-type AnnouncementProps = {
-  title: string;
-  description: string;
-  action?: ReactNode;
-};
+import { AnnouncementProps } from "../../types";
 
 const Announcement = ({ title, description, action }: AnnouncementProps) => {
   return (

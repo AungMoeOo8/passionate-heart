@@ -5,7 +5,7 @@ import { IconHeart } from "@tabler/icons-react";
 
 export default function HeroSection() {
   return (
-    <div className="bg-white relative">
+    <section className="bg-white relative">
       <div className="container-sm py-[100px] ">
         {/* <div className="mb-[100px] flex flex-col-reverse md:flex-row z-50"> */}
         <div className="basis-6/12 flex flex-col justify-center">
@@ -33,6 +33,6 @@ export default function HeroSection() {
 
         <Glass />
       </div>
-    </div>
+    </section>
   );
 }

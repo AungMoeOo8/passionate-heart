@@ -8,7 +8,7 @@ const services = [
 
 export default function ServiceSection() {
   return (
-    <div className="bg-white">
+    <section className="bg-white">
       <div id="services" className="container-sm mt-[0] z-50 py-[100px]">
         <div className="flex flex-col gap-[50px]">
           {services.map((service, index) => (
@@ -33,6 +33,6 @@ export default function ServiceSection() {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 }
