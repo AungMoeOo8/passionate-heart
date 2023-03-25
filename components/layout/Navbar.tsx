@@ -28,23 +28,12 @@ export default function Navbar() {
     closeNav(), [pathname];
   });
 
-  // style={{backgroundColor: "#f1f9fd"}}
-
   return (
     <div ref={navbarRef} className="z-50 sticky top-0 bg-white shadow-sm">
       <div className="container-lg flex justify-between items-center bg-inherit">
         <Link href={"/"} passHref>
           <a className="">
-            {/* <Image
-              priority
-              alt="logo"
-              width={130}
-              height={100}
-              src={"/images/ph-logo.webp"}
-              // layout={"fill"}
-              style={{ transform: "scale(1, 0.6)" }}
-            /> */}
-            <img src="/images/ph-logo.webp" className="py-[20px]" />
+            <img src="/images/ph-logo.webp" className="py-[12px]" />
           </a>
         </Link>
 

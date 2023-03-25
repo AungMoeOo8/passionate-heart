@@ -1,4 +1,3 @@
-import { Box, Container, Grid, Space, Title } from "@mantine/core";
 import Head from "next/head";
 import { CounsellorCard } from "../../components";
 import counsellorsData from "../../counsellorsData";
@@ -9,10 +8,10 @@ export default function CounsellorsPage() {
       <Head>
         <title>Passionate Heart | Counselors</title>
       </Head>
-      <div className="mt-[50px]">
-        <p className="text-center text-4xl font-extrabold">Counselors</p>
+      <div className="mt-[50px] container-sm">
+        <p className="text-3xl font-bold mt-8 mb-14">Our Counsellors</p>
       </div>
-      <div className="container-sm my-[100px]">
+      <div className="container-sm mb-[100px]">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-[20px]">
           {counsellorsData.map((counsellor, index) => (
             <div key={index} className="flex justify-center rounded-[10px]">
@@ -31,7 +30,6 @@ export default function CounsellorsPage() {
                 bio={counsellor.bio}
                 roles={counsellor.roles}
               />
-              <Space h={50} />
             </div>
           ))}
         </div>

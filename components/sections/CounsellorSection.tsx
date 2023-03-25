@@ -4,7 +4,7 @@ import counsellorsData from "../../counsellorsData";
 
 export default function CounsellorSection() {
   return (
-    <section className="bg-white">
+    <section className="">
       <div className="container-sm mt-[0] py-[100px] z-50 ">
         <div id="counsellors">
           <div className="flex justify-center">
@@ -26,7 +26,7 @@ export default function CounsellorSection() {
 
           <div className="flex justify-center mt-[50px]">
             <Link href={"/counselors"}>
-              <button className="text-white text-[0.9rem] px-4 py-2 rounded-sm cursor-pointer hover:-translate-y-2 transition-all duration-300 flex items-center gap-1 bg-black">
+              <button className="text-white text-[0.9rem] px-4 py-2 rounded-sm cursor-pointer hover:-translate-y-2 transition-all duration-300 flex items-center gap-1 bg-secondary">
                 <span>All Counselors</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

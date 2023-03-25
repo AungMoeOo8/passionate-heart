@@ -10,11 +10,10 @@
 
 @layer base {
   /* body {
-    @apply md:overflow-auto
+    @apply bg-secondary !important
   } */
-
   ::selection {
-    @apply bg-[#af74ff] text-white;
+    @apply bg-primary text-white;
   }
 }
 
@@ -59,12 +58,10 @@
     transform: rotate3d(1.5, -1, 1, 69deg);
     box-shadow: 6px 9px 15px 0px #9ce3ed;
     transition: top 250ms;
-    pointer-events: none;
   }
 
   .type-2 {
     box-shadow: -3px 3px 8px 0px #adf2f5cf;
-    /* box-shadow: -8px 8px 15px 0px #9ce3ed; */
     pointer-events: none;
   }
 
@@ -113,7 +110,7 @@
   }
 }
 
-.stacked-box {
+/* .stacked-box {
   position: absolute;
 }
 
@@ -121,7 +118,7 @@
   box-shadow: 6px 9px 15px 0px #9ce3ed;
   transform: rotate3d(1.5, -1, 1, 69deg);
   transition: top 250ms;
-}
+} */
 
 .glass > .first {
   top: 0px;
@@ -136,29 +133,9 @@
   top: 40px;
 }
 
-/* .cshadow {
-  box-shadow: 0px 0px 10px 0px #9ce3ed;
-} */
-
 .custom-font {
   font-family: "Libre Baskerville", serif;
 }
-
-/* .cardContainer {
-  width: 100%;
-  position: relative;
-}
-
-.cardContainer > div {
-  position: unset !important;
-}
-
-.cardImage {
-  object-fit: contain;
-  width: 100% !important;
-  position: relative !important;
-  height: unset !important;
-} */
 
 .a {
   object-position: center !important;

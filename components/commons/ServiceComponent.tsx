@@ -13,21 +13,8 @@ const ServiceComponent: React.FC<ServiceComponentProps> = ({
     >
       <div
         data-reverse={reverse ? true : false}
-        className="basis-6/12 flex justify-start data-[reverse=true]:justify-end  relative"
+        className="basis-6/12 flex justify-center  relative"
       >
-        {/* <div className="relative max-w-[450px] w-[450px] h-[300px] overflow-hidden">
-          <Image
-            alt="services"
-            // width="450px"
-            // height="300px"
-            layout="fill"
-            objectFit="cover"
-            src={image}
-            className="rounded-lg"
-            priority
-          />
-        </div> */}
-
         <div className="max-w-[450px] h-[300px] rounded-lg overflow-hidden">
           <img
             src={image}
