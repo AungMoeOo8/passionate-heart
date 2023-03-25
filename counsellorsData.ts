@@ -1,3 +1,5 @@
+import { CounsellorProps } from "./types";
+
 export default [
   {
     image: "/images/DrTinMarSan.jpg",
@@ -12,7 +14,7 @@ export default [
   Trauma counselor as well as trainer by EMDR Europe. She is accredited therapist and
   counsellor.
   She is also CEO and founder of Passionate Heart Mental Health Services and
-  Passionate Heart Academy. She is also active as a consultant of AJWS and her current
+  Passionate Heart Academy. She is also active as a consultant of groups of companies and her current
   responsibilities include supporting the required psychosocial training and services for
   partner organizations. As a resource person of EMDR Myanmar Association, she is
   supporting the training programs in various regions and organizations, and provide
@@ -67,4 +69,4 @@ export default [
     bio: "",
     roles: ["Counselor"],
   },
-];
+] as CounsellorProps[];

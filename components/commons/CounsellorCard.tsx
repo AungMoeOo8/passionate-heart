@@ -1,25 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
-import Glass from "./Glass";
-
-// "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1600"
-
-type CounsellorCardType = {
-  image: string;
-  name: string;
-  bio: string;
-  roles: string[];
-};
+import { CounsellorProps } from "../../types";
 
 export default function CounsellorCard({
   image,
   name,
   bio,
   roles,
-}: CounsellorCardType) {
+}: CounsellorProps) {
   return (
     <Link href={`/counselors/${name}`} passHref>
-      <a className="w-full rounded-lg p-4 flex flex-col lg:flex-row custom-shadow overflow-hidden cursor-pointer group">
+      <a className="w-full rounded-lg p-4 flex flex-col lg:flex-row custom-shadow custom-hover overflow-hidden cursor-pointer group">
         <div className="basis-[35%] justify-center flex">
           <div className="min-w-[200px] min-h-[200px] w-[200px] lg:w-full h-[200px] lg:h-full overflow-hidden rounded-[100%] lg:rounded-[20px]">
             <div className="relative min-w-[200px] min-h-[300px]">

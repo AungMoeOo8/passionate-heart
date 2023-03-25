@@ -6,6 +6,8 @@ import { NavLinkButton } from "..";
 import { IconX } from "@tabler/icons-react";
 import { useRouter } from "next/router";
 
+// min-w-[130px] h-[100px] overflow-hidden relative cursor-pointer px-[10px]
+
 export default function Navbar() {
   const { pathname } = useRouter();
   const navRef = useRef<HTMLElement>() as MutableRefObject<HTMLElement>;
@@ -23,34 +25,16 @@ export default function Navbar() {
   }
 
   useEffect(() => {
-    // document.onscroll = () => {
-    //   if (scrollY > 100) {
-    //     navbarRef.current.classList.add("bg-white");
-    //   }
-    //   if (scrollY < 100) {
-    //     navbarRef.current.classList.remove("bg-white");
-    //   }
-    // };
     closeNav(), [pathname];
   });
-
-  // style={{backgroundColor: "#f1f9fd"}}
 
   return (
     <div ref={navbarRef} className="z-50 sticky top-0 bg-white shadow-sm">
       <div className="container-lg flex justify-between items-center bg-inherit">
-        <Link href={"/"}>
-          {/* <a className="min-w-[130px] h-[100px] overflow-hidden relative cursor-pointer px-[10px]"> */}
-          <Image
-            priority
-            alt="logo"
-            width={130}
-            height={100}
-            src={"/images/ph-logo.webp"}
-            // layout={"fill"}
-            style={{ transform: "scale(1, 0.6)" }}
-          />
-          {/* </a> */}
+        <Link href={"/"} passHref>
+          <a className="">
+            <img src="/images/ph-logo.webp" className="py-[12px]" />
+          </a>
         </Link>
 
         <nav
@@ -67,7 +51,7 @@ export default function Navbar() {
               </div>
             </div>
             <NavLinkButton name="Counselors" href="/counselors" />
-            <NavLinkButton name="Services" href="/#services" />
+            <NavLinkButton name="Services" href="/services" />
             <NavLinkButton name="Academy" href="/academy" />
             <NavLinkButton name="Contact" href="/contact" />
           </div>

@@ -1,12 +1,7 @@
 import Link from "next/link";
-import { FC } from "react";
+import { NavLinkProps } from "../../types";
 
-type NavLinkProps = {
-  name: string;
-  href: string;
-};
-
-const NavLinkButton: FC<NavLinkProps> = ({ name, href }) => {
+const NavLinkButton: React.FC<NavLinkProps> = ({ name, href }) => {
   return (
     <Link href={href} style={{ textDecoration: "none", color: "black" }}>
       <a className="font-medium text-[18px] py-[10px] text-center cursor-pointer">
