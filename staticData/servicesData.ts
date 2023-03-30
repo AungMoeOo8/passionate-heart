@@ -1,4 +1,4 @@
-import { ServiceProps } from "./types";
+import { ServiceProps } from "../types";
 
 export default [
   {

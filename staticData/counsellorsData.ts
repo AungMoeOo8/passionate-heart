@@ -1,4 +1,4 @@
-import { CounsellorProps } from "./types";
+import { CounsellorProps } from "../types";
 
 export default [
   {

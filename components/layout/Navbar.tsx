@@ -6,8 +6,6 @@ import { NavLinkButton } from "..";
 import { IconX } from "@tabler/icons-react";
 import { useRouter } from "next/router";
 
-// min-w-[130px] h-[100px] overflow-hidden relative cursor-pointer px-[10px]
-
 export default function Navbar() {
   const { pathname } = useRouter();
   const navRef = useRef<HTMLElement>() as MutableRefObject<HTMLElement>;
@@ -33,7 +31,13 @@ export default function Navbar() {
       <div className="container-lg flex justify-between items-center bg-inherit">
         <Link href={"/"} passHref>
           <a className="">
-            <img src="/images/ph-logo.webp" className="py-[12px]" />
+            {/* <img src="/images/ph-logo.webp" className="py-[12px]" /> */}
+            <Image
+              width={150}
+              height={88}
+              src={"/images/ph-logo.webp"}
+              className="py-[12px]"
+            />
           </a>
         </Link>
 

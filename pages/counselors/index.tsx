@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { CounsellorCard } from "../../components";
-import counsellorsData from "../../counsellorsData";
+import counsellorsData from "../../staticData/counsellorsData";
 
 export default function CounsellorsPage() {
   return (
@@ -15,15 +15,6 @@ export default function CounsellorsPage() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-[20px]">
           {counsellorsData.map((counsellor, index) => (
             <div key={index} className="flex justify-center rounded-[10px]">
-              {/* lg={6}
-              xs={6}
-              key={index}
-              sx={{
-                display: "flex",
-                justifyContent: "center",
-                borderRadius: "10px",
-              }} */}
-
               <CounsellorCard
                 image={counsellor.image}
                 name={counsellor.name}

@@ -1,8 +1,8 @@
-import Service, { ServiceProps } from "../../components/commons/Service";
 import { motion } from "framer-motion";
 import Head from "next/head";
+import { ServiceCard } from "../../components";
 
-import servicesData from "../../servicesData";
+import { servicesData } from "../../staticData";
 
 export default function Services() {
   return (
@@ -28,7 +28,7 @@ export default function Services() {
           }}
         >
           {servicesData.map((service, index) => (
-            <Service key={index} {...service} />
+            <ServiceCard key={index} {...service} />
           ))}
         </motion.div>
       </div>

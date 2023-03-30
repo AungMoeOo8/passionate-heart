@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
-import counsellorsData from "../../counsellorsData";
+import { counsellorsData } from "../../staticData";
 
 export default function Counsellors() {
   const router = useRouter();

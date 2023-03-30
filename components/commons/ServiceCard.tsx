@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ServiceProps } from "../../types";
 
-export default function Service({
+export default function ServiceCard({
   title,
   description,
   fees,

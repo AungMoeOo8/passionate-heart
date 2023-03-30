@@ -9,7 +9,7 @@ export default function CounsellorCard({
   roles,
 }: CounsellorProps) {
   return (
-    <Link href={`/counselors/${name}`} passHref>
+    <Link href={`/counselors/${name}`} scroll={false} passHref>
       <a className="w-full rounded-lg p-4 flex flex-col lg:flex-row custom-shadow custom-hover overflow-hidden cursor-pointer group">
         <div className="basis-[35%] justify-center flex">
           <div className="min-w-[200px] min-h-[200px] w-[200px] lg:w-full h-[200px] lg:h-full overflow-hidden rounded-[100%] lg:rounded-[20px]">
@@ -17,7 +17,7 @@ export default function CounsellorCard({
               <Image
                 alt={name}
                 src={image}
-                layout={"fill"}
+                layout="fill"
                 // width={200}
                 // height={300}
                 priority

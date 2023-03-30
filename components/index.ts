@@ -7,6 +7,7 @@ import CounsellorCard from "./commons/CounsellorCard";
 import NavLinkButton from "./commons/NavLinkButton";
 import ServiceComponent from "./commons/ServiceComponent";
 import Announcement from "./layout/Announcement";
+import ServiceCard from "./commons/ServiceCard";
 
 export {
   Navbar,
@@ -18,4 +19,5 @@ export {
   CounsellorCard,
   NavLinkButton,
   ServiceComponent,
+  ServiceCard,
 };
