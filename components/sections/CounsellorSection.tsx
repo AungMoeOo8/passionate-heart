@@ -27,10 +27,10 @@ export default function CounsellorSection() {
 
           <div className="flex justify-center mt-[50px]">
             <Link href={"/counselors"} passHref>
-              <a className="text-white text-[0.9rem] px-4 py-2 rounded-sm cursor-pointer hover:-translate-y-2 transition-all duration-300 flex items-center gap-1 bg-secondary">
+              <div className="text-white text-[0.9rem] px-4 py-2 rounded-sm cursor-pointer hover:-translate-y-2 transition-all duration-300 flex items-center gap-1 bg-secondary">
                 <span>All Counselors</span>
                 <IconArrowNarrowRight />
-              </a>
+              </div>
             </Link>
           </div>
         </div>

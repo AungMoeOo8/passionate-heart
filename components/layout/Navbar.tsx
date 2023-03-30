@@ -30,15 +30,16 @@ export default function Navbar() {
     <div ref={navbarRef} className="z-50 sticky top-0 bg-white shadow-sm">
       <div className="container-lg flex justify-between items-center bg-inherit">
         <Link href={"/"} passHref>
-          <a className="">
+          <div className="">
             {/* <img src="/images/ph-logo.webp" className="py-[12px]" /> */}
             <Image
+              alt="logo"
               width={150}
               height={88}
               src={"/images/ph-logo.webp"}
               className="py-[12px]"
             />
-          </a>
+          </div>
         </Link>
 
         <nav

@@ -5,8 +5,6 @@ export default class _Document extends Document {
     return (
       <Html>
         <Head />
-        {/* <link rel="preconnect" href="https://rsms.me/" />
-        <link rel="stylesheet" href="https://rsms.me/inter/inter.css" /> */}
         <body className="overflow-x-hidden font-[poppins]">
           <Main />
           <NextScript />
