@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ServiceComponentProps } from "../../types";
 
 const ServiceComponent: React.FC<ServiceComponentProps> = ({
@@ -13,13 +14,22 @@ const ServiceComponent: React.FC<ServiceComponentProps> = ({
     >
       <div
         data-reverse={reverse ? true : false}
-        className="basis-6/12 flex justify-center  relative"
+        className="basis-6/12 flex justify-center"
       >
-        <div className="max-w-[450px] h-[300px] rounded-lg overflow-hidden">
+        {/* <div className="max-w-[450px] h-[300px] rounded-lg overflow-hidden">
           <img
             src={image}
             alt="services"
             className="w-auto h-full object-cover rounded-lg"
+          />
+        </div> */}
+        <div className="relative max-w-[450px] w-full h-[300px]">
+          <Image
+            alt="Services"
+            width={450}
+            height={450}
+            src={image}
+            className="rounded-lg"
           />
         </div>
       </div>

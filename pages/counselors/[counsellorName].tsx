@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Image from "next/image";
 import { useRouter } from "next/router";
 import { counsellorsData } from "../../staticData";
 
@@ -20,11 +21,13 @@ export default function Counsellors() {
         <title>Counselor | {counsellor?.name}</title>
       </Head>
       <div className="container-sm mt-10 mb-10 min-h-[560px] relative">
-        <div className="max-w-[400px] h-[400px] rounded-lg overflow-hidden">
-          <img
-            className="w-auto h-auto translate-y-[-12.5%] rounded-lg"
-            alt="Counsellor Photo"
+        <div className="max-w-[400px] h-[400px] overflow-hidden rounded-lg">
+          <Image
+            alt={"Counsellor Photo"}
             src={counsellor.image}
+            width={400}
+            height={400}
+            className="sm:translate-y-[-12.5%] rounded-lg"
           />
         </div>
         <span className="block text-[25px] font-semibold mt-[16px]">

@@ -25,7 +25,7 @@ export default function Footer() {
       <div className="container-lg py-[50px] px-[16px] gap-[30px] flex flex-col items-center">
         <div className="w-full flex gap-[30px] justify-between flex-col sm:flex-row">
           <div className="flex flex-col gap-[20px]">
-            <Info Icon={IconPhone} info="09 988 209589" />
+            <Info Icon={IconPhone} info="09987440256" />
             <Info Icon={IconMail} info="passionateheartmyanmar@gmail.com" />
             <Info
               Icon={IconLocation}
@@ -54,7 +54,7 @@ export default function Footer() {
           </div>
         </div>
         <p className="font-light text-center text-sm text-white">
-          Copyright © 2022
+          Copyright © 2023
           <br /> passionateheartmyanmar.com
         </p>
       </div>

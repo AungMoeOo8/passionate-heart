@@ -1,10 +1,17 @@
 import Link from "next/link";
 import Image from "next/image";
 
-import { MutableRefObject, useEffect, useRef } from "react";
+import { MutableRefObject, useCallback, useEffect, useRef } from "react";
 import { NavLinkButton } from "..";
 import { IconX } from "@tabler/icons-react";
 import { useRouter } from "next/router";
+
+const navLinks = [
+  { name: "Counselors", href: "/counselors" },
+  { name: "Services", href: "/services" },
+  { name: "Academy", href: "/academy" },
+  { name: "Contact", href: "/contact" },
+];
 
 export default function Navbar() {
   const { pathname } = useRouter();
@@ -30,16 +37,13 @@ export default function Navbar() {
     <div ref={navbarRef} className="z-50 sticky top-0 bg-white shadow-sm">
       <div className="container-lg flex justify-between items-center bg-inherit">
         <Link href={"/"} passHref>
-          <div className="">
-            {/* <img src="/images/ph-logo.webp" className="py-[12px]" /> */}
-            <Image
-              alt="logo"
-              width={150}
-              height={88}
-              src={"/images/ph-logo.webp"}
-              className="py-[12px]"
-            />
-          </div>
+          <Image
+            alt="logo"
+            width={150}
+            height={88}
+            src={"/images/ph-logo.webp"}
+            className="py-[12px]"
+          />
         </Link>
 
         <nav
@@ -55,10 +59,9 @@ export default function Navbar() {
                 <IconX />
               </div>
             </div>
-            <NavLinkButton name="Counselors" href="/counselors" />
-            <NavLinkButton name="Services" href="/services" />
-            <NavLinkButton name="Academy" href="/academy" />
-            <NavLinkButton name="Contact" href="/contact" />
+            {navLinks.map((item, index) => (
+              <NavLinkButton key={index} name={item.name} href={item.href} />
+            ))}
           </div>
         </nav>
 
