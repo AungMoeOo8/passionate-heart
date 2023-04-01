@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Head from "next/head";
+import Link from "next/link";
 
 const outline = [
   "What is PFA and Why is PFA needed?",
@@ -10,6 +11,64 @@ const outline = [
   "Self-Awareness and Emotion management",
 ];
 
+function Course() {
+  return (
+    <div className="py-16">
+      <div className="flex justify-between flex-col gap-x-8 md:flex-row">
+        <div className=" basis-1/2 ">
+          <div className="h-3/4">
+            <div className="sticky top-[88px] sm:top-[152px]">
+              <h3 className="text-2xl font-semibold py-4  bg-white sm:bg-transparent z-10">
+                Foundation Course In Counselling
+              </h3>
+
+              <div className="bg-slate-500 inline text-sm px-2 py-1 rounded text-white">
+                Instructor
+              </div>
+              <Link
+                href={"/counselors/Dr. Tin Mar San"}
+                className="ml-2 font-semibold text-md"
+              >
+                Prof Dr. Tin Mar San
+              </Link>
+              <div className="my-4 flex flex-wrap gap-x-4 gap-y-4">
+                <div className="flex flex-col justify-center text-center bg-green-700 text-white w-min min-w-[120px] p-4 rounded-lg">
+                  <span>Fees</span>
+                  <span>150,000 MMK</span>
+                </div>
+                <div className="flex flex-col justify-center text-center bg-yellow-600 text-white w-min min-w-[120px] p-4 rounded-lg">
+                  <span>Duration</span>
+                  <span>5 Weeks</span>
+                </div>
+                <div className="flex flex-col grow justify-center text-center bg-purple-800 text-white w-min min-w-[120px] p-4 rounded-lg">
+                  <span>Time</span>
+                  <span>Every Sat and Sun ( 7pm to 9pm )</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="basis-1/2 flex justify-center sm:justify-end">
+          <div className="mt-16">
+            <p className="font-semibold text-2xl">Course Outline</p>
+            <ul className="parent-dotted-line relative">
+              {outline.map((item, index) => (
+                <li
+                  key={index}
+                  className="first:my-8 last:my-8 my-16 ml-8 font-base child-dotted-line relative"
+                >
+                  <p className="relative">{item}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function Academy() {
   return (
     <>
@@ -17,7 +76,7 @@ export default function Academy() {
         <title>Passionate Heart | Academy</title>
       </Head>
       <div>
-        <div className="container-sm flex items-center flex-col-reverse md:flex-row">
+        <div className="container-sm pb-16 flex items-center flex-col-reverse md:flex-row">
           <div className="flex-[50%]">
             <p className="font-bold text-4xl text-center md:text-start">
               Passionate Heart Academy
@@ -38,26 +97,9 @@ export default function Academy() {
           </div>
         </div>
         <div>
-          <div className="container-sm py-8">
-            <h3 className="text-2xl font-semibold">
-              Foundation Course In Counselling
-            </h3>
-            <div className="my-4">
-              <div className="bg-slate-500 inline text-sm px-2 py-1 rounded text-white">
-                Instructor
-              </div>
-              <span className="ml-2 font-semibold text-md">
-                Prof Dr. Tin Mar San
-              </span>
-            </div>
-            <div>
-              <p className="font-semibold text-lg">Course Outline</p>
-              <ul className=" my-4 list-disc list-inside">
-                {outline.map((item, index) => (
-                  <li key={index} className="my-2 font-base">{item}</li>
-                ))}
-              </ul>
-            </div>
+          <div className="container-sm ">
+            <Course />
+            <Course />
           </div>
         </div>
       </div>
