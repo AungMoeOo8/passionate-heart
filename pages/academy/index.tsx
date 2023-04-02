@@ -12,12 +12,12 @@ const outline = [
 ];
 
 const infomations = [
-  { title: "Fees", value: "150,000 MMK", color: "teal-500" },
-  { title: "Duration", value: "5 Weeks", color: "amber-500" },
+  { title: "Fees", value: "150,000 MMK", color: "bg-teal-500" },
+  { title: "Duration", value: "5 Weeks", color: "bg-amber-500" },
   {
     title: "Time",
     value: "Every Sat and Sun ( 7pm to 9pm )",
-    color: "fuchsia-500",
+    color: "bg-fuchsia-500",
   },
 ];
 
@@ -47,7 +47,7 @@ function Course() {
                 {infomations.map((infomation, index) => (
                   <div
                     key={index}
-                    className={`flex flex-col justify-center text-center bg-${infomation.color} w-fit min-w-[120px] p-4 rounded-lg`}
+                    className={`flex flex-col justify-center text-center ${infomation.color} w-fit min-w-[120px] p-4 rounded-lg`}
                   >
                     <span className="font-semibold">{infomation.title}</span>
                     <span className="text-sm">{infomation.value}</span>
