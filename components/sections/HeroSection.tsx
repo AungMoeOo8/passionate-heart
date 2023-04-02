@@ -1,5 +1,3 @@
-import Glass from "../commons/Glass";
-
 export default function HeroSection() {
   return (
     <section className="relative">
@@ -17,13 +15,15 @@ export default function HeroSection() {
           </p>
         </div>
 
+        {/* background glasses */}
         <div className="glass glass-lg type-2 animated top-[100px] right-[31%] rotate-[10deg] hidden md:block"></div>
         <div className="glass glass-sm type-2 animated top-[220px] right-[25.5%] rotate-[344deg] hidden md:block"></div>
 
         <div className="glass glass-sm type-2 animated top-[204px] right-[1520px] rotate-[155deg]"></div>
         <div className="glass glass-sm type-2 animated top-[400px] left-[25.5%] rotate-[30deg]"></div>
 
-        <Glass />
+        <div className="glass glass-lg type-1 third left-[78%]"></div>
+        {/*  */}
       </div>
     </section>
   );

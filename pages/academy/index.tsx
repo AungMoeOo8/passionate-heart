@@ -11,39 +11,62 @@ const outline = [
   "Self-Awareness and Emotion management",
 ];
 
+const infomations = [
+  { title: "Fees", value: "150,000 MMK", color: "teal-500" },
+  { title: "Duration", value: "5 Weeks", color: "amber-500" },
+  {
+    title: "Time",
+    value: "Every Sat and Sun ( 7pm to 9pm )",
+    color: "fuchsia-500",
+  },
+];
+
 function Course() {
   return (
     <div className="py-16">
       <div className="flex justify-between flex-col gap-x-8 md:flex-row">
         <div className=" basis-1/2 ">
-          <div className="h-3/4">
+          <div className="h-full">
             <div className="sticky top-[88px] sm:top-[152px]">
-              <h3 className="text-2xl font-semibold py-4  bg-white sm:bg-transparent z-10">
+              <h3 className="text-3xl font-bold py-4  bg-white sm:bg-transparent z-10">
                 Foundation Course In Counselling
               </h3>
 
-              <div className="bg-slate-500 inline text-sm px-2 py-1 rounded text-white">
+              <div className="bg-slate-700 inline text-sm font-light px-2 py-1 rounded text-white">
                 Instructor
               </div>
               <Link
                 href={"/counselors/Dr. Tin Mar San"}
-                className="ml-2 font-semibold text-md"
+                className="ml-2 font-semibold text-xl"
               >
                 Prof Dr. Tin Mar San
               </Link>
-              <div className="my-4 flex flex-wrap gap-x-4 gap-y-4">
-                <div className="flex flex-col justify-center text-center bg-green-700 text-white w-min min-w-[120px] p-4 rounded-lg">
-                  <span>Fees</span>
-                  <span>150,000 MMK</span>
-                </div>
-                <div className="flex flex-col justify-center text-center bg-yellow-600 text-white w-min min-w-[120px] p-4 rounded-lg">
-                  <span>Duration</span>
-                  <span>5 Weeks</span>
-                </div>
-                <div className="flex flex-col grow justify-center text-center bg-purple-800 text-white w-min min-w-[120px] p-4 rounded-lg">
-                  <span>Time</span>
-                  <span>Every Sat and Sun ( 7pm to 9pm )</span>
-                </div>
+
+              {/* Boxes */}
+              <div className="my-8 flex flex-wrap gap-x-4 gap-y-4 text-white">
+                {infomations.map((infomation, index) => (
+                  <div
+                    key={index}
+                    className={`flex flex-col justify-center text-center bg-${infomation.color} w-fit min-w-[120px] p-4 rounded-lg`}
+                  >
+                    <span className="font-semibold">{infomation.title}</span>
+                    <span className="text-sm">{infomation.value}</span>
+                  </div>
+                ))}
+              </div>
+              {/* Boxes End */}
+
+              <div className="inline-flex flex-col items-center gap-y-2">
+                <Image
+                  priority
+                  alt="zoom logo"
+                  width={40}
+                  height={40}
+                  src={"/images/Zoom-Icon.png"}
+                />
+                <p className="text-lg">
+                  Via <span className="text-xl font-bold">Zoom</span>
+                </p>
               </div>
             </div>
           </div>
@@ -51,7 +74,7 @@ function Course() {
 
         <div className="basis-1/2 flex justify-center sm:justify-end">
           <div className="mt-16">
-            <p className="font-semibold text-2xl">Course Outline</p>
+            <p className="font-bold text-2xl">Course Outline</p>
             <ul className="parent-dotted-line relative">
               {outline.map((item, index) => (
                 <li
@@ -75,10 +98,10 @@ export default function Academy() {
       <Head>
         <title>Passionate Heart | Academy</title>
       </Head>
-      <div>
-        <div className="container-sm pb-16 flex items-center flex-col-reverse md:flex-row">
+      <div className="relative">
+        <div className=" container-sm pb-16 flex items-center flex-col-reverse md:flex-row">
           <div className="flex-[50%]">
-            <p className="font-bold text-4xl text-center md:text-start">
+            <p className="font-bold text-4xl lg:text-5xl text-center md:text-start">
               Passionate Heart Academy
             </p>
             <p className="md:w-[70%] text-[20px] opacity-80 my-[25px] text-center md:text-start">
@@ -96,12 +119,22 @@ export default function Academy() {
             />
           </div>
         </div>
-        <div>
+        <div className="">
           <div className="container-sm ">
             <Course />
             <Course />
           </div>
         </div>
+
+        {/* background glasses */}
+        <div className="glass glass-lg type-2 animated top-[100px] right-[42%] rotate-[10deg] hidden md:block"></div>
+        <div className="glass glass-sm type-2 animated top-[70px] right-[70%] rotate-[344deg]"></div>
+
+        <div className="glass glass-sm type-2 animated top-[204px] lg:right-[81%] rotate-[155deg] hidden lg:block"></div>
+        <div className="glass glass-sm type-2 animated top-[400px] left-[25.5%] rotate-[30deg]"></div>
+
+        <div className="glass glass-lg type-1 third top-[400px] left-[78%]"></div>
+        {/*  */}
       </div>
     </>
   );

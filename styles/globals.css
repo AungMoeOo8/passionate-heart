@@ -29,7 +29,7 @@
   .glass {
     position: absolute;
     border-radius: 10px;
-    backdrop-filter: blur(1px);
+    /* backdrop-filter: blur(1px); */
     z-index: 0;
   }
 }
@@ -127,16 +127,6 @@
     translate: 0;
   }
 }
-
-/* .stacked-box {
-  position: absolute;
-}
-
-.stacked-box div {
-  box-shadow: 6px 9px 15px 0px #9ce3ed;
-  transform: rotate3d(1.5, -1, 1, 69deg);
-  transition: top 250ms;
-} */
 
 .glass > .first {
   top: 0px;
