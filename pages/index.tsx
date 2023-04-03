@@ -7,6 +7,7 @@ const Home: NextPage = () => {
     <>
       <Head>
         <title>Passionate Heart | Welcome</title>
+        <link href="https://passionateheartmyanmar.com" rel="canonical" />
       </Head>
       <HeroSection />
       <ServiceSection />

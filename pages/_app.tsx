@@ -11,7 +11,6 @@ function MyApp({ Component, pageProps }: AppProps) {
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=device-width"
         />
-        <link href="https://passionateheartmyanmar.com" rel="canonical" />
         <link
           rel="apple-touch-icon"
           sizes="180x180"
@@ -33,6 +32,17 @@ function MyApp({ Component, pageProps }: AppProps) {
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#ffffff"></meta>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "Passionate Heart",
+              url: "https://passionateheartmyanmar.com",
+            }),
+          }}
+        ></script>
       </Head>
 
       <MainLayout>

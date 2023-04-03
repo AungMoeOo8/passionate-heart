@@ -7,6 +7,10 @@ export default function CounsellorsPage() {
     <>
       <Head>
         <title>Passionate Heart | Counselors</title>
+        <link
+          href="https://passionateheartmyanmar.com/counselors"
+          rel="canonical"
+        />
       </Head>
       <div className="mt-[50px] container-sm">
         <p className="text-3xl font-bold mt-8 mb-14">Our Counsellors</p>

@@ -5,7 +5,7 @@ export default class _Document extends Document {
     return (
       <Html>
         <Head />
-        <body className="overflow-x-hidden font-[poppins]">
+        <body className="font-[poppins] overflow-x-hidden md:overflow-y-scroll ">
           <Main />
           <NextScript />
         </body>

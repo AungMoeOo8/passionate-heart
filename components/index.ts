@@ -8,6 +8,7 @@ import NavLinkButton from "./commons/NavLinkButton";
 import ServiceComponent from "./commons/ServiceComponent";
 import Announcement from "./layout/Announcement";
 import ServiceCard from "./commons/ServiceCard";
+import CourseComponent from "./commons/CourseComponent";
 
 export {
   Navbar,
@@ -20,4 +21,5 @@ export {
   NavLinkButton,
   ServiceComponent,
   ServiceCard,
+  CourseComponent,
 };

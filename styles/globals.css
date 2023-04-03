@@ -3,15 +3,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* :root {
-  --purple: #af74ff;
-  --lightgreen: #afffff;
-} */
-
 @layer base {
-  /* body {
-    @apply bg-secondary !important
-  } */
   ::selection {
     @apply bg-primary text-white;
   }
@@ -29,7 +21,6 @@
   .glass {
     position: absolute;
     border-radius: 10px;
-    /* backdrop-filter: blur(1px); */
     z-index: 0;
   }
 }
@@ -87,21 +78,16 @@
     box-shadow: none;
   }
 
+  .custom-font {
+    font-family: "Libre Baskerville", serif;
+  }
+
   .parent-dotted-line::before {
     content: "";
     position: absolute;
     top: 0;
     width: 2px;
     height: 100%;
-    background-color: black;
-  }
-  .child-dotted-line::before {
-    content: "";
-    position: absolute;
-    bottom: 50%;
-    left: -32px;
-    width: 18px;
-    height: 2px;
     background-color: black;
   }
 }
@@ -141,10 +127,6 @@
   top: 40px;
 }
 
-.custom-font {
-  font-family: "Libre Baskerville", serif;
-}
-
-.a {
+/* .a {
   object-position: center !important;
-}
+} */
