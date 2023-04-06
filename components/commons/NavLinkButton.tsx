@@ -7,10 +7,7 @@ const NavLinkButton: React.FC<NavLinkProps> = ({ name, href }) => {
   const { pathname } = useRouter();
   const isCurrentURL = pathname === href;
 
-  const textColor = useMemo(
-    () => (isCurrentURL ? "text-cyan-600" : "text-black"),
-    [isCurrentURL]
-  );
+  const textColor = isCurrentURL ? "text-cyan-600" : "text-black";
 
   return (
     <Link href={href} className={`${textColor}`}>

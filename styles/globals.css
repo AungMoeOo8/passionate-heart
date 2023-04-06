@@ -25,7 +25,7 @@
   }
 }
 
-@layer ultilities {
+@layer utilities {
   .open-navbar {
     background-color: white;
   }
@@ -113,20 +113,3 @@
     translate: 0;
   }
 }
-
-.glass > .first {
-  top: 0px;
-  transition-delay: 70ms;
-}
-
-.glass > .second {
-  top: 20px;
-}
-
-.glass > .third {
-  top: 40px;
-}
-
-/* .a {
-  object-position: center !important;
-} */
