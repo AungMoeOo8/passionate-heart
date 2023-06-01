@@ -1,10 +1,12 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 
 import { MutableRefObject, useCallback, useEffect, useRef } from "react";
 import { NavLinkButton } from "..";
 import { IconX } from "@tabler/icons-react";
-import { useRouter } from "next/router";
+import { usePathname } from "next/navigation";
 
 const navLinks = [
   { name: "Counselors", href: "/counselors" },
@@ -14,7 +16,7 @@ const navLinks = [
 ];
 
 export default function Navbar() {
-  const { pathname } = useRouter();
+  const pathname = usePathname();
   const navRef = useRef<HTMLElement>() as MutableRefObject<HTMLElement>;
   const navbarRef =
     useRef<HTMLDivElement>() as MutableRefObject<HTMLDivElement>;

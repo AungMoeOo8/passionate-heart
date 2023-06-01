@@ -8,7 +8,7 @@ type ServicesProps = {
 
 const services: ServicesProps[] = [
   {
-    image: "/images/photo1.JPG",
+    image: "/images/photo1.jpg",
     title: "Trauma Counselling",
     description: `Trauma counseling is designed to help individuals cope with and recover from the effects of traumatic experiences. Trauma can refer to a wide range of events, including physical, emotional, or sexual abuse, natural disasters, accidents, or other life-threatening situations.`,
   },

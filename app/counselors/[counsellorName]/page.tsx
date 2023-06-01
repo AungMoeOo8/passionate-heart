@@ -1,14 +1,15 @@
+"use client";
+
 import Head from "next/head";
 import Image from "next/image";
-import { useRouter } from "next/router";
-import { counsellorsData } from "../../staticData";
+import { useParams } from "next/navigation";
+import { counsellorsData } from "../../../staticData/";
 
 export default function Counsellors() {
-  const router = useRouter();
-  const { counsellorName } = router.query;
+  const { counsellorName } = useParams();
 
   const counsellor = counsellorsData.find(
-    (counsellor) => counsellor.name === counsellorName
+    (counsellor) => counsellor.name === counsellorName.replaceAll("%20", " ")
   );
 
   if (!counsellor) {

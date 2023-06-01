@@ -1,14 +1,14 @@
-import type { NextPage } from "next";
+import type { Metadata, NextPage } from "next";
 import Head from "next/head";
 import { CounsellorSection, HeroSection, ServiceSection } from "../components";
+
+export const metadata: Metadata = {
+  title: "Welcome | Passionate Heart",
+};
 
 const Home: NextPage = () => {
   return (
     <>
-      <Head>
-        <title>Passionate Heart | Welcome</title>
-        <link href="https://passionateheartmyanmar.com" rel="canonical" />
-      </Head>
       <HeroSection />
       <ServiceSection />
       <CounsellorSection />

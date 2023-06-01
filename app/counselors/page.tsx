@@ -1,17 +1,17 @@
-import Head from "next/head";
+import { Metadata } from "next";
 import { CounsellorCard } from "../../components";
 import counsellorsData from "../../staticData/counsellorsData";
+
+export const metadata: Metadata = {
+  title: "Counselors",
+  alternates: {
+    canonical: "https://passionateheartmyanmar.com/counselors",
+  },
+};
 
 export default function CounsellorsPage() {
   return (
     <>
-      <Head>
-        <title>Passionate Heart | Counselors</title>
-        <link
-          href="https://passionateheartmyanmar.com/counselors"
-          rel="canonical"
-        />
-      </Head>
       <div className="mt-[50px] container-sm">
         <p className="text-3xl font-bold mt-8 mb-14">Our Counsellors</p>
       </div>

@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from "framer-motion";
 import Head from "next/head";
 import { ServiceCard } from "../../components";

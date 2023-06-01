@@ -1,10 +1,10 @@
 import Link from "next/link";
-import { useRouter } from "next/router";
+import { usePathname } from "next/navigation";
 import { useMemo } from "react";
 import { NavLinkProps } from "../../types";
 
 const NavLinkButton: React.FC<NavLinkProps> = ({ name, href }) => {
-  const { pathname } = useRouter();
+  const pathname = usePathname()
   const isCurrentURL = pathname === href;
 
   const textColor = isCurrentURL ? "text-cyan-600" : "text-black";
