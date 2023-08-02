@@ -1,23 +1,13 @@
-"use client";
-
-import { motion } from "framer-motion";
 import { ServiceProps } from "../../types";
 
 export default function ServiceCard({
   title,
   description,
   fees,
-  ending,
+  ending
 }: ServiceProps) {
   return (
-    <motion.div
-      variants={{
-        hidden: { y: 20, opacity: 0 },
-        visible: {
-          y: 0,
-          opacity: 1,
-        },
-      }}
+    <li
       className=" py-1 my-14"
     >
       <div className="w-full rounded-lg custom-shadow relative bg-cyan-800">
@@ -47,11 +37,11 @@ export default function ServiceCard({
           </div>
         </div>
 
-        <button className="rounded-lg py-2 px-6 border-2 border-cyan-800 bg-white hover:-translate-y-2 transition-all duration-300 text-sm absolute bottom-[-20px] right-[16px]">
+        {/* <button className="rounded-lg py-2 px-6 border-2 border-cyan-800 bg-white hover:-translate-y-2 transition-all duration-300 text-sm absolute bottom-[-20px] right-[16px]">
           Message
-        </button>
+        </button> */}
       </div>
-    </motion.div>
+    </li>
   );
 }
 

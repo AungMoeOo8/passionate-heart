@@ -20,6 +20,20 @@ const infomations = [
   },
 ];
 
+const OutlineItem = ({ item, index }: { item: string; index: number }) => {
+  return (
+    <li
+      key={index}
+      className="first:my-8 last:my-8 my-16 ml-6 font-base child-dotted-line relative"
+    >
+      <div className="absolute top-[2px] left-[-33px] w-5 h-5 flex justify-center items-center text-white text-[12px] bg-black rounded-full">
+        <span className="p-1">{index + 1}</span>
+      </div>
+      <p className="relative text-slate-800">{item}</p>
+    </li>
+  );
+};
+
 export default function Course() {
   return (
     <div className="py-16 ">
@@ -35,7 +49,7 @@ export default function Course() {
                 Instructor
               </div>
               <Link
-                href={"/counselors/Dr. Tin Mar San"}
+                href={"/counsellors/Dr. Tin Mar San"}
                 className="ml-2 font-semibold text-xl"
               >
                 Prof Dr. Tin Mar San
@@ -76,16 +90,7 @@ export default function Course() {
             <p className="font-bold text-2xl">Course Outline</p>
             <ul className="parent-dotted-line relative">
               {outline.map((item, index) => (
-                <li
-                  key={index}
-                  className="first:my-8 last:my-8 my-16 ml-6 font-base child-dotted-line relative"
-                >
-                  <div className="absolute top-[2px] left-[-33px] w-5 h-5 flex justify-center items-center text-white text-[12px] bg-black rounded-full">
-                    <span className="p-1">{index + 1}</span>
-                  </div>
-
-                  <p className="relative text-slate-800">{item}</p>
-                </li>
+                <OutlineItem key={index} item={item} index={index} />
               ))}
             </ul>
           </div>

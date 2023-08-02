@@ -51,11 +51,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${poppins.className}`}>
-      <body>
-        <Announcement
-          title="To The Better Self"
-          description="Join and discuss online workshop about self-awareness 29/1/2023"
-        />
+      <body className=" overflow-x-hidden">
         <Navbar />
         {children}
         <Footer />

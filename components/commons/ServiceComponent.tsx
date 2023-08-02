@@ -6,7 +6,6 @@ const ServiceComponent: React.FC<ServiceComponentProps> = ({
   text,
   reverse,
 }) => {
-  const direction = reverse ? "flex-row-reverse" : "flex-row";
   return (
     <div
       data-reverse={reverse ? true : false}
@@ -16,20 +15,14 @@ const ServiceComponent: React.FC<ServiceComponentProps> = ({
         data-reverse={reverse ? true : false}
         className="basis-6/12 flex justify-center"
       >
-        {/* <div className="max-w-[450px] h-[300px] rounded-lg overflow-hidden">
-          <img
-            src={image}
-            alt="services"
-            className="w-auto h-full object-cover rounded-lg"
-          />
-        </div> */}
-        <div className="relative max-w-[450px] w-full h-[300px]">
+        <div>
           <Image
             alt="Services"
             width={450}
-            height={450}
+            height={250}
             src={image}
-            className="rounded-lg"
+            className="rounded-lg outline outline-1 outline-offset-2 outline-blue-100"
+            style={{ height: "auto" }}
           />
         </div>
       </div>

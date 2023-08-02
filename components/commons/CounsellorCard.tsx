@@ -10,12 +10,12 @@ export default function CounsellorCard({
 }: CounsellorProps) {
   return (
     <Link
-      href={`/counselors/${name}`}
+      href={`/counsellors/${name}`}
       scroll={false}
       passHref
       className="flex w-full"
     >
-      <div className="w-full rounded-lg p-4 flex flex-col lg:flex-row custom-shadow custom-hover overflow-hidden cursor-pointer group">
+      <div className="w-full rounded-lg p-4 flex flex-col lg:flex-row border custom-shadow custom-hover overflow-hidden cursor-pointer group">
         <div className="basis-[35%] justify-center flex">
           <div className="min-w-[200px] min-h-[200px] w-[200px] lg:w-full h-[200px] lg:h-full overflow-hidden rounded-[100%] lg:rounded-[20px]">
             <div className="relative min-w-[200px] min-h-[300px]">

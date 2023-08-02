@@ -1,33 +1,45 @@
-"use client";
-
-import Head from "next/head";
+import { Metadata } from "next";
 import Image from "next/image";
-import { useParams } from "next/navigation";
-import { counsellorsData } from "../../../staticData/";
+import { notFound } from "next/navigation";
+import { counsellorsData } from "../../../staticData";
 
-export default function Counsellors() {
-  const { counsellorName } = useParams();
+export async function generateMetadata({
+  params,
+}: {
+  params: { counsellorName: string };
+}): Promise<Metadata> {
+  const { counsellorName } = params;
+  const name = counsellorName.replaceAll("%20", " ");
+  return {
+    title: name,
+  };
+}
+
+export default function Page({
+  params,
+}: {
+  params: { counsellorName: string };
+}) {
+  const { counsellorName } = params;
 
   const counsellor = counsellorsData.find(
     (counsellor) => counsellor.name === counsellorName.replaceAll("%20", " ")
   );
 
   if (!counsellor) {
-    return <div>404, Page not found!</div>;
+    notFound();
   }
 
   return (
     <>
-      <Head>
-        <title>Counselor | {counsellor?.name}</title>
-      </Head>
-      <div className="container-sm mt-10 mb-10 min-h-[560px] relative">
+      <main className="">
         <div className="max-w-[400px] h-[400px] overflow-hidden rounded-lg">
           <Image
             alt={"Counsellor Photo"}
             src={counsellor.image}
             width={400}
             height={400}
+            style={{ height: "auto" }}
             className="sm:translate-y-[-12.5%] rounded-lg"
           />
         </div>
@@ -48,7 +60,7 @@ export default function Counsellors() {
           <img src="/images/paragraph_end.png" className=" w-40" />
           <hr className="flex-1" />
         </div>
-      </div>
+      </main>
     </>
   );
 }

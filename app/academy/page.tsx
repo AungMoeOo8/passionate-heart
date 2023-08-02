@@ -1,17 +1,15 @@
 import Image from "next/image";
 import Head from "next/head";
 import { CourseComponent } from "../../components";
+import { Metadata } from "next";
 
-export default function Academy() {
+export const metadata: Metadata = {
+  title: "Academy",
+};
+
+export default function Page() {
   return (
     <>
-      <Head>
-        <title>Passionate Heart | Academy</title>
-        <link
-          href="https://passionateheartmyanmar.com/academy"
-          rel="canonical"
-        />
-      </Head>
       <div className="relative">
         <div className=" container-sm pb-16 flex items-center flex-col-reverse md:flex-row">
           <div className="flex-[50%]">
@@ -29,6 +27,7 @@ export default function Academy() {
               alt="academy logo"
               width={500}
               height={500}
+              style={{ height: "auto" }}
               src="/images/ph-academy-logo.png"
             />
           </div>

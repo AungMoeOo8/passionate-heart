@@ -1,12 +1,11 @@
-import type { Metadata, NextPage } from "next";
-import Head from "next/head";
+import type { Metadata } from "next";
 import { CounsellorSection, HeroSection, ServiceSection } from "../components";
 
 export const metadata: Metadata = {
   title: "Welcome | Passionate Heart",
 };
 
-const Home: NextPage = () => {
+const page = () => {
   return (
     <>
       <HeroSection />
@@ -16,4 +15,4 @@ const Home: NextPage = () => {
   );
 };
 
-export default Home;
+export default page;

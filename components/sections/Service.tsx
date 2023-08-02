@@ -6,19 +6,21 @@ type ServicesProps = {
   description: string;
 };
 
+const brainSVG = "/images/trauma_counselling.jpg";
+
 const services: ServicesProps[] = [
   {
-    image: "/images/photo1.jpg",
+    image: brainSVG,
     title: "Trauma Counselling",
     description: `Trauma counseling is designed to help individuals cope with and recover from the effects of traumatic experiences. Trauma can refer to a wide range of events, including physical, emotional, or sexual abuse, natural disasters, accidents, or other life-threatening situations.`,
   },
   {
-    image: "/images/photo1.JPG",
+    image: "/images/EMDR_Therapy.jpg",
     title: "Eye Movement Desensitization and Reprocessing (EMDR Therapy)",
     description: `EMDR therapy is a form of psychotherapy that aims to help individuals recover from the effects of traumatic experiences. It is used to treat a wide range of mental health conditions, including post-traumatic stress disorder (PTSD), anxiety, depression, and phobias.`,
   },
   {
-    image: "/images/photo1.JPG",
+    image: "/images/psychiatrist_consultation.jpg",
     title: "Psychiatrist Consultation",
     description: `Psychiatrist consultations are often recommended for individuals experiencing significant mental health symptoms, such as depression, anxiety, bipolar disorder, or schizophrenia. During the consultation, the psychiatrist will typically conduct a comprehensive psychiatric evaluation, which may include a review of the person's medical history, mental health history, and current symptoms. They may also conduct a physical examination and order additional tests or screenings if needed.`,
   },
@@ -28,7 +30,7 @@ export default function ServiceSection() {
   return (
     <section className="">
       <div id="services" className="container-sm mt-[0] z-50 py-[100px]">
-        <div className="flex flex-col gap-[50px]">
+        <div className="flex flex-col gap-[66px]">
           {services.map((service, index) => (
             <ServiceComponent
               key={index}

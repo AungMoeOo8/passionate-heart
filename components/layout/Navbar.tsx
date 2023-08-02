@@ -5,14 +5,17 @@ import Image from "next/image";
 
 import { MutableRefObject, useCallback, useEffect, useRef } from "react";
 import { NavLinkButton } from "..";
-import { IconX } from "@tabler/icons-react";
+import {
+  IconX,
+  IconBrandFacebook,
+  IconBrandLinkedin,
+} from "@tabler/icons-react";
 import { usePathname } from "next/navigation";
 
 const navLinks = [
-  { name: "Counselors", href: "/counselors" },
+  { name: "Counsellors", href: "/counsellors" },
   { name: "Services", href: "/services" },
   { name: "Academy", href: "/academy" },
-  { name: "Contact", href: "/contact" },
 ];
 
 export default function Navbar() {
@@ -22,12 +25,13 @@ export default function Navbar() {
     useRef<HTMLDivElement>() as MutableRefObject<HTMLDivElement>;
 
   function openNav() {
-    document.body.classList.add("overflow-hidden");
+    // document.body.classList.replace("overflow-scroll", "overflow-hidden");
     navRef.current.classList.add("open-nav");
   }
 
   function closeNav() {
-    document.body.classList.remove("overflow-hidden");
+    // document.body.classList.replace("overflow-hidden", "overflow-scroll");
+    // document.body.classList.remove("overflow-hidden");
     navRef.current.classList.remove("open-nav");
   }
 
@@ -41,8 +45,10 @@ export default function Navbar() {
         <Link href={"/"} passHref>
           <Image
             alt="logo"
+            loading="eager"
             width={150}
             height={88}
+            style={{ height: "auto" }}
             src={"/images/ph-logo.webp"}
             className="py-[12px]"
           />
@@ -64,6 +70,17 @@ export default function Navbar() {
             {navLinks.map((item, index) => (
               <NavLinkButton key={index} name={item.name} href={item.href} />
             ))}
+            <div className="flex gap-4 justify-center items-center">
+              <Link
+                href={"https://www.facebook.com/profile.php?id=100075651559328"}
+              >
+                <IconBrandFacebook size={28} stroke="1.5" color="#00ADB5" />
+              </Link>
+
+              <Link href={"https://www.linkedin.com/company/passionate-heart/"}>
+                <IconBrandLinkedin size={28} stroke="1.5" color="#00ADB5" />
+              </Link>
+            </div>
           </div>
         </nav>
 

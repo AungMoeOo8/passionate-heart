@@ -8,31 +8,34 @@ import {
   IconPhone,
   Icon,
 } from "@tabler/icons-react";
+import { businessInfo } from "../../staticData/";
 
 type InfoPropsType = { Icon: Icon; info: string };
 
 const Info = ({ Icon, info }: InfoPropsType) => {
   return (
-    <p className="flex items-center gap-[10px] text-sm text-white">
-      <Icon stroke="1.5" /> <span>{info}</span>
-    </p>
+    <>
+      {info != "" ? (
+        <p className="flex items-center gap-[10px] text-sm text-white">
+          <Icon stroke="1.5" /> <span>{info}</span>
+        </p>
+      ) : (
+        <></>
+      )}
+    </>
   );
 };
 
 export default function Footer() {
   return (
-    <div className="bg-cyan-800">
+    <footer className="bg-cyan-800">
       <div className="container-lg py-[50px] px-[16px] gap-[30px] flex flex-col items-center">
         <div className="w-full flex gap-[30px] justify-between flex-col sm:flex-row">
           <div className="flex flex-col gap-[20px]">
-            <Info Icon={IconPhone} info="09987440256" />
-            <Info Icon={IconMail} info="passionateheartmyanmar@gmail.com" />
-            <Info
-              Icon={IconLocation}
-              info="Hledan Centre, 2nd Floor Learning Hub
-            Room 2"
-            />
-            <Info Icon={IconClock} info="Tues, Thurs, Sat, Sun (10AM - 3PM)" />
+            <Info Icon={IconPhone} info={businessInfo.phone} />
+            <Info Icon={IconMail} info={businessInfo.email} />
+            <Info Icon={IconLocation} info={businessInfo.location} />
+            <Info Icon={IconClock} info={businessInfo.time} />
           </div>
 
           <div className="flex justify-center gap-[20px]">
@@ -58,6 +61,6 @@ export default function Footer() {
           <br /> passionateheartmyanmar.com
         </p>
       </div>
-    </div>
+    </footer>
   );
 }
