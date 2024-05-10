@@ -19,7 +19,7 @@ export default function CounsellorCard({
         <div className="basis-[35%] justify-center flex">
           <div className="min-w-[200px] min-h-[200px] w-[200px] lg:w-full h-[200px] lg:h-full overflow-hidden rounded-[100%] lg:rounded-[20px]">
             <div className="relative min-w-[200px] min-h-[300px]">
-              <Image alt={name} src={image} fill priority />
+              <Image alt={name} src={image} fill priority className="object-cover"/>
             </div>
           </div>
         </div>

@@ -37,9 +37,18 @@ well as treatment of traumas.`,
 
 const DrPaing: CounsellorProps = {
   image:
-    "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "/images/DrPaingSoe.jpg",
   name: "Dr. Paing",
-  bio: ``,
+  bio: `Dr. Paing Soe is a highly skilled and compassionate psychiatrist dedicated to improving the mental health
+  and well-being of indivituals, specializing in psychiatry . He earned his M.B.,B.S(YGN) and M.Med.Sc(Mental Health) 
+  from Univisity of Medicine (2). With over 10 years of clinical experience, Dr. Paing has worked in various
+  clinical settings, including outpatient clinics, inpatient psychiatric units, and drugs and alcohol detozification centers.
+  He has a proven track record of effectively treating diverse patient populations, including adults and adolescents, 
+  with a focus on mood disorders, anxiety disorders, psychotic disorders and suicide prevention. His collabrative approach extends to working with many
+  clinical psychologists, fostering a supportive and inclusive treatment enviroment. Known for his empathetic
+  communication skills and patient centered approach, Dr. Paing establishes strong therapeutic alliances with his patients. 
+  Dr. Paing has also contributed to many psychiatric training programs focusing on mental health awareness and suicide prevention. His dedication to continunous learning 
+  and improvement underscores his passion to enhance the mental health landscape in the communities he serves.`,
   roles: ["Psychiatrist"],
 };
 
@@ -47,7 +56,14 @@ const Snow: CounsellorProps = {
   image:
     "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1600",
   name: "Snow",
-  bio: "",
+  bio: `Snow is a Part Time Trauma Counsellor from Passionate Heart. She graduated with a Bachelor Degree
+   of Business Administration from Myanmar Institute of Theology (MIT) in Yangon. She already received the 
+   certification of Eye Movement Desensitization and Reprocessing (EMDR) Therapy by EMDR Europe. She became 
+   an accredited EDMR therapist as well as trauma counsellor, and has been serving trauma affected indivituals 
+   in Karen State with close supervision of the Senior Psychiatrist Consultant from 2016 till 2019. She is now doing 
+   both trauma counselling support and awareness service mainly on psychoeducation, positive parenting, stress management, 
+   positive thinking for mindful living or meaningful lifestyles. Her professional interest and passion is prevention and early 
+   intervention in mental health.`,
   roles: ["EMDR Therapist", "Trauma Counsellor"],
 };
 
@@ -72,9 +88,26 @@ Lay Counselor at Passionate Heart Mental Health Services.`,
   roles: ["Counselor"],
 };
 
+const NayNweLwin: CounsellorProps = {
+  image: "/images/NayNweLwin.jpg",
+  name: "Nay Nwe Lwin",
+  bio: `Nay Nwe Lwin is a mental health practitioner and training facilititor from passionate heart mental 
+  health services. She holds the Bachelor of Arts in English from Dagon University. Her career in mental health 
+  began when she served as a service provider at "Little Emotions Helpline" in 2021. Since then, she has accumulated experience 
+  in counselling and emotional support to various key populations including MSM (Men who have sex with men), TGW (Transgender Women), 
+  Du (Drug users), FSW (Female sex worker) and PLHIV (People living with HIV). She attended the psychological first aid training 
+  psychological assistance hotline cource, positive psychology, fundamental concept of psychology, basic and advanced councelling skills training 
+  and is committed to continunous learning in related fields. After participating in the internship program (Batch-1) from Passionate Heart, 
+  she has been involved in operations, public relations, client coordinations and implementing workshopds/ webiners/ traning as a main team member. 
+  Additionally, she provides mental health services in "One to One psychological support session" under the supervision of Prof Dr. Tin Mar San's. 
+  She values the diverse perspectives and backgrounds of her clients and is dedicated to creating a safe and supportive enviroment to encourage 
+  their well-being.`,
+  roles: ["Counsellor"],
+};
+
 const ThawZinMinThant: CounsellorProps = {
   image:
-    "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "/images/ThawZinMinThant.jpg",
   name: "Thaw Zin Min Thant",
   bio: "",
   roles: ["Counselor"],
@@ -85,5 +118,6 @@ export default [
   DrPaing,
   Snow,
   BrangSeng,
+  NayNweLwin,
   ThawZinMinThant,
 ];
