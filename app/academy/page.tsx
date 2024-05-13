@@ -36,7 +36,7 @@ export default function Page() {
         <div className="">
           <div className="container-sm ">
             {
-              coursesData.map(course => <CourseComponent {...course} />)
+              coursesData.map((course, index) => <CourseComponent course={course} index={index} />)
             }
           </div>
         </div>

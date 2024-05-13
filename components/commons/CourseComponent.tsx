@@ -37,9 +37,9 @@ const Outlines = (course: CourseProps) => {
   )
 }
 
-export default function Course(course: CourseProps) {
+export default function Course({ course, index }: { course: CourseProps, index: number }) {
   return (
-    <>
+    <div key={index}>
       <div className="py-16 ">
         <div className="flex justify-between flex-col gap-x-8 md:flex-row">
           <div className=" basis-1/2 ">
@@ -81,7 +81,7 @@ export default function Course(course: CourseProps) {
                   <div
                     className={`flex items-center`}
                   >
-                    <IconClock size={28}/>
+                    <IconClock size={28} />
                     <span className="ml-2 text-slate-800 font-semibold">{course.duration}</span>
                   </div>
                 </div>
@@ -117,6 +117,6 @@ export default function Course(course: CourseProps) {
         </div>
       </div>
       <hr />
-    </>
+    </div>
   );
 }
