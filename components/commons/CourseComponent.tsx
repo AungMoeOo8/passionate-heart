@@ -37,9 +37,9 @@ const Outlines = (course: CourseProps) => {
   )
 }
 
-export default function Course({ course, index }: { course: CourseProps, index: number }) {
+export default function Course({ course }: { course: CourseProps }) {
   return (
-    <div key={index}>
+    <div>
       <div className="py-16 ">
         <div className="flex justify-between flex-col gap-x-8 md:flex-row">
           <div className=" basis-1/2 ">
