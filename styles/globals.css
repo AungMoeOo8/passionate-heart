@@ -82,13 +82,14 @@
     font-family: "Libre Baskerville", serif;
   }
 
-  .parent-dotted-line::before {
+  .outlines:not(.outlines:last-of-type):before {
     content: "";
     position: absolute;
-    top: 2px;
-    width: 2px;
-    height: 91%;
-    background-color: black;
+    top: 26px;
+    left: 12.5px;
+    bottom: calc(-1 * 32px);
+    width: 1px;
+    background-color: #d0c9ff;
   }
 }
 

@@ -8,9 +8,21 @@ export default function CounsellorCard({
   bio,
   roles,
 }: CounsellorProps) {
+
+  function Placeholder() {
+    return (
+      <div className="h-full flex justify-center items-center">
+        <div>
+          
+        </div>
+      </div>
+    )
+  }
+
+
   return (
     <Link
-      href={`/counsellors/${name}`}
+      href={`/members/${name}`}
       scroll={false}
       passHref
       className="flex w-full"
@@ -18,9 +30,11 @@ export default function CounsellorCard({
       <div className="w-full rounded-lg p-4 flex flex-col lg:flex-row border custom-shadow custom-hover overflow-hidden cursor-pointer group">
         <div className="basis-[35%] justify-center flex">
           <div className="min-w-[200px] min-h-[200px] w-[200px] lg:w-full h-[200px] lg:h-full overflow-hidden rounded-[100%] lg:rounded-[20px]">
-            <div className="relative min-w-[200px] min-h-[300px]">
-              <Image alt={name} src={image} fill priority className="object-cover"/>
-            </div>
+            {
+              image === "" ? (<Placeholder />) : (<div className="relative min-w-[200px] min-h-[300px]">
+                <Image alt={name} src={image} fill priority className="object-cover" />
+              </div>)
+            }
           </div>
         </div>
         <div className="basis-[65%] p-[20px]">

@@ -1,5 +1,5 @@
-import counsellorsData from "./counsellorsData";
+import membersData from "./membersData";
 import servicesData from "./servicesData";
 import { businessInfo } from "./businessInfo";
 
-export { counsellorsData, servicesData, businessInfo };
+export { membersData, servicesData, businessInfo };

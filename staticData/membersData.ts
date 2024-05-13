@@ -1,5 +1,7 @@
 import { CounsellorProps } from "../types";
 
+// https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1600
+
 const DrTinMarSan: CounsellorProps = {
   image: "/images/DrTinMarSan.jpg",
   name: "Dr. Tin Mar San",
@@ -54,17 +56,10 @@ const DrPaing: CounsellorProps = {
 
 const Snow: CounsellorProps = {
   image:
-    "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "",
   name: "Snow",
-  bio: `Snow is a Part Time Trauma Counsellor from Passionate Heart. She graduated with a Bachelor Degree
-   of Business Administration from Myanmar Institute of Theology (MIT) in Yangon. She already received the 
-   certification of Eye Movement Desensitization and Reprocessing (EMDR) Therapy by EMDR Europe. She became 
-   an accredited EDMR therapist as well as trauma counsellor, and has been serving trauma affected indivituals 
-   in Karen State with close supervision of the Senior Psychiatrist Consultant from 2016 till 2019. She is now doing 
-   both trauma counselling support and awareness service mainly on psychoeducation, positive parenting, stress management, 
-   positive thinking for mindful living or meaningful lifestyles. Her professional interest and passion is prevention and early 
-   intervention in mental health.`,
-  roles: ["EMDR Therapist", "Trauma Counsellor"],
+  bio: `Snow is a Part Time Trauma Counsellor from Passionate Heart. She graduated with a Bachelor Degree of Business Administration from Myanmar Institute of Theology (MIT) in Yangon. She already received the certification of Eye Movement Desensitization and Reprocessing (EMDR) Therapy by EMDR Europe. She became an accredited EMDR therapist as well as trauma counsellor, and has been serving trauma affected individuals in Karen State with the close supervision of the Senior Psychiatrist Consultant from 2016 till 2019. She is now doing both trauma counselling support and awareness service mainly on psychoeducation, positive parenting, stress management, positive thinking for mindful living or meaningful lifestyles. Her professional interest and passion is prevention and early intervention in mental health.`,
+  roles: ["EMDR Therapist", "Trauma Counselor"],
 };
 
 const BrangSeng: CounsellorProps = {
@@ -91,26 +86,27 @@ Lay Counselor at Passionate Heart Mental Health Services.`,
 const NayNweLwin: CounsellorProps = {
   image: "/images/NayNweLwin.jpg",
   name: "Nay Nwe Lwin",
-  bio: `Nay Nwe Lwin is a mental health practitioner and training facilititor from passionate heart mental 
-  health services. She holds the Bachelor of Arts in English from Dagon University. Her career in mental health 
-  began when she served as a service provider at "Little Emotions Helpline" in 2021. Since then, she has accumulated experience 
-  in counselling and emotional support to various key populations including MSM (Men who have sex with men), TGW (Transgender Women), 
-  Du (Drug users), FSW (Female sex worker) and PLHIV (People living with HIV). She attended the psychological first aid training 
-  psychological assistance hotline cource, positive psychology, fundamental concept of psychology, basic and advanced councelling skills training 
-  and is committed to continunous learning in related fields. After participating in the internship program (Batch-1) from Passionate Heart, 
-  she has been involved in operations, public relations, client coordinations and implementing workshopds/ webiners/ traning as a main team member. 
-  Additionally, she provides mental health services in "One to One psychological support session" under the supervision of Prof Dr. Tin Mar San's. 
-  She values the diverse perspectives and backgrounds of her clients and is dedicated to creating a safe and supportive enviroment to encourage 
-  their well-being.`,
-  roles: ["Counsellor"],
+  bio: `Nay Nwe Lwin is a mental health practitioner and training facilitator from Passionate Heart Mental Health services. She holds the Bachelor of Arts in English from Dagon University. Her career in mental health began when she served as a service provider at “Little Emotions Helpline” in 2021.Since then, she has accumulated experience in counselling and emotional support to various key populations including MSM (Men who have sex with men), TGW (Transgender Women), DU (Drug users), FSW (Female sex worker) and PLHIV (People living with HIV). She attended the psychological first aid training, psychological assistance hotline course, positive psychology, fundamental concept of psychology, basic and advanced counselling skills training and is committed to continuous learning in related fields. After participating in the Internship Program (Batch-1) from Passionate Heart, she has been involved in operations, public relations, client coordinations and implementing workshops/ webinars/ training as a main team member. Additionally, she provides mental health services  in “One to One psychological  support session” under the supervision of Prof Dr. Tin Mar San’s. She values the diverse perspectives and backgrounds of her clients and is dedicated to creating a safe and supportive environment to encourage their well-being.`,
+  roles: [],
 };
+
+const HtooLwinPaingAung: CounsellorProps = {
+  image: "/images/HtooLwinPaingAung.jpg",
+  name: "Htoo Lwin Paing Aung",
+  bio: `Htoo Lwin Paing Aung, a graduate of the University of Medicine, Mandalay, began his journey in mental health and counseling through the psychological internship program at Passionate Heart Academy and Mental Health Services. He has completed numerous psychological and mental health-related trainings, including an Advanced Diploma in Cognitive Behavioral Therapy (CBT) and certifications in Advanced Counseling, Positive Psychiatry and Mental Health, Child and Adolescent Mental Health, Arts and Science of Relationships, Buddhist Psychology, MHPSS training, Series of Common Psychiatric Disorders in Primary Care training, mhGAP training, and Usages of Psychotropic Drugs in Clinical Practices training.
+  His academic pursuits have taken him to prestigious institutions such as the University of Sydney, the University of Stanford, the University of Kent (UK), the University of Nalanda (US), in collaboration with the Myanmar & Korea Psychiatry Association, Ministry of Health (Myanmar) and the World Health Organization (WHO).
+  Htoo Lwin Paing Aung has served as a facilitator and lay counselor at Being with You Mental Health Service and Art of Healing Mental Health Service. Currently, he serves as a lay counselor at Passionate Heart Mental Health Service under the supervision of an EMDR therapist and at Tine Pin Phaw Mental Health Service under the supervision of Psychiatrists. His strength lies in adolescent mental health, stress, anxiety, depression, grief & loss, suicide prevention, addiction, and common psychiatric problems, with a strong foundation in CBT.
+  Drawing from diverse experiences in teaching, medicine, clinical practice, social work, and management, Htoo Lwin Paing Aung is dedicated to helping individuals overcome challenges and achieve optimal mental well-being. He provides empathetic, client-centered support, utilizing evidence-based techniques within a safe, non-judgmental environment, fostering exploration and navigation of emotions and challenges through goal-oriented counseling.
+  `,
+  roles: []
+}
 
 const ThawZinMinThant: CounsellorProps = {
   image:
     "/images/ThawZinMinThant.jpg",
   name: "Thaw Zin Min Thant",
   bio: "",
-  roles: ["Counselor"],
+  roles: [],
 };
 
 export default [
@@ -119,5 +115,6 @@ export default [
   Snow,
   BrangSeng,
   NayNweLwin,
+  HtooLwinPaingAung,
   ThawZinMinThant,
 ];

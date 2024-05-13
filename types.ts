@@ -31,10 +31,19 @@ type ServiceProps = {
   ending?: string;
 };
 
+type CourseProps = {
+  title: string,
+  instructor: string,
+  gustLecturer?: string,
+  duration: string,
+  outlines: string[],
+}
+
 export type {
   AnnouncementProps,
   NavLinkProps,
   CounsellorProps,
   ServiceComponentProps,
   ServiceProps,
+  CourseProps
 };
