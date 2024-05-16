@@ -64,7 +64,7 @@ export default function Page({
             <span className="font-normal text-[14px] opacity-80">{role}</span>
           </div>
         ))}
-        <p className=" mt-8 leading-7 opacity-80">{member.bio}</p>
+        <p className=" mt-8 leading-7 opacity-80 font-poppins text-wrap whitespace-pre">{member.bio}</p>
         <div className="flex justify-center items-center gap-2 mt-5">
           <hr className=" flex-1" />
           <img src="/images/paragraph_end.png" className=" w-40" />
