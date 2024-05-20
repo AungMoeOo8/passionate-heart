@@ -13,7 +13,7 @@ import {
 import { usePathname } from "next/navigation";
 
 const navLinks = [
-  { name: "Members", href: "/members" },
+  { name: "Our Professionals", href: "/professionals" },
   { name: "Services", href: "/services" },
   { name: "Academy", href: "/academy" },
 ];
@@ -25,13 +25,10 @@ export default function Navbar() {
     useRef<HTMLDivElement>() as MutableRefObject<HTMLDivElement>;
 
   function openNav() {
-    // document.body.classList.replace("overflow-scroll", "overflow-hidden");
     navRef.current.classList.add("open-nav");
   }
 
   function closeNav() {
-    // document.body.classList.replace("overflow-hidden", "overflow-scroll");
-    // document.body.classList.remove("overflow-hidden");
     navRef.current.classList.remove("open-nav");
   }
 

@@ -22,7 +22,7 @@ export default function CounsellorCard({
 
   return (
     <Link
-      href={`/members/${name}`}
+      href={`/professionals/${name}`}
       scroll={false}
       passHref
       className="flex w-full"

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { MemberSection, HeroSection, ServiceSection } from "../components";
+import { ProfessionalSection, HeroSection, ServiceSection } from "../components";
 
 export const metadata: Metadata = {
   title: "Welcome | Passionate Heart",
@@ -10,7 +10,7 @@ const page = () => {
     <>
       <HeroSection />
       <ServiceSection />
-      <MemberSection />
+      <ProfessionalSection />
     </>
   );
 };

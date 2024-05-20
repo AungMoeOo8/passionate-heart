@@ -1,9 +1,9 @@
 import Navbar from "./layout/Navbar";
 import Footer from "./layout/Footer";
 import HeroSection from "./sections/Hero";
-import MemberSection from "./sections/Member";
+import ProfessionalSection from "./sections/Professional";
 import ServiceSection from "./sections/Service";
-import MemberCard from "./commons/MemberCard";
+import ProfessionalCard from "./commons/ProfessionalCard";
 import NavLinkButton from "./commons/NavLinkButton";
 import ServiceComponent from "./commons/ServiceComponent";
 import Announcement from "./layout/Announcement";
@@ -15,9 +15,9 @@ export {
   Footer,
   Announcement,
   HeroSection,
-  MemberSection,
+  ProfessionalSection,
   ServiceSection,
-  MemberCard,
+  ProfessionalCard,
   NavLinkButton,
   ServiceComponent,
   ServiceCard,
