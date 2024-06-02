@@ -3,9 +3,9 @@ import { ProfessionalCard } from "../../components";
 import counsellorsData from "../../staticData/professionalsData";
 
 export const metadata: Metadata = {
-  title: "Counsellors",
+  title: "Mental Health Professionals",
   alternates: {
-    canonical: "https://passionateheartmyanmar.com/counselors",
+    canonical: "https://passionateheartmyanmar.com/professionals",
   },
 };
 
