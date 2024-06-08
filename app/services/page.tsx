@@ -19,31 +19,31 @@ function Card({ children, className, ...props }: React.HtmlHTMLAttributes<HTMLDi
 }
 
 const psychologistServices = [
-  { title: "Counselling", fee: 40000 },
-  { title: "Trauma Counselling", fee: 40000 },
-  { title: "EMDR Therapy", fee: 40000 }
+  { title: "Counselling", fee: 50000 },
+  { title: "Trauma Counselling", fee: 60000 },
+  { title: "EMDR Therapy", fee: 70000 }
 ]
 
 export default function Page() {
   return (
     <div className="container-sm">
       <div>
-        <p className="text-3xl font-bold my-8">Psychologist & EMDR Therapist</p>
-        <Card className="bg-white rounded-[18px] custom-shadow px-4 py-8">
-          <div className=" w-full flex flex-col sm:flex-row justify-evenly gap-8">
-            {
-              psychologistServices.map((service, index) => (
-                <div key={index}>
-                  <div className="text-center text-2xl font-bold">{service.title}</div>
-                  <div className="text-center font-semibold mt-2">Online</div>
-                  <div className="text-center font-semibold">{service.fee} MMK</div>
-                  <div className="font-semibold flex justify-center items-center gap-x-1"><IconClock strokeWidth={1.75}/>50 Minutes</div>
-                </div>
-              ))
-            }
-          </div>
-        </Card>
-        <ServiceCard {...servicesData[4]} className="my-16"/>
+        <p className="text-3xl font-bold mt-8">Psychologist & EMDR Therapist</p>
+
+        <div className=" mt-8 mb-20 w-full flex flex-col sm:flex-row justify-evenly gap-4">
+          {
+            psychologistServices.map((service, index) => (
+              <div key={index} className="border custom-shadow rounded-lg p-8 ">
+                <div className="text-center text-2xl font-bold mb-8">{service.title}</div>
+                <div className="text-center font-semibold">Online</div>
+                <div className="text-center font-semibold">{service.fee} MMK</div>
+                <div className="font-semibold flex justify-center items-center gap-x-1"><IconClock strokeWidth={1.75} />50 Minutes</div>
+              </div>
+            ))
+          }
+        </div>
+
+        <ServiceCard {...servicesData[4]} className="my-16" />
       </div>
 
       <div className="mt-16">
@@ -58,7 +58,7 @@ export default function Page() {
 
       <div className=" mt-16">
         <p className="text-3xl font-bold">Lay Counsellor</p>
-        <ServiceCard {...servicesData[3]} className="mt-8 mb-16"/>
+        <ServiceCard {...servicesData[3]} className="mt-8 mb-16" />
       </div>
 
     </div>

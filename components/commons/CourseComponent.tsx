@@ -16,7 +16,6 @@ const infomations = [
 const OutlineItem = ({ item, index }: { item: string; index: number }) => {
   return (
     <li
-      key={index}
       className="first:my-8 last:my-8 my-8 font-base outlines relative"
     >
       <div className="absolute w-[26px] flex justify-center items-center text-base font-bold">
@@ -65,7 +64,7 @@ export default function Course({ course }: { course: CourseProps }) {
                   course.gustLecturer ? (
                     <div>
                       <div className="bg-slate-700 inline text-sm font-light px-2 py-1 rounded text-white">
-                        Gust Lecturer
+                        Guest Lecturer
                       </div>
                       <div
                         className="ml-2 font-semibold text-xl inline"
@@ -81,7 +80,7 @@ export default function Course({ course }: { course: CourseProps }) {
                   <div
                     className={`flex items-center`}
                   >
-                    <IconClock size={28} />
+                    <IconClock className=" self-start shrink-0" size={28} />
                     <span className="ml-2 text-slate-800 font-semibold">{course.duration}</span>
                   </div>
                 </div>

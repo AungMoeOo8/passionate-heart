@@ -2,7 +2,20 @@ import { CourseProps } from "../types"
 
 export default [
     {
-        title: "Advanced Counselling Training (Batch 1 & 2)",
+        title: "Foundation Course in Counselling (Batch 1 & 2)",
+        instructor: "Prof Dr. Tin Mar San",
+        duration: "5 weeks - 20 hours for Theory and 10 hours supervision session",
+        outlines: [
+            "What is PFA and Why is PFA needed?",
+            "How to apply PFA",
+            "The concept of Counselling",
+            "Basic Interpersonal Communication",
+            "The role of counsellor",
+            "Self-awareness and Emotion Management"
+        ]
+    },
+    {
+        title: "Advanced Counselling Training (Batch 1)",
         instructor: "Prof Dr. Tin Mar San",
         gustLecturer: "Dr. Paing Soe",
         duration: "6 weeks - 24 hours for Theory and 10 hour supervision session",

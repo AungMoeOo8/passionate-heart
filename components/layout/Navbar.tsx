@@ -14,6 +14,7 @@ import { usePathname } from "next/navigation";
 
 const navLinks = [
   { name: "Our Professionals", href: "/professionals" },
+  { name: "Activity", href: "/activity"},
   { name: "Services", href: "/services" },
   { name: "Academy", href: "/academy" },
 ];
@@ -26,10 +27,12 @@ export default function Navbar() {
 
   function openNav() {
     navRef.current.classList.add("open-nav");
+    document.body.classList.add("overflow-hidden")
   }
 
   function closeNav() {
     navRef.current.classList.remove("open-nav");
+    document.body.classList.remove("overflow-hidden")
   }
 
   useEffect(() => {
@@ -53,9 +56,9 @@ export default function Navbar() {
 
         <nav
           ref={navRef}
-          className="absolute md:static left-0 -top-[100vh] opacity-0 md:opacity-100 md:px-[10px] md:py-0 m-auto md:m-0  md:max-w-[600px] w-full h-screen md:h-full transition-[opacity] bg-white md:bg-transparent z-50"
+          className="absolute md:static left-0 -top-[100vh] opacity-0 md:opacity-100 md:px-[10px] md:py-0 m-auto md:m-0  md:max-w-[700px] w-full h-screen md:h-full transition-[opacity] bg-white md:bg-transparent z-50"
         >
-          <div className="flex gap-[30px] h-[80%] flex-col md:flex-row justify-evenly">
+          <div className="flex h-dvh md:h-full flex-col md:flex-row justify-evenly">
             <div className="absolute top-[30px] right-[30px] flex items-center justify-end">
               <div
                 onClick={closeNav}
