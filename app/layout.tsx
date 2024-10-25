@@ -1,12 +1,18 @@
 import { Metadata } from "next";
-import { Announcement, Footer, Navbar } from "../components";
+import { Footer, Navbar } from "../components";
 import "../styles/globals.css";
-import { Poppins } from "next/font/google";
+import { Inter, Libre_Baskerville } from "next/font/google";
 
-const poppins = Poppins({
+const libre = Libre_Baskerville({
+  weight: "700",
+  subsets: ["latin"],
+  variable: "--font-libre",
+});
+
+const inter = Inter({
   weight: ["300", "400", "600", "700"],
   subsets: ["latin"],
-  variable: "--font-poppins",
+  variable: "--font-inter",
 });
 
 export const metadata: Metadata = {
@@ -50,8 +56,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${poppins.className}`}>
-      <body className=" overflow-x-hidden">
+    <html lang="en" className={`${inter.variable} ${libre.variable}`}>
+      <body className="font-inter overflow-x-hidden">
         <Navbar />
         {children}
         <Footer />

@@ -2,8 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-
-import { MutableRefObject, useCallback, useEffect, useRef } from "react";
+import { MutableRefObject, useEffect, useRef } from "react";
 import { NavLinkButton } from "..";
 import {
   IconX,
@@ -14,7 +13,7 @@ import { usePathname } from "next/navigation";
 
 const navLinks = [
   { name: "Our Professionals", href: "/professionals" },
-  { name: "Activity", href: "/activity"},
+  { name: "Activities", href: "/activities"},
   { name: "Services", href: "/services" },
   { name: "Academy", href: "/academy" },
 ];
@@ -56,10 +55,10 @@ export default function Navbar() {
 
         <nav
           ref={navRef}
-          className="absolute md:static left-0 -top-[100vh] opacity-0 md:opacity-100 md:px-[10px] md:py-0 m-auto md:m-0  md:max-w-[700px] w-full h-screen md:h-full transition-[opacity] bg-white md:bg-transparent z-50"
+          className="absolute md:static left-0 -top-[100vh] opacity-0 md:opacity-100 md:px-[10px] md:py-0 m-auto md:m-0 flex justify-end w-full h-screen md:h-full transition-[opacity] bg-white md:bg-transparent z-50"
         >
-          <div className="flex h-dvh md:h-full flex-col md:flex-row justify-evenly">
-            <div className="absolute top-[30px] right-[30px] flex items-center justify-end">
+          <div className="flex h-dvh md:h-full flex-col md:flex-row justify-evenly gap-x-8 lg:gap-x-12">
+            <div className="absolute top-[30px] right-[30px] flex items-center">
               <div
                 onClick={closeNav}
                 className="md:hidden p-[10px] rounded-[16px] bg-azure shadow-lg cursor-pointer"

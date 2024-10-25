@@ -10,7 +10,13 @@ export default function ServiceCard({
   ...props
 }: ServiceProps & React.HtmlHTMLAttributes<HTMLDivElement>) {
   return (
-    <div className={cn("w-full rounded-lg custom-shadow relative bg-cyan-800", className)} {...props}>
+    <div
+      className={cn(
+        "w-full rounded-lg custom-shadow relative bg-cyan-800",
+        className
+      )}
+      {...props}
+    >
       <h1 className="text-sm font-normal rounded-lg py-2 px-4 inline absolute top-[-20px] left-[16px] bg-cyan-800 text-white">
         {title}
       </h1>
@@ -26,7 +32,9 @@ export default function ServiceCard({
           {fees.map((fee, index) => (
             <p key={index} className="leading-6 even:py-2">
               <span className="text-sm font-semibold">{fee.type}</span> -{" "}
-              <span className="text-sm">{fee.amount} MMK</span>
+              <span className="text-sm">
+                {Intl.NumberFormat().format(fee.amount)} MMK
+              </span>
               {fee.description && (
                 <span className="text-sm block font-light py-1">
                   {fee.description}
@@ -36,9 +44,7 @@ export default function ServiceCard({
           ))}
         </div>
       </div>
-
     </div>
-
   );
 }
 

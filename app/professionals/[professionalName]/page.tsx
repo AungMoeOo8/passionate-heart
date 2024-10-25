@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { professionalsData } from "../../../staticData";
+import { professionals } from "../../../staticData";
 
 export async function generateMetadata({
   params,
@@ -22,7 +22,7 @@ export default function Page({
 }) {
   const { professionalName } = params;
 
-  const professional = professionalsData.find(
+  const professional = professionals.find(
     (professional) => professional.name === professionalName.replaceAll("%20", " ")
   );
 
@@ -67,7 +67,7 @@ export default function Page({
         <p className=" mt-8 leading-7 opacity-80 font-poppins text-wrap whitespace-pre">{professional.bio}</p>
         <div className="flex justify-center items-center gap-2 mt-5">
           <hr className=" flex-1" />
-          <img src="/images/paragraph_end.png" className=" w-40" />
+          <img src="/images/paragraph_end.png" className=" w-40" alt="close_paragraph"/>
           <hr className="flex-1" />
         </div>
       </main>

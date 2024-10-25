@@ -6,11 +6,9 @@ export const Head: Metadata = {
 
 export default function NotFound() {
   return (
-    <div className=" h-[460px] grid place-content-center">
-      <div className="">
-        <div className="font-semibold text-6xl text-center">404</div>
-        <div className="font-medium text-xl text-center">Page Not Found!</div>
-      </div>
+    <div className="h-[calc(100dvh-397.75px)] grid place-content-center">
+      <div className="font-bold text-6xl text-center text-primary">404</div>
+      <div className="font-bold text-4xl">Page Not Found!</div>
     </div>
   );
 }

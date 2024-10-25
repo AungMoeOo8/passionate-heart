@@ -1,8 +1,7 @@
 import Image from "next/image";
-import Head from "next/head";
 import { CourseComponent } from "../../components";
 import { Metadata } from "next";
-import coursesData from "../../staticData/coursesData";
+import courses from "../../staticData/courses";
 
 export const metadata: Metadata = {
   title: "Academy",
@@ -36,7 +35,7 @@ export default function Page() {
         <div className="">
           <div className="container-sm ">
             {
-              coursesData.map((course, index) => <CourseComponent key={index} course={course} />)
+              courses.map((course, index) => <CourseComponent key={index} course={course} />)
             }
           </div>
         </div>

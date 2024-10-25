@@ -1,73 +1,81 @@
 import { Metadata } from "next";
 import { ServiceCard } from "../../components";
-import { servicesData } from "../../staticData";
+import { services } from "../../staticData";
 import React from "react";
 import { cn } from "../../util";
 import { IconClock } from "@tabler/icons-react";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Services",
 };
 
-function Card({ children, className, ...props }: React.HtmlHTMLAttributes<HTMLDivElement>) {
-  const merged = cn("", className)
-  return (
-    <div className={merged} {...props}>
-      {children}
-    </div>
-  )
-}
-
 const psychologistServices = [
   { title: "Counselling", fee: 50000 },
   { title: "Trauma Counselling", fee: 60000 },
-  { title: "EMDR Therapy", fee: 70000 }
-]
+  { title: "EMDR Therapy", fee: 70000 },
+];
 
 export default function Page() {
   return (
     <div className="container-sm">
-      <div>
-        <p className="text-3xl font-bold mt-8">Psychologist & EMDR Therapist</p>
+      <div className="mt-8 bg-cyan-800 p-8 rounded-lg">
+        <p className="text-3xl font-bold text-white">
+          Psychologist & EMDR Therapist
+        </p>
 
-        <div className=" mt-8 mb-20 w-full flex flex-col sm:flex-row justify-evenly gap-4">
-          {
-            psychologistServices.map((service, index) => (
-              <div key={index} className="border custom-shadow rounded-lg p-8 ">
-                <div className="text-center text-2xl font-bold mb-8">{service.title}</div>
-                <div className="text-center font-semibold">Online</div>
-                <div className="text-center font-semibold">{service.fee} MMK</div>
-                <div className="font-semibold flex justify-center items-center gap-x-1"><IconClock strokeWidth={1.75} />50 Minutes</div>
+        <div className=" my-8 w-full grid grid-cols-1 md:grid-cols-3 justify-evenly gap-4">
+          {psychologistServices.map((service, index) => (
+            <div
+              key={index}
+              className="relative rounded-lg px-8 py-8 bg-white overflow-hidden"
+            >
+              <Image
+                fill
+                className=" brightness-[40%] object-cover bg-[#6d6d6d]"
+                src={"/images/passionate-heart-logo.png"}
+                alt="bg"
+              />
+              <div className=" backdrop-blur-0 text-white">
+                <div className="text-2xl font-bold mb-8">{service.title}</div>
+                <div className="font-medium">Online</div>
+                <div className="font-medium">50 Minutes</div>
+                <div className="font-medium">
+                  {Intl.NumberFormat().format(service.fee)} MMK
+                </div>
               </div>
-            ))
-          }
+            </div>
+          ))}
         </div>
-
-        <ServiceCard {...servicesData[4]} className="my-16" />
+        <p className="text-white text-sm">
+          Counselling Service များကို Facebook Messenger သို့
+          ဆက်သွယ်၍ရယူနိင်ပါတယ်။
+        </p>
       </div>
+      <ServiceCard {...services[4]} className="my-16" />
 
       <div className="mt-16">
         <p className="text-3xl font-bold mb-8">Trauma Counsellor</p>
-        <ServiceCard {...servicesData[0]} />
+        <ServiceCard {...services[0]} />
       </div>
 
       <div className="mt-16">
         <p className="text-3xl font-bold mb-8">Psychiatrist</p>
-        <ServiceCard {...servicesData[2]} />
+        <ServiceCard {...services[2]} />
       </div>
 
       <div className=" mt-16">
-        <p className="text-3xl font-bold">Lay Counsellor</p>
-        <ServiceCard {...servicesData[3]} className="mt-8 mb-16" />
+        <p className="text-3xl font-bold">Counsellor & Mental Health Practitioner</p>
+        <ServiceCard {...services[3]} className="mt-8 mb-16" />
       </div>
-
     </div>
   );
 }
 
-
-{/* <ul>
+{
+  /* <ul>
   {servicesData.map((service, index) => (
     <ServiceCard key={index} {...service} />
   ))}
-</ul> */}
+</ul> */
+}

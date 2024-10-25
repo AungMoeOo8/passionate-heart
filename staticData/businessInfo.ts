@@ -1,5 +1,5 @@
-export const businessInfo = {
-  phone: "09987440256",
+export default {
+  phone: "",
   email: "passionateheart.mm@gmail.com",
   location: "",
   time: "",

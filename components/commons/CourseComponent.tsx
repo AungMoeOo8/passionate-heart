@@ -3,21 +3,9 @@ import Link from "next/link";
 import { CourseProps } from "../../types";
 import { IconClock } from "@tabler/icons-react";
 
-const infomations = [
-  { title: "Fees", value: "150,000 MMK", color: "bg-teal-500" },
-  { title: "Duration", value: "5 Weeks", color: "bg-amber-500" },
-  {
-    title: "Time",
-    value: "Every Sat and Sun ( 7pm to 9pm )",
-    color: "bg-fuchsia-500",
-  },
-];
-
-const OutlineItem = ({ item, index }: { item: string; index: number }) => {
+const OutlineItem = ({ item }: { item: string }) => {
   return (
-    <li
-      className="first:my-8 last:my-8 my-8 font-base outlines relative"
-    >
+    <li className="first:my-8 last:my-8 my-8 font-base outlines relative">
       <div className="absolute w-[26px] flex justify-center items-center text-base font-bold">
         <span>.</span>
       </div>
@@ -30,11 +18,11 @@ const Outlines = (course: CourseProps) => {
   return (
     <ul className=" relative w-full">
       {course.outlines.map((item, index) => (
-        <OutlineItem key={index} item={item} index={index} />
+        <OutlineItem key={index} item={item}/>
       ))}
     </ul>
-  )
-}
+  );
+};
 
 export default function Course({ course }: { course: CourseProps }) {
   return (
@@ -60,31 +48,25 @@ export default function Course({ course }: { course: CourseProps }) {
                   </Link>
                 </div>
 
-                {
-                  course.gustLecturer ? (
-                    <div>
-                      <div className="bg-slate-700 inline text-sm font-light px-2 py-1 rounded text-white">
-                        Guest Lecturer
-                      </div>
-                      <div
-                        className="ml-2 font-semibold text-xl inline"
-                      >
-                        {course.gustLecturer}
-                      </div>
+                {course.gustLecturer ? (
+                  <div>
+                    <div className="bg-slate-700 inline text-sm font-light px-2 py-1 rounded text-white">
+                      Guest Lecturer
                     </div>
-                  ) : null
-                }
+                    <div className="ml-2 font-semibold text-xl inline">
+                      {course.gustLecturer}
+                    </div>
+                  </div>
+                ) : null}
 
-                {/* Boxes */}
                 <div className="mt-4 mb-8 flex flex-wrap gap-x-4 gap-y-4">
-                  <div
-                    className={`flex items-center`}
-                  >
+                  <div className={`flex items-center`}>
                     <IconClock className=" self-start shrink-0" size={28} />
-                    <span className="ml-2 text-slate-800 font-semibold">{course.duration}</span>
+                    <span className="ml-2 text-slate-800 font-semibold">
+                      {course.duration}
+                    </span>
                   </div>
                 </div>
-                {/* Boxes End */}
 
                 <div className="inline-flex flex-col items-center gap-y-2">
                   <Image
@@ -103,13 +85,8 @@ export default function Course({ course }: { course: CourseProps }) {
           </div>
 
           <div className="basis-1/2 flex justify-center sm:justify-end">
-            <div className="mt-16 px-1 max-w-[370px]">
+            <div className="mt-16 px-1 w-[370px]">
               <p className="font-bold text-2xl">Course Outline</p>
-              {/* <ul className="parent-dotted-line relative">
-                {course.outlines.map((item, index) => (
-                  <OutlineItem key={index} item={item} index={index} />
-                ))}
-              </ul> */}
               <Outlines {...course} />
             </div>
           </div>

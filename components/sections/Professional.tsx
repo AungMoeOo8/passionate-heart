@@ -1,9 +1,9 @@
 import Link from "next/link";
 import MemberCard from "../commons/ProfessionalCard";
-import { professionalsData } from "../../staticData";
+import { professionals } from "../../staticData";
 import { IconArrowNarrowRight } from "@tabler/icons-react";
 
-const professionals = professionalsData.slice(0, 4);
+const professionalsSlice = professionals.slice(0, 4);
 
 export default function CounsellorSection() {
   return (
@@ -15,7 +15,7 @@ export default function CounsellorSection() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-[20px] mt-[50px]">
-            {professionals.map((professional, index) => (
+            {professionalsSlice.map((professional, index) => (
               <div key={index} className="flex justify-center rounded-[10px]">
                 <MemberCard
                   image={professional.image}

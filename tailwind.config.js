@@ -19,8 +19,8 @@ module.exports = {
         lg: "20px",
       },
       fontFamily: {
-        libre: `"Libre Baskerville", serif`,
-        poppins: `"Poppins", serif`,
+        libre: `var(--font-libre)`,
+        inter: `var(--font-inter)`,
         padauk: `Padauk`,
       },
     },

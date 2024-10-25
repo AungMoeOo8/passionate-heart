@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import { ProfessionalCard } from "../../components";
-import counsellorsData from "../../staticData/professionalsData";
+import counsellorsData from "../../staticData/professionals";
 
 export const metadata: Metadata = {
   title: "Mental Health Professionals",
@@ -13,9 +13,7 @@ export default function Page() {
   return (
     <>
       <div className="mt-[50px]">
-        <p className="text-4xl font-bold text-center mt-8 mb-14">Mental Health
-          <span className=" text-primary"> Professionals</span> &
-          <span className=" text-primary"> Practitioners</span></p>
+        <p className="text-4xl font-bold text-center mt-8 mb-14">Mental Health Professionals & Practitioners</p>
       </div>
       <div className="mb-[100px]">
         <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-[20px]">

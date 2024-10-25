@@ -27,7 +27,7 @@ type ServiceComponentProps = {
 type ServiceProps = {
   title: string;
   description: string;
-  fees: { type: string; amount: string; description?: string }[];
+  fees: { type: string; amount: number; description?: string }[];
   ending?: string;
 };
 
