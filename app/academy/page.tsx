@@ -5,17 +5,22 @@ import courses from "../../staticData/courses";
 
 export const metadata: Metadata = {
   title: "Academy",
+  description:
+    "We aim to offer systematic and qualified psychology and mental health courses.",
+  alternates: {
+    canonical: "/academy",
+  },
 };
 
 export default function Page() {
   return (
     <>
-      <div className="relative">
+      <main className="relative">
         <div className=" container-sm pb-16 flex items-center flex-col-reverse md:flex-row">
           <div className="flex-[50%]">
-            <p className="font-bold text-4xl lg:text-5xl text-center md:text-start">
+            <h1 className="font-bold text-4xl lg:text-5xl text-center md:text-start">
               Passionate Heart Academy
-            </p>
+            </h1>
             <p className="md:w-[70%] text-[20px] opacity-80 my-[25px] text-center md:text-start">
               We aim to offer systematic and qualified psychology and mental
               health courses.
@@ -34,9 +39,9 @@ export default function Page() {
         </div>
         <div className="">
           <div className="container-sm ">
-            {
-              courses.map((course, index) => <CourseComponent key={index} course={course} />)
-            }
+            {courses.map((course, index) => (
+              <CourseComponent key={index} course={course} />
+            ))}
           </div>
         </div>
 
@@ -49,7 +54,7 @@ export default function Page() {
 
         <div className="glass glass-lg type-1 third top-[400px] left-[78%]"></div>
         {/*  */}
-      </div>
+      </main>
     </>
   );
 }

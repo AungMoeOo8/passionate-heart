@@ -3,9 +3,11 @@ import { ProfessionalCard } from "../../components";
 import counsellorsData from "../../staticData/professionals";
 
 export const metadata: Metadata = {
-  title: "Mental Health Professionals",
+  title: "Mental Health Professionals & Practitioners",
+  description:
+    "Explore our profiles to learn more about their backgrounds, specialties, and how they can assist you in achieving your wellness goals.",
   alternates: {
-    canonical: "https://passionateheartmyanmar.com/professionals",
+    canonical: "/professionals",
   },
 };
 
@@ -13,7 +15,9 @@ export default function Page() {
   return (
     <>
       <div className="mt-[50px]">
-        <p className="text-4xl font-bold text-center mt-8 mb-14">Mental Health Professionals & Practitioners</p>
+        <h2 className="text-4xl font-bold text-center mt-8 mb-14">
+          Mental Health Professionals & Practitioners
+        </h2>
       </div>
       <div className="mb-[100px]">
         <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-[20px]">

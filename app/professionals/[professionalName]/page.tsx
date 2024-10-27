@@ -10,8 +10,12 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { professionalName } = params;
   const name = professionalName.replaceAll("%20", " ");
+
   return {
     title: name,
+    alternates: {
+      canonical: "/professionals/" + professionalName,
+    },
   };
 }
 
@@ -23,7 +27,8 @@ export default function Page({
   const { professionalName } = params;
 
   const professional = professionals.find(
-    (professional) => professional.name === professionalName.replaceAll("%20", " ")
+    (professional) =>
+      professional.name === professionalName.replaceAll("%20", " ")
   );
 
   if (!professional) {
@@ -31,17 +36,15 @@ export default function Page({
   }
 
   function Placeholder() {
-    return (
-      <div>
-        
-      </div>
-    )
+    return <div></div>;
   }
 
   return (
     <>
       <main className="">
-        {professional.image === "" ? <Placeholder /> :
+        {professional.image === "" ? (
+          <Placeholder />
+        ) : (
           <div className="max-w-[400px] h-[400px] overflow-hidden rounded-lg">
             <Image
               alt={"Counsellor Photo"}
@@ -51,11 +54,12 @@ export default function Page({
               style={{ height: "auto" }}
               className="sm:translate-y-[-12.5%] rounded-lg"
             />
-          </div>}
+          </div>
+        )}
 
-        <span className="block text-[25px] font-semibold mt-[16px]">
+        <h1 className="block text-[25px] font-semibold mt-[16px]">
           {professional.name}
-        </span>
+        </h1>
         {professional.roles.map((role, index) => (
           <div
             key={index}
@@ -64,10 +68,16 @@ export default function Page({
             <span className="font-normal text-[14px] opacity-80">{role}</span>
           </div>
         ))}
-        <p className=" mt-8 leading-7 opacity-80 font-poppins text-wrap whitespace-pre">{professional.bio}</p>
+        <p className=" mt-8 leading-7 opacity-80 font-poppins text-wrap whitespace-pre">
+          {professional.bio}
+        </p>
         <div className="flex justify-center items-center gap-2 mt-5">
           <hr className=" flex-1" />
-          <img src="/images/paragraph_end.png" className=" w-40" alt="close_paragraph"/>
+          <img
+            src="/images/paragraph_end.png"
+            className=" w-40"
+            alt="close_paragraph"
+          />
           <hr className="flex-1" />
         </div>
       </main>

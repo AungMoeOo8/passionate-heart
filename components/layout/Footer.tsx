@@ -9,22 +9,7 @@ import {
   Icon,
 } from "@tabler/icons-react";
 import { businessInfo } from "../../staticData/";
-
-type InfoPropsType = { Icon: Icon; info: string };
-
-const Info = ({ Icon, info }: InfoPropsType) => {
-  return (
-    <>
-      {info != "" ? (
-        <p className="flex items-center gap-[10px] text-sm text-white">
-          <Icon stroke="1.5" /> <span>{info}</span>
-        </p>
-      ) : (
-        <></>
-      )}
-    </>
-  );
-};
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -32,10 +17,11 @@ export default function Footer() {
       <div className="container-lg py-[50px] px-[16px] gap-[30px] flex flex-col items-center">
         <div className="w-full flex gap-[30px] justify-between flex-col sm:flex-row">
           <div className="flex flex-col gap-[20px]">
-            <Info Icon={IconPhone} info={businessInfo.phone} />
-            <Info Icon={IconMail} info={businessInfo.email} />
-            <Info Icon={IconLocation} info={businessInfo.location} />
-            <Info Icon={IconClock} info={businessInfo.time} />
+            <Link href={"mailto:" + businessInfo.email}>
+              <div className="flex items-center gap-[10px] text-sm text-white">
+                <IconMail stroke="1.5" /> <span>{businessInfo.email}</span>
+              </div>
+            </Link>
           </div>
 
           <div className="flex justify-center gap-[20px]">
@@ -56,10 +42,10 @@ export default function Footer() {
             </a>
           </div>
         </div>
-        <p className="font-light text-center text-sm text-white">
+        <div className="font-light text-center text-sm text-white">
           Copyright © 2023
           <br /> passionateheartmyanmar.com
-        </p>
+        </div>
       </div>
     </footer>
   );

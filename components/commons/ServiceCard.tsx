@@ -17,9 +17,9 @@ export default function ServiceCard({
       )}
       {...props}
     >
-      <h1 className="text-sm font-normal rounded-lg py-2 px-4 inline absolute top-[-20px] left-[16px] bg-cyan-800 text-white">
+      <div className="text-sm font-normal rounded-lg py-2 px-4 inline absolute top-[-20px] left-[16px] bg-cyan-800 text-white">
         {title}
-      </h1>
+      </div>
       <div className="flex flex-col md:flex-row gap-x-3">
         <div className="flex-[65%] px-4 py-8 bg-white rounded-[18px]">
           <p className=" whitespace-pre-wrap text-sm sm:text-[15px] leading-6">
@@ -30,7 +30,7 @@ export default function ServiceCard({
 
         <div className="flex-[35%] text-white px-4 py-8">
           {fees.map((fee, index) => (
-            <p key={index} className="leading-6 even:py-2">
+            <div key={index} className="leading-6 even:py-2">
               <span className="text-sm font-semibold">{fee.type}</span> -{" "}
               <span className="text-sm">
                 {Intl.NumberFormat().format(fee.amount)} MMK
@@ -40,7 +40,7 @@ export default function ServiceCard({
                   {fee.description}
                 </span>
               )}
-            </p>
+            </div>
           ))}
         </div>
       </div>

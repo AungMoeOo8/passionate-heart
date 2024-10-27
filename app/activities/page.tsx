@@ -5,7 +5,7 @@ const pics = [
   "/images/activities/IMG-2e6c7bfb771fb00a958a85f18ea8ae25-V.jpg",
   "/images/activities/IMG-2700bf3773c4331ffe971cbbb1bb60bf-V.jpg",
   "/images/activities/IMG-a0e850e7cf7221f6e71db4ec05a6f9c6-V.jpg",
-  "/images/activities/IMG-d26f92866901c6de4d38a74cc9336c6d-V.jpg",
+  "/images/activities/IMG-b47c3fbea7b021eb8f7d24187562a422-V.jpg",
   "/images/activities/IMG-a6fbe291253d167d8b3cf440c4990ab2-V.jpg",
   "/images/activities/IMG-8e2eb8647602581c0977675121c6e25d-V.jpg",
   "/images/activities/IMG-7fa04e30f8598cd7f9e6f74f6d33e75f-V.jpg",

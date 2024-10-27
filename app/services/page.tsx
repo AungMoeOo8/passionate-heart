@@ -2,12 +2,15 @@ import { Metadata } from "next";
 import { ServiceCard } from "../../components";
 import { services } from "../../staticData";
 import React from "react";
-import { cn } from "../../util";
-import { IconClock } from "@tabler/icons-react";
 import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Services",
+  description:
+    "We are dedicated to providing a safe environment where you can explore your feelings and receive support for various mental health challenges.",
+  alternates: {
+    canonical: "/services",
+  },
 };
 
 const psychologistServices = [
@@ -65,7 +68,9 @@ export default function Page() {
       </div>
 
       <div className=" mt-16">
-        <p className="text-3xl font-bold">Counsellor & Mental Health Practitioner</p>
+        <p className="text-3xl font-bold">
+          Counsellor & Mental Health Practitioner
+        </p>
         <ServiceCard {...services[3]} className="mt-8 mb-16" />
       </div>
     </div>
