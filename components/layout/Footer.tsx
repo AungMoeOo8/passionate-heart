@@ -8,7 +8,7 @@ import {
   IconPhone,
   Icon,
 } from "@tabler/icons-react";
-import { businessInfo } from "../../staticData/";
+import { businessInfo } from "../../staticData";
 import Link from "next/link";
 
 export default function Footer() {

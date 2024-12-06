@@ -3,20 +3,35 @@
 import Link from "next/link";
 import Image from "next/image";
 import { MutableRefObject, useEffect, useRef } from "react";
-import { NavLinkButton } from "..";
 import {
   IconX,
   IconBrandFacebook,
   IconBrandLinkedin,
 } from "@tabler/icons-react";
 import { usePathname } from "next/navigation";
+import { NavLinkProps } from "../../types";
 
 const navLinks = [
-  { name: "Our Professionals", href: "/professionals" },
+  { name: "Organization", href: "/professionals" },
   { name: "Activities", href: "/activities"},
   { name: "Services", href: "/services" },
   { name: "Academy", href: "/academy" },
 ];
+
+const NavLinkButton: React.FC<NavLinkProps> = ({ name, href }) => {
+  const pathname = usePathname();
+  const isCurrentURL = pathname === href;
+
+  const textColor = isCurrentURL ? "text-cyan-600" : "text-black";
+
+  return (
+    <Link href={href} className={`${textColor} hover:bg-slate-50 rounded-md`}>
+      <div className="font-semibold p-2 text-center cursor-pointer">
+        {name}
+      </div>
+    </Link>
+  );
+};
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -57,7 +72,7 @@ export default function Navbar() {
           ref={navRef}
           className="absolute md:static left-0 -top-[100vh] opacity-0 md:opacity-100 md:px-[10px] md:py-0 m-auto md:m-0 flex justify-end w-full h-screen md:h-full transition-[opacity] bg-white md:bg-transparent z-50"
         >
-          <div className="flex h-dvh md:h-full flex-col md:flex-row justify-evenly gap-x-8 lg:gap-x-12">
+          <div className="flex h-dvh md:h-full flex-col md:flex-row justify-evenly gap-x-8">
             <div className="absolute top-[30px] right-[30px] flex items-center">
               <div
                 onClick={closeNav}
