@@ -2,7 +2,8 @@ import { ServiceProps } from "../../types";
 import { cn } from "../../util";
 
 export default function ServiceCard({
-  title,
+  name,
+  provider,
   description,
   fees,
   ending,
@@ -18,7 +19,7 @@ export default function ServiceCard({
       {...props}
     >
       <div className="text-sm font-normal rounded-lg py-2 px-4 inline absolute top-[-20px] left-[16px] bg-cyan-800 text-white">
-        {title}
+        {name}
       </div>
       <div className="flex flex-col md:flex-row gap-x-3">
         <div className="flex-[65%] px-4 py-8 bg-white rounded-[18px]">

@@ -48,13 +48,13 @@ export default function Course({ course }: { course: CourseProps }) {
                   </Link>
                 </div>
 
-                {course.gustLecturer ? (
+                {course.guestLecturer ? (
                   <div>
                     <div className="bg-slate-700 inline text-sm font-light px-2 py-1 rounded text-white">
                       Guest Lecturer
                     </div>
                     <div className="ml-2 font-semibold text-xl inline">
-                      {course.gustLecturer}
+                      {course.guestLecturer}
                     </div>
                   </div>
                 ) : null}

@@ -11,11 +11,15 @@ type NavLinkProps = {
   href: string;
 };
 
-type CounsellorProps = {
-  image: string;
+type PersonProps = {
+  id: string;
   name: string;
-  bio: string;
+  image: string;
+  position: string;
   roles: string[];
+  biography: string;
+  visibility: boolean;
+  indexNumber: number;
 };
 
 type ServiceComponentProps = {
@@ -25,24 +29,31 @@ type ServiceComponentProps = {
 };
 
 type ServiceProps = {
-  title: string;
+  id: string;
+  provider: string;
+  name: string;
   description: string;
-  fees: { type: string; amount: number; description?: string }[];
-  ending?: string;
+  fees: { type: string, amount: number, description: string }[];
+  ending: string;
+  visibility: boolean;
+  indexNumber: number;
 };
 
 type CourseProps = {
+  id: string,
   title: string,
-  instructor: string,
-  gustLecturer?: string,
   duration: string,
+  instructor: string,
+  guestLecturer: string,
   outlines: string[],
+  visibility: boolean,
+  indexNumber: number,
 }
 
 export type {
   AnnouncementProps,
   NavLinkProps,
-  CounsellorProps,
+  PersonProps,
   ServiceComponentProps,
   ServiceProps,
   CourseProps

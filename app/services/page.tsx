@@ -3,6 +3,7 @@ import { ServiceCard } from "../../components";
 import { services } from "../../staticData";
 import React from "react";
 import Image from "next/image";
+import { getServices } from "../../services/wordpress/service.service";
 
 export const metadata: Metadata = {
   title: "Services",
@@ -19,11 +20,31 @@ const psychologistServices = [
   { title: "EMDR Therapy", fee: 70000 },
 ];
 
-export default function Page() {
+export default async function Page() {
+  const { data } = await getServices();
+
+
   return (
     <div className="container-sm">
-      <div className="mt-8 bg-cyan-800 p-8 rounded-lg">
-        <p className="text-3xl font-bold text-white">
+      <ul className="my-12 flex flex-col gap-12">
+        {data.map((service, index) => (
+          <li key={index}>
+            <ServiceCard {...service} />
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+{
+  /* <div className="mt-8 bg-cyan-800 p-8 rounded-lg">
+        
+        </div> */
+}
+
+{
+  /* <p className="text-3xl font-bold text-white">
           Psychologist & EMDR Therapist
         </p>
 
@@ -71,16 +92,5 @@ export default function Page() {
         <p className="text-3xl font-bold">
           Counsellor & Mental Health Practitioner
         </p>
-        <ServiceCard {...services[3]} className="mt-8 mb-16" />
-      </div>
-    </div>
-  );
-}
-
-{
-  /* <ul>
-  {servicesData.map((service, index) => (
-    <ServiceCard key={index} {...service} />
-  ))}
-</ul> */
+        <ServiceCard {...services[3]} className="mt-8 mb-16" /> */
 }

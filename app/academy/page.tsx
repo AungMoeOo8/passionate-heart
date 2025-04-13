@@ -2,6 +2,7 @@ import Image from "next/image";
 import { CourseComponent } from "../../components";
 import { Metadata } from "next";
 import courses from "../../staticData/courses";
+import { getCourses } from "../../services/wordpress/course.service";
 
 export const metadata: Metadata = {
   title: "Academy",
@@ -12,7 +13,9 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Page() {
+export default async function Page() {
+  const { data } = await getCourses();
+
   return (
     <>
       <main className="relative">
@@ -39,7 +42,7 @@ export default function Page() {
         </div>
         <div className="">
           <div className="container-sm ">
-            {courses.map((course, index) => (
+            {data.map((course, index) => (
               <CourseComponent key={index} course={course} />
             ))}
           </div>

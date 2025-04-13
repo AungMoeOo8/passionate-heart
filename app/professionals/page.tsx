@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { ProfessionalCard } from "../../components";
 import counsellorsData from "../../staticData/professionals";
+import { getPeople } from "../../services/wordpress/people.service";
 
 export const metadata: Metadata = {
   title: "Mental Health Professionals & Practitioners",
@@ -11,7 +12,8 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Page() {
+export default async function Page() {
+  const { data } = await getPeople();
   return (
     <>
       <div className="mt-[50px]">
@@ -21,14 +23,9 @@ export default function Page() {
       </div>
       <div className="mb-[100px]">
         <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-[20px]">
-          {counsellorsData.map((counsellor, index) => (
+          {data.map((person, index) => (
             <li key={index} className="flex justify-center rounded-[10px]">
-              <ProfessionalCard
-                image={counsellor.image}
-                name={counsellor.name}
-                bio={counsellor.bio}
-                roles={counsellor.roles}
-              />
+              <ProfessionalCard {...person} />
             </li>
           ))}
         </ul>
