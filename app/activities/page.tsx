@@ -15,12 +15,38 @@ const pics = [
   "/images/activities/IMG-ac5be12b4db524f68ef249fd97d15eaa-V.jpg",
 ];
 
-export default function Page() {
+const { NEXT_WORDPRESS_DOMAIN } = process.env;
+
+export type Response<TData> = {
+  isSuccess: boolean;
+  message: string;
+  data: TData;
+};
+
+export type ActivityProps = {
+  id: string;
+  imageUrl: string;
+  visibility: boolean;
+  indexNumber: number;
+};
+
+export async function getActivities() {
+  const res = await fetch(
+    `${NEXT_WORDPRESS_DOMAIN}/phweb/wp-json/api/activity`
+  );
+  const data: Response<ActivityProps[]> = await res.json();
+
+  return data;
+}
+
+export default async function Page() {
+  const { data: activities } = await getActivities();
+
   return (
     <div className="container-sm mx-auto px-4">
       <div className="my-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        {pics.map((pic, index) => (
-          <Image key={index} src={pic} alt="pic" width={600} height={200} />
+        {activities.map((activity, index) => (
+          <Image key={index} src={activity.imageUrl} alt="pic" width={600} height={200} />
         ))}
       </div>
     </div>
