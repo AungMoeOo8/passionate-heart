@@ -30,23 +30,23 @@ export type ActivityProps = {
   indexNumber: number;
 };
 
-export async function getActivities() {
+export default async function Page() {
   const res = await fetch(
     `${NEXT_WORDPRESS_DOMAIN}/phweb/wp-json/api/activity`
   );
-  const data: Response<ActivityProps[]> = await res.json();
-
-  return data;
-}
-
-export default async function Page() {
-  const { data: activities } = await getActivities();
+  const { data: activities }: Response<ActivityProps[]> = await res.json();
 
   return (
     <div className="container-sm mx-auto px-4">
       <div className="my-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {activities.map((activity, index) => (
-          <Image key={index} src={activity.imageUrl} alt="pic" width={600} height={200} />
+          <Image
+            key={index}
+            src={activity.imageUrl}
+            alt="pic"
+            width={600}
+            height={200}
+          />
         ))}
       </div>
     </div>
