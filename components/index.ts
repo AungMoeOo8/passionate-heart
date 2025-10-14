@@ -1,17 +1,17 @@
 import Navbar from "./layout/Navbar";
 import Footer from "./layout/Footer";
-import ProfessionalCard from "./commons/ProfessionalCard";
+import PersonCard from "./commons/PersonCard";
 import ServiceComponent from "./commons/ServiceComponent";
 import Announcement from "./layout/Announcement";
-import ServiceCard from "./commons/ServiceCard";
 import CourseComponent from "./commons/CourseComponent";
+import PersonComponent from "./commons/PersonComponent";
 
 export {
   Navbar,
   Footer,
   Announcement,
-  ProfessionalCard,
+  PersonCard,
+  PersonComponent,
   ServiceComponent,
-  ServiceCard,
   CourseComponent,
 };

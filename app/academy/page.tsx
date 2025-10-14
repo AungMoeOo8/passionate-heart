@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { CourseComponent } from "../../components";
 import { Metadata } from "next";
-import courses from "../../staticData/courses";
 import { getCourses } from "../../services/wordpress/course.service";
 
 export const metadata: Metadata = {
@@ -11,10 +10,18 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/academy",
   },
+  openGraph: {
+    title: "Academy",
+    description: "We aim to offer systematic and qualified psychology and mental health courses.",
+    url: "/academy",
+    locale: "en-US",
+    siteName: "Passionate Heart",
+    type: "website"
+  }
 };
 
 export default async function Page() {
-  const { data } = await getCourses();
+  const courses = await getCourses()
 
   return (
     <>
@@ -42,7 +49,7 @@ export default async function Page() {
         </div>
         <div className="">
           <div className="container-sm ">
-            {data.map((course, index) => (
+            {courses.map((course, index) => (
               <CourseComponent key={index} course={course} />
             ))}
           </div>

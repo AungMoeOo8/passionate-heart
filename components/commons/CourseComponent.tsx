@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { CourseProps } from "../../types";
 import { IconClock } from "@tabler/icons-react";
+import { CourseResponse } from "../../services/wordpress/course.service";
 
 const OutlineItem = ({ item }: { item: string }) => {
   return (
@@ -14,17 +15,19 @@ const OutlineItem = ({ item }: { item: string }) => {
   );
 };
 
-const Outlines = (course: CourseProps) => {
+const Outlines = (course: CourseResponse) => {
   return (
     <ul className=" relative w-full">
       {course.outlines.map((item, index) => (
-        <OutlineItem key={index} item={item}/>
+        <OutlineItem key={index} item={item} />
       ))}
     </ul>
   );
 };
 
-export default function Course({ course }: { course: CourseProps }) {
+export default function Course({ course }: { course: CourseResponse }) {
+  const isProfessional = course.instructorPosition === "PROFESSIONAL" ? "professionals" : "members"
+  const instructorHref = `${isProfessional}/${course.instructorName}`
   return (
     <div>
       <div className="py-16 ">
@@ -37,27 +40,27 @@ export default function Course({ course }: { course: CourseProps }) {
                 </h3>
 
                 <div className="mb-2">
-                  <div className="bg-slate-700 inline text-sm font-light px-2 py-1 rounded text-white">
+                  <div className="bg-slate-700 inline text-sm font-base px-2 py-1 rounded text-white">
                     Instructor
                   </div>
                   <Link
-                    href={"/counsellors/Dr. Tin Mar San"}
+                    href={instructorHref}
                     className="ml-2 font-semibold text-xl"
                   >
-                    {course.instructor}
+                    {course.instructorName}
                   </Link>
                 </div>
 
-                {course.guestLecturer ? (
+                {course.guestLecturer && (
                   <div>
-                    <div className="bg-slate-700 inline text-sm font-light px-2 py-1 rounded text-white">
+                    <div className="bg-slate-700 inline text-sm font-base px-2 py-1 rounded text-white">
                       Guest Lecturer
                     </div>
                     <div className="ml-2 font-semibold text-xl inline">
                       {course.guestLecturer}
                     </div>
                   </div>
-                ) : null}
+                )}
 
                 <div className="mt-4 mb-8 flex flex-wrap gap-x-4 gap-y-4">
                   <div className={`flex items-center`}>
@@ -92,7 +95,7 @@ export default function Course({ course }: { course: CourseProps }) {
           </div>
         </div>
       </div>
-      <hr />
+      <hr className="text-gray-200" />
     </div>
   );
 }

@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import {
   ServiceComponent,
-  ProfessionalCard,
+  PersonCard,
 } from "../components";
 import Link from "next/link";
 import { IconArrowNarrowRight } from "@tabler/icons-react";
-import { professionals } from "../staticData";
+import { getProfessionals } from "../services/wordpress/people.service";
 
 type ServicesProps = {
   image: string;
@@ -33,17 +33,18 @@ const services: ServicesProps[] = [
   },
 ];
 
-const professionalsSlice = professionals.slice(0, 4);
-
 export const metadata: Metadata = {
   title: "Welcome | Passionate Heart",
 };
 
-const page = () => {
+const page = async () => {
+
+  const professionals = await getProfessionals()
+
   return (
     <>
       {/* Hero Section */}
-      <section className="relative">
+      <section className="relative overflow-x-hidden">
         <div className="container-sm py-[100px] ">
           <div className="basis-6/12 flex flex-col justify-center">
             <h2
@@ -71,7 +72,7 @@ const page = () => {
       {/* Service Section */}
       <section className="">
         <div id="services" className="container-sm mt-[0] z-50 py-[100px]">
-          <div className="flex flex-col gap-[66px]">
+          <div className="flex flex-col gap-y-36">
             {services.map((service, index) => (
               <ServiceComponent
                 key={index}
@@ -95,36 +96,31 @@ const page = () => {
 
       {/* Professionals Section */}
       <section className="">
-      <div className="container-sm mt-[0] py-[100px] z-50 ">
-        <div id="counsellors">
-          <div className="flex justify-center">
-            <p className="text-center text-4xl font-bold">Mental Health Professionals</p>
-          </div>
+        <div className="container-sm mt-[0] py-[100px] z-50 ">
+          <div id="counsellors">
+            <div className="flex justify-center">
+              <p className="text-center text-4xl font-bold">Mental Health Professionals</p>
+            </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-[20px] mt-[50px]">
-            {professionalsSlice.map((professional, index) => (
-              <div key={index} className="flex justify-center rounded-[10px]">
-                <ProfessionalCard
-                  image={professional.image}
-                  name={professional.name}
-                  bio={professional.bio}
-                  roles={professional.roles}
-                />
-              </div>
-            ))}
-          </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-[20px] mt-[50px]">
+              {professionals.slice(0, 4).map((professional, index) => (
+                <div key={index} className="flex justify-center rounded-[10px]">
+                  <PersonCard {...professional} />
+                </div>
+              ))}
+            </div>
 
-          <div className="flex justify-center mt-[50px]">
-            <Link href={"/professionals"} passHref>
-              <div className=" text-[0.9rem] px-4 py-2 rounded-sm cursor-pointer hover:-translate-y-2 transition-all duration-300 flex items-center gap-1 border custom-shadow">
-                <span className="font-medium">See More</span>
-                <IconArrowNarrowRight />
-              </div>
-            </Link>
+            <div className="flex justify-center mt-[50px]">
+              <Link href={"/professionals"} passHref>
+                <div className=" text-[0.9rem] px-4 py-2 rounded-sm cursor-pointer hover:-translate-y-2 transition-all duration-300 flex items-center gap-1 border border-gray-200 custom-shadow">
+                  <span className="font-medium">See More</span>
+                  <IconArrowNarrowRight />
+                </div>
+              </Link>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
     </>
   );
 };

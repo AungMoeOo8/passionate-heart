@@ -22,10 +22,20 @@ export const metadata: Metadata = {
   },
   description:
     "We are passionate to offer assured, trusted, affordable counseling services, pyschological tests, and assessment services.",
-  viewport: "minimum-scale=1, initial-scale=1, width=device-width",
-  metadataBase: new URL("https://passionateheartmyanmar.com"),
+  metadataBase: new URL("https://www.passionateheartmyanmar.com"),
   alternates: {
     canonical: "/",
+  },
+  openGraph: {
+    title: {
+      template: "%s | Passionate Heart",
+      default: "Passionate Heart",
+    },
+    description: "We are passionate to offer assured, trusted, affordable counseling services, pyschological tests, and assessment services.",
+    url: "https://www.passionateheartmyanmar.com/",
+    siteName: "Passionate Heart",
+    locale: "en_US",
+    type: "website",
   },
   icons: {
     icon: [
@@ -58,7 +68,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} ${libre.variable}`}>
-      <body className="font-inter overflow-x-hidden">
+      <body className="font-inter overflow-x-hidden selection:bg-primary selection:text-white">
         <Navbar />
         {children}
         <Footer />

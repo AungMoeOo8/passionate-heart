@@ -1,86 +1,44 @@
 import { Metadata } from "next";
-import Image from "next/image";
 import { notFound } from "next/navigation";
-import { professionals } from "../../../staticData";
+import { getPersonByName } from "../../../services/wordpress/people.service";
+import { PersonComponent } from "../../../components";
 
 export async function generateMetadata({
   params,
 }: {
   params: { professionalName: string };
 }): Promise<Metadata> {
-  const { professionalName } = params;
-  const name = professionalName.replaceAll("%20", " ");
+  const { professionalName } = await params;
+  const professional = await getPersonByName(professionalName)
 
   return {
-    title: name,
+    title: professional?.name,
     alternates: {
-      canonical: "/professionals/" + professionalName,
+      canonical: "/professionals/" + professional?.name,
     },
+    openGraph: {
+      title: professional?.name,
+      description: professional?.biography.split("\n")[0],
+      url: "/members/" + professional?.name,
+      locale: "en-US",
+      siteName: "Passionate Heart",
+      type: "website"
+    }
   };
 }
 
-export default function Page({
+export default async function Page({
   params,
 }: {
   params: { professionalName: string };
 }) {
-  const { professionalName } = params;
+  const { professionalName } = await params;
 
-  const professional = professionals.find(
-    (professional) =>
-      professional.name === professionalName.replaceAll("%20", " ")
-  );
+  const professional = await getPersonByName(professionalName)
 
   if (!professional) {
     notFound();
   }
 
-  function Placeholder() {
-    return <div></div>;
-  }
-
-  return (
-    <>
-      <main className="">
-        {professional.image === "" ? (
-          <Placeholder />
-        ) : (
-          <div className="max-w-[400px] h-[400px] overflow-hidden rounded-lg">
-            <Image
-              alt={"Counsellor Photo"}
-              src={professional.image}
-              width={400}
-              height={400}
-              style={{ height: "auto" }}
-              className="sm:translate-y-[-12.5%] rounded-lg"
-            />
-          </div>
-        )}
-
-        <h1 className="block text-[25px] font-semibold mt-[16px]">
-          {professional.name}
-        </h1>
-        {professional.roles.map((role, index) => (
-          <div
-            key={index}
-            className="inline-block rounded-sm mt-[8px] px-[12px] border even:mx-2"
-          >
-            <span className="font-normal text-[14px] opacity-80">{role}</span>
-          </div>
-        ))}
-        <p className=" mt-8 leading-7 opacity-80 font-poppins text-wrap whitespace-pre">
-          {professional.bio}
-        </p>
-        <div className="flex justify-center items-center gap-2 mt-5">
-          <hr className=" flex-1" />
-          <img
-            src="/images/paragraph_end.png"
-            className=" w-40"
-            alt="close_paragraph"
-          />
-          <hr className="flex-1" />
-        </div>
-      </main>
-    </>
-  );
+  return <PersonComponent {...professional} />;
 }

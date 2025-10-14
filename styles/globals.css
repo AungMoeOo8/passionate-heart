@@ -1,11 +1,17 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-@layer base {
-  ::selection {
-    @apply bg-primary text-white;
-  }
+@theme {
+  --color-primary: #00ADB5;
+  --color-secondary: #222831;
+
+  --font-inter: var(--font-inter);
+  --font-libre: var(--font-libre);
+
+  --radius-sm: 12px;
+  --radius-lg: 20px;
+
+  --shadow-custom: 0px 4px 5px 0px #e7f4f4;
+  ;
 }
 
 @layer components {
@@ -62,10 +68,6 @@
     animation: bounce 18s infinite ease;
   }
 
-  .custom-shadow {
-    box-shadow: 0px 4px 5px 0px #e7f4f4;
-  }
-
   .custom-hover {
     translate: 0px -5px;
     transition: box-shadow 0.25s ease, translate 0.25s ease;
@@ -86,7 +88,7 @@
     background-color: #d0c9ff;
   }
 
-  
+
 }
 
 @keyframes bounce {

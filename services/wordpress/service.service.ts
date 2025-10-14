@@ -1,16 +1,35 @@
 import { ServiceProps } from "../../types";
 const { WORDPRESS_DOMAIN } = process.env
 
-export async function getServices() {
-    const res = await fetch(`${WORDPRESS_DOMAIN}/phweb/wp-json/api/service`)
-    const data = await res.json() as { isSuccess: boolean, message: string, data: ServiceProps[] };
-
-    return data
+export type Fee = {
+    type?: string,
+    amount?: number,
+    description?: string
 }
 
-export async function getServiceById(id: string) {
-    const res = await fetch(`${WORDPRESS_DOMAIN}/phweb/wp-json/api/service/${id}`)
-    const data = await res.json() as { isSuccess: boolean, message: string, data: ServiceProps };
+export type ServiceResponse =
+    {
+        "id"?: number,
+        "name": string,
+        "provider"?: string,
+        "description": string,
+        "ending": string,
+        "fees": Fee[],
+        "providedBy"?: number,
+        "providedByName"?: string,
+        "providedByPosition"?: string
+    }
+
+export async function getServices() {
+    const res = await fetch(`${WORDPRESS_DOMAIN}/wp-json/api/organization/services`)
+    const data: ServiceResponse[] = await res.json()
+
+    return data
+}   
+
+export async function getServiceById(id: number) {
+    const res = await fetch(`${WORDPRESS_DOMAIN}/wp-json/api/services/${id}`)
+    const data: ServiceProps = await res.json()
 
     return data
 }

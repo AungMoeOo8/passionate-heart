@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { MutableRefObject, useEffect, useRef } from "react";
+import { MutableRefObject, useEffect, useRef, useState } from "react";
 import {
   IconX,
   IconBrandFacebook,
@@ -12,11 +12,41 @@ import { usePathname } from "next/navigation";
 import { NavLinkProps } from "../../types";
 
 const navLinks = [
-  { name: "Organization", href: "/professionals" },
-  { name: "Activities", href: "/activities"},
+  { name: "Activities", href: "/activities" },
   { name: "Services", href: "/services" },
   { name: "Academy", href: "/academy" },
 ];
+
+function OrganizationLinks() {
+  return (
+    <div className="p-2 absolute left-0 top-[100%] bg-white flex items-start flex-col shadow rounded-[8px]">
+      <Link href={"/professionals"} className="w-full text-black font-semibold p-3 cursor-pointer rounded-md hover:bg-slate-100">Professionals</Link>
+      <Link href={"/members"} className="w-full text-black font-semibold p-3 cursor-pointer rounded-md hover:bg-slate-100">Members</Link>
+    </div>
+  )
+}
+
+function OrganizationButton() {
+  const pathname = usePathname();
+  const isCurrentURL = pathname === "/professionals" || pathname === "/members";
+
+  const textColor = isCurrentURL ? "text-cyan-600" : "text-black";
+
+  const [show, setShow] = useState(false);
+
+  return (
+    <div
+      className="relative h-16 flex items-center"
+      onMouseOver={() => setShow(true)}
+      onMouseOut={() => setShow(false)}>
+      <div
+        className={`${textColor} hover:bg-slate-100 rounded-md font-semibold p-3 text-center cursor-pointer`}>
+        Organization
+      </div>
+      {show && <OrganizationLinks />}
+    </div>
+  )
+}
 
 const NavLinkButton: React.FC<NavLinkProps> = ({ name, href }) => {
   const pathname = usePathname();
@@ -25,8 +55,8 @@ const NavLinkButton: React.FC<NavLinkProps> = ({ name, href }) => {
   const textColor = isCurrentURL ? "text-cyan-600" : "text-black";
 
   return (
-    <Link href={href} className={`${textColor} hover:bg-slate-50 rounded-md`}>
-      <div className="font-semibold p-2 text-center cursor-pointer">
+    <Link href={href} className={`${textColor} flex justify-center items-center`}>
+      <div className="hover:bg-slate-100 rounded-md font-semibold p-3 text-center cursor-pointer">
         {name}
       </div>
     </Link>
@@ -35,17 +65,17 @@ const NavLinkButton: React.FC<NavLinkProps> = ({ name, href }) => {
 
 export default function Navbar() {
   const pathname = usePathname();
-  const navRef = useRef<HTMLElement>() as MutableRefObject<HTMLElement>;
+  const navRef = useRef<HTMLElement>(null)
   const navbarRef =
-    useRef<HTMLDivElement>() as MutableRefObject<HTMLDivElement>;
+    useRef<HTMLDivElement>(null)
 
   function openNav() {
-    navRef.current.classList.add("open-nav");
+    navRef.current?.classList.add("open-nav");
     document.body.classList.add("overflow-hidden")
   }
 
   function closeNav() {
-    navRef.current.classList.remove("open-nav");
+    navRef.current?.classList.remove("open-nav");
     document.body.classList.remove("overflow-hidden")
   }
 
@@ -54,8 +84,8 @@ export default function Navbar() {
   });
 
   return (
-    <div ref={navbarRef} className="z-50 sticky top-0 bg-white shadow-sm">
-      <div className="container-lg flex justify-between items-center bg-inherit">
+    <div ref={navbarRef} className="h-[92px] sticky flex items-center top-0 bg-white shadow-sm z-50">
+      <div className="container-lg w-full flex justify-between items-center bg-inherit">
         <Link href={"/"} passHref>
           <Image
             alt="logo"
@@ -81,6 +111,7 @@ export default function Navbar() {
                 <IconX />
               </div>
             </div>
+            <OrganizationButton />
             {navLinks.map((item, index) => (
               <NavLinkButton key={index} name={item.name} href={item.href} />
             ))}

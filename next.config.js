@@ -1,11 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  swcMinify: true,
+  // swcMinify: true,
   images: {
     unoptimized: true,
     minimumCacheTTL: 60,
   },
+  allowedDevOrigins: ['phadmin.local'],
 };
 
 module.exports = nextConfig;

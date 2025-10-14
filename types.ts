@@ -12,7 +12,7 @@ type NavLinkProps = {
 };
 
 type PersonProps = {
-  id: string;
+  id: number;
   name: string;
   image: string;
   position: string;
@@ -29,18 +29,19 @@ type ServiceComponentProps = {
 };
 
 type ServiceProps = {
-  id: string;
-  provider: string;
+  id?: number;
+  provider?: string;
+  providedByName?: string;
   name: string;
   description: string;
-  fees: { type: string, amount: number, description: string }[];
+  fees: { type: string, amount: number, description?: string }[];
   ending: string;
-  visibility: boolean;
-  indexNumber: number;
+  visibility?: boolean;
+  indexNumber?: number;
 };
 
 type CourseProps = {
-  id: string,
+  id: number,
   title: string,
   duration: string,
   instructor: string,
@@ -48,6 +49,13 @@ type CourseProps = {
   outlines: string[],
   visibility: boolean,
   indexNumber: number,
+}
+
+export type ActivityProps = {
+  id: number,
+  imageUrl: string,
+  visibility: boolean
+  indexNumber: number
 }
 
 export type {
