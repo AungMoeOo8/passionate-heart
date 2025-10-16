@@ -22,6 +22,11 @@ export default function Footer() {
                 <IconMail stroke="1.5" /> <span>{businessInfo.email}</span>
               </div>
             </Link>
+            <Link href={"mailto:" + businessInfo.email}>
+              <div className="flex items-center gap-[10px] text-sm text-white">
+                <IconPhone stroke="1.5" /> <span>{"09 7564 45767"}</span>
+              </div>
+            </Link>
           </div>
 
           <div className="flex justify-center gap-[20px]">
