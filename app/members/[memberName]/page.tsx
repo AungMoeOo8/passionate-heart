@@ -6,7 +6,7 @@ import { PersonComponent } from "../../../components";
 export async function generateMetadata({
   params,
 }: {
-  params: { memberName: string };
+  params: Promise<{ memberName: string }>;
 }): Promise<Metadata> {
   const { memberName } = await params;
   const member = await getPersonByName(memberName)
@@ -30,7 +30,7 @@ export async function generateMetadata({
 export default async function Page({
   params,
 }: {
-  params: { memberName: string };
+  params: Promise<{ memberName: string }>;
 }) {
   const { memberName } = await params;
 

@@ -25,7 +25,7 @@ export default async function Page() {
 
   return (
     <>
-      <main className="relative">
+      <main className="relative overflow-x-hidden">
         <div className=" container-sm pb-16 flex items-center flex-col-reverse md:flex-row">
           <div className="flex-[50%]">
             <h1 className="font-bold text-4xl lg:text-5xl text-center md:text-start">
