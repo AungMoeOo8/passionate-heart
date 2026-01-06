@@ -1,5 +1,5 @@
+import Env from "../../env";
 import { ServiceProps } from "../../types";
-const { WORDPRESS_DOMAIN } = process.env
 
 export type Fee = {
     type?: string,
@@ -21,14 +21,14 @@ export type ServiceResponse =
     }
 
 export async function getServices() {
-    const res = await fetch(`${WORDPRESS_DOMAIN}/wp-json/api/organization/services`)
+    const res = await fetch(`${Env.WordpressDomain}/wp-json/api/organization/services`, { next: { revalidate: Env.RevalidateDuration } })
     const data: ServiceResponse[] = await res.json()
 
     return data
-}   
+}
 
 export async function getServiceById(id: number) {
-    const res = await fetch(`${WORDPRESS_DOMAIN}/wp-json/api/services/${id}`)
+    const res = await fetch(`${Env.WordpressDomain}/wp-json/api/services/${id}`, { next: { revalidate: Env.RevalidateDuration } })
     const data: ServiceProps = await res.json()
 
     return data

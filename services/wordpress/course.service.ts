@@ -1,5 +1,4 @@
-import { CourseProps } from "../../types";
-const { WORDPRESS_DOMAIN } = process.env
+import Env from "../../env";
 
 export type CourseResponse = {
     "id": number,
@@ -12,7 +11,7 @@ export type CourseResponse = {
 }
 
 export async function getCourses() {
-    const res = await fetch(`${WORDPRESS_DOMAIN}/wp-json/api/organization/courses`)
+    const res = await fetch(`${Env.WordpressDomain}/wp-json/api/organization/courses`, { next: { revalidate: Env.RevalidateDuration } })
     const data: CourseResponse[] = await res.json()
 
     return data
